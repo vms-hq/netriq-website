@@ -177,15 +177,24 @@ p { color: var(--text-soft); }
 }
 .btn:hover { transform: translateY(-1px); }
 .btn--primary {
-  background: var(--teal-strong);
-  color: #001513;
-  box-shadow: 0 6px 20px -10px rgba(0, 200, 160, 0.6);
+  background: #FFFFFF;
+  color: #0B0E10;
+  font-weight: 700;
+  border-color: #FFFFFF;
+  box-shadow: 0 6px 24px -8px rgba(0, 200, 160, 0.35);
 }
-.btn--primary:hover { background: var(--teal); }
+.btn--primary:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #00231C;
+}
 .btn--ghost {
   background: transparent; color: var(--text); border-color: var(--border-strong);
 }
-.btn--ghost:hover { border-color: var(--text); }
+.btn--ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
 
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
