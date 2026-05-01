@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Platform — Netriq</title>
+<meta name="description" content="What Netriq does today: live view, recording, AI detection, plate recognition, person-of-interest tracking, forensic scan, alerts, and multi-site control." />
+<link rel="icon" href="/assets/logos/netriq-favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="brand"><img src="/assets/logos/netriq-logo-dark.svg" alt="Netriq" /></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/platform.html">Platform</a>
+      <a href="/verticals.html">Verticals</a>
+      <a href="/why-netriq.html">Why Netriq</a>
+      <a href="/contact.html" class="btn btn--primary" style="padding:9px 16px;">Get in touch</a>
+    </nav>
+    <button class="btn-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="reveal" style="max-width:780px;">
+      <span class="eyebrow">Platform</span>
+      <h1>Everything Netriq does today, on the cameras you already have.</h1>
+      <p class="hero__sub">Below is the live feature set &mdash; what is in production, deployed, and used by customers. We don&rsquo;t list roadmap items here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAPTURE -->
+<section class="container">
+  <div class="fgroup reveal" id="capture">
+    <div class="fgroup__head">
+      <div>
+        <span class="eyebrow">01 / Capture</span>
+        <h2>Bring every camera into one view.</h2>
+      </div>
+      <p class="lead">Netriq is camera-agnostic. We connect to whatever you have &mdash; over the network you have &mdash; and present it as one system.</p>
+    </div>
+
+    <div class="fgroup__list">
+      <div class="fgroup__item">
+        <h4>Multi-vendor ingestion</h4>
+        <p>Native support for Hikvision and Dahua, ingest from Frigate NVRs, and any ONVIF / RTSP camera.</p>
+      </div>
+      <div class="fgroup__item">
+        <h4>Auto-discovery</h4>
+        <p>Network scanner finds cameras on the LAN, detects codecs, and registers them in bulk.</p>
+      </div>
+      <div class="fgroup__item">
+        <h4>4G / SIM cameras</h4>
+        <p>RTMP ingest from remote SIM cameras via relay. Per-device auth keys, no public IP needed at the camera.</p>
+      </div>
+      <div class="fgroup__item">
+        <h4>Live view</h4>
+        <p>WebRTC streaming with sub-second latency. H.265 and H.264, automatic codec fallback when a stream fails to decode.</p>
+      </div>
+      <div class="fgroup__item">
+        <h4>Continuous recording</h4>
+        <p>Segment-based recording with configurable retention. Detection events linked to the exact frame in the recording.</p>
+      </div>
+      <div class="fgroup__item">
+        <h4>Recording playback</h4>
+        <p>Timeline scrubber with detection events overlaid. NVR fallback for cameras whose own NVR holds the archive.</p>
+      </div>
+      <div class="fgroup__item">
+        <h4>Snapshot fallback</h4>
+        <p>For cameras that drop RTSP or refuse it, Netriq auto-falls-back to snapshot polling so the feed keeps flowing.</p>
+      </div>
+      <div class="fgroup__item">
+        <h4>Detection overlay</h4>
+        <p>Bounding boxes drawn on the live feed with class, confidence, and colour-coded labels.</p>
+      </div>
+      <div class="fgroup__item">
+        <h4>Group, organise, share</h4>
+        <p>Camera groups with per-group toggles for detection, sharing, and view layout.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="screenshot reveal" style="margin: 18px 0 6px;">
+    <img src="/assets/img/live-view.png" alt="Netriq live-view grid showing multiple camera feeds with detection overlays" />
+  </div>
+</section>
+
+<!-- UNDERSTAND -->
+<section class="section section--soft">
+  <div class="container">
+    <div class="fgroup reveal" id="understand" style="border-top:0; padding-top:0;">
+      <div class="fgroup__head">
+        <div>
+          <span class="eyebrow">02 / Understand</span>
+          <h2>The AI that watches the wall.</h2>
+        </div>
+        <p class="lead">Generic VMS detects motion. Netriq detects what is moving, identifies it across cameras, and only surfaces what matters.</p>
+      </div>
+
+      <div class="fgroup__list">
+        <div class="fgroup__item">
+          <h4>Object detection</h4>
+          <p>Real-time inference for person, vehicle, animal, and common object classes. Switchable models, configurable per-camera frame rate.</p>
+        </div>
+        <div class="fgroup__item">
+          <h4>License plate recognition</h4>
+          <p>HSRP-tuned OCR for Indian plates, with consensus across multiple frames per track. Vehicle registry and gate log are auto-populated.</p>
+        </div>
+        <div class="fgroup__item">
+          <h4>Persons of Interest</h4>
+          <p>Mark a person, vehicle, or object once. Netriq tracks every appearance across every camera using OSNet Re-ID and forensic backfill.</p>
+        </div>
+        <div class="fgroup__item">
+          <h4>Cross-camera tracking</h4>
+          <p>Re-identification ties the same individual or vehicle across disjoint feeds. Class-aware so handbag-PoI doesn&rsquo;t match a person.</p>
+        </div>
+        <div class="fgroup__item">
+          <h4>Forensic scan</h4>
+          <p>Run the same AI over recorded footage. Pick a time range and cameras, get back detections, plates, and PoI matches retroactively.</p>
+        </div>
+        <div class="fgroup__item">
+          <h4>Counting and occupancy</h4>
+          <p>Counting tasks for any class, on demand. Occupancy zones report dwell and presence. Snapshots stored as proof.</p>
+        </div>
+        <div class="fgroup__item">
+          <h4>Polygon zones</h4>
+          <p>Draw zones on the camera view. Detection events fire only inside the zone &mdash; cuts false positives sharply.</p>
+        </div>
+        <div class="fgroup__item">
+          <h4>Floor plans</h4>
+          <p>Place cameras on an uploaded floor plan with field-of-view cones. Zones map to the physical space, not just the camera frame.</p>
+        </div>
+        <div class="fgroup__item">
+          <h4>Heatmaps &amp; analytics</h4>
+          <p>Activity heatmaps, footfall, dwell. Daily and hourly aggregates per camera and per zone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="grid-2 reveal" style="gap:36px; align-items:center; padding: 56px 0;">
+    <div class="screenshot">
+      <img src="/assets/img/poi-tracking.png" alt="Persons of Interest panel with cross-camera sightings" />
+    </div>
+    <div>
+      <h2>Track a person, vehicle, or object across every camera you own.</h2>
+      <p class="lead" style="margin-top:14px;">
+        Mark a Person of Interest from any detection &mdash; a suspect, a vehicle, a delivery rider, a misplaced bag.
+        Netriq backfills sightings across the time range and cameras you choose, then keeps watching forward in real time.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid-2 reveal" style="gap:36px; align-items:center; padding: 32px 0 72px;">
+    <div>
+      <h2>Plate logs that read themselves.</h2>
+      <p class="lead" style="margin-top:14px;">
+        Every vehicle through every gate ends up in the registry with plate, time, camera, and image &mdash; searchable by plate fragment, by time, by gate.
+        Track regulars, flag unknown vehicles, build whitelists.
+      </p>
+    </div>
+    <div class="screenshot">
+      <img src="/assets/img/gate-log.png" alt="Gate log auto-populated by license plate recognition" />
+    </div>
+  </div>
+</section>
+
+<!-- ACT -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="fgroup reveal" id="act" style="border-top:0; padding-top:0;">
+      <div class="fgroup__head">
+        <div>
+          <span class="eyebrow">03 / Act</span>
+          <h2>From signal to response.</h2>
+        </div>
+        <p class="lead" style="color:var(--gray-light);">Detection is only useful if it routes to the right person at the right moment, or to the right query after the fact.</p>
+      </div>
+
+      <div class="fgroup__list">
+        <div class="fgroup__item" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.12); color:var(--white);">
+          <h4 style="color:var(--white);">WhatsApp &amp; email alerts</h4>
+          <p style="color:var(--gray-light);">Per-rule routing. De-duplicated so the same event doesn&rsquo;t flood the channel.</p>
+        </div>
+        <div class="fgroup__item" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.12);">
+          <h4 style="color:var(--white);">Gate log</h4>
+          <p style="color:var(--gray-light);">Every entry and exit captured automatically. Searchable, exportable, image-attached.</p>
+        </div>
+        <div class="fgroup__item" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.12);">
+          <h4 style="color:var(--white);">Detection history</h4>
+          <p style="color:var(--gray-light);">Every event with thumbnail, class, confidence, camera, time, and link to the recording frame.</p>
+        </div>
+        <div class="fgroup__item" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.12);">
+          <h4 style="color:var(--white);">Event de-duplication</h4>
+          <p style="color:var(--gray-light);">Intelligent filtering reduces duplicate alerts so the inbox stays signal, not noise.</p>
+        </div>
+        <div class="fgroup__item" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.12);">
+          <h4 style="color:var(--white);">Roles &amp; access</h4>
+          <p style="color:var(--gray-light);">Admin, operator, viewer. Permissions enforced at the API, not just the UI.</p>
+        </div>
+        <div class="fgroup__item" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.12);">
+          <h4 style="color:var(--white);">Multi-site</h4>
+          <p style="color:var(--gray-light);">One console across every site. Group cameras, route alerts, and assign access per site.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPLOYMENT -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="max-width:780px;">
+      <span class="eyebrow">Deployment</span>
+      <h2>Cloud, on-prem, or both. Your data, your storage.</h2>
+    </div>
+
+    <div class="grid-3 reveal" style="margin-top:36px;">
+      <div class="card">
+        <h3>Cloud-managed</h3>
+        <p>We host the console; the Site Agent at your premises bridges cameras over a relay. No port forwarding, no static IP, no VPN to maintain.</p>
+      </div>
+      <div class="card">
+        <h3>On-premise</h3>
+        <p>Deploy the full stack on your own server. Hikvision, Dahua, ONVIF cameras feed in directly. Air-gapped if you want it that way.</p>
+      </div>
+      <div class="card">
+        <h3>Hybrid</h3>
+        <p>Recording stays local for bandwidth and retention; detection metadata, alerts, and remote view ride the cloud. Default for most customers.</p>
+      </div>
+    </div>
+
+    <dl class="reveal" style="margin-top:48px;">
+      <div class="spec-row">
+        <dt>Edge</dt>
+        <dd>Linux server, Raspberry Pi 4 / 5, or x86 mini-PC. AP-mode setup for the Pi when there&rsquo;s no DHCP yet.</dd>
+      </div>
+      <div class="spec-row">
+        <dt>Protocols</dt>
+        <dd>RTSP, ONVIF, RTMP (for SIM cams), WebRTC, HLS. H.264 and H.265.</dd>
+      </div>
+      <div class="spec-row">
+        <dt>Native vendors</dt>
+        <dd>Hikvision, Dahua / Amcrest, Frigate. Generic ONVIF for everything else.</dd>
+      </div>
+      <div class="spec-row">
+        <dt>Authentication</dt>
+        <dd>JWT, role-based access, per-site isolation, audit log of user actions.</dd>
+      </div>
+      <div class="spec-row">
+        <dt>Onboarding</dt>
+        <dd>Token-based site activation: admin generates a token, operator runs the installer, the site comes online by itself.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--soft">
+  <div class="container" style="text-align:center;">
+    <div class="reveal" style="max-width:640px; margin:0 auto;">
+      <h2>Walk through the actual product, not slides.</h2>
+      <p class="lead" style="margin:14px auto 0;">A short live walkthrough &mdash; we connect to a demo deployment with real cameras and real footage.</p>
+      <div class="btn-row" style="justify-content:center;">
+        <a href="/contact.html" class="btn btn--primary">Request a demo</a>
+        <a href="/verticals.html" class="btn btn--ghost">See verticals</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <img src="/assets/logos/netriq-logo-white.svg" alt="Netriq" />
+        <p>The Intelligent Eye. AI on every camera you already own.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/platform.html">Platform</a></li>
+          <li><a href="/verticals.html">Verticals</a></li>
+          <li><a href="/why-netriq.html">Why Netriq</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:ishaileshpant@nysha.in">ishaileshpant@nysha.in</a></li>
+          <li><a href="mailto:mmv@nysha.in">mmv@nysha.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <span>&copy; <span id="yr"></span> Netriq. All rights reserved.</span>
+      <span>The Intelligent Eye &mdash; नेत्र + IQ</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

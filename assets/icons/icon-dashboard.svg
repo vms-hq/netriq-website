@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#00B894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Grid tiles -->
+  <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+  <rect x="14" y="3" width="7" height="4" rx="1.5"/>
+  <rect x="14" y="10" width="7" height="11" rx="1.5"/>
+  <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+  <!-- Small eye in the large tile (AI-monitored dashboard) -->
+  <ellipse cx="17.5" cy="15.5" rx="2.5" ry="1.5" opacity="0.6"/>
+  <circle cx="17.5" cy="15.5" r="0.6" fill="#00B894" stroke="none" opacity="0.6"/>
+</svg>

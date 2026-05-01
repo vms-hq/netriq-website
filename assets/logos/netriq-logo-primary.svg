@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <defs>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B894"/>
+      <stop offset="100%" stop-color="#00A884"/>
+    </linearGradient>
+    <linearGradient id="irisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B894"/>
+      <stop offset="50%" stop-color="#00D2A8"/>
+      <stop offset="100%" stop-color="#00B894"/>
+    </linearGradient>
+    <!-- Glow filter for the pupil -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="320" height="80" rx="12" fill="#2D3436"/>
+
+  <!-- === EYE LOGOMARK (centered at 40, 40) === -->
+  <g transform="translate(14, 16)">
+    <!-- Outer eye shape — almond -->
+    <path d="M 4,24 C 10,8 20,2 28,2 C 36,2 46,8 52,24 C 46,40 36,46 28,46 C 20,46 10,40 4,24 Z"
+          stroke="url(#tealGrad)" stroke-width="2" fill="none"/>
+
+    <!-- Iris circle -->
+    <circle cx="28" cy="24" r="12" stroke="url(#irisGrad)" stroke-width="1.5" fill="none"/>
+
+    <!-- Circuit traces inside iris (intelligence/AI pattern) -->
+    <line x1="28" y1="12" x2="28" y2="16" stroke="#00B894" stroke-width="0.8" opacity="0.6"/>
+    <line x1="28" y1="32" x2="28" y2="36" stroke="#00B894" stroke-width="0.8" opacity="0.6"/>
+    <line x1="16" y1="24" x2="20" y2="24" stroke="#00B894" stroke-width="0.8" opacity="0.6"/>
+    <line x1="36" y1="24" x2="40" y2="24" stroke="#00B894" stroke-width="0.8" opacity="0.6"/>
+    <!-- Diagonal circuit traces -->
+    <line x1="19.5" y1="15.5" x2="22" y2="18" stroke="#00B894" stroke-width="0.7" opacity="0.4"/>
+    <line x1="36.5" y1="15.5" x2="34" y2="18" stroke="#00B894" stroke-width="0.7" opacity="0.4"/>
+    <line x1="19.5" y1="32.5" x2="22" y2="30" stroke="#00B894" stroke-width="0.7" opacity="0.4"/>
+    <line x1="36.5" y1="32.5" x2="34" y2="30" stroke="#00B894" stroke-width="0.7" opacity="0.4"/>
+
+    <!-- Camera aperture pupil (6-blade) -->
+    <circle cx="28" cy="24" r="5.5" fill="#2D3436" stroke="url(#tealGrad)" stroke-width="1"/>
+    <path d="M 28,18.5 L 30,21 L 28,20 Z" fill="#00B894" opacity="0.5"/>
+    <path d="M 33.5,24 L 31,22 L 32,24 Z" fill="#00B894" opacity="0.5"/>
+    <path d="M 28,29.5 L 26,27 L 28,28 Z" fill="#00B894" opacity="0.5"/>
+    <path d="M 22.5,24 L 25,26 L 24,24 Z" fill="#00B894" opacity="0.5"/>
+
+    <!-- Central AI dot (pupil core) — glowing -->
+    <circle cx="28" cy="24" r="2" fill="#00B894" filter="url(#glow)"/>
+
+    <!-- Outer scan arcs (all-seeing awareness) -->
+    <path d="M 0,24 C 4,14 10,8 16,5" stroke="#00B894" stroke-width="0.7" fill="none" opacity="0.25" stroke-linecap="round"/>
+    <path d="M 56,24 C 52,14 46,8 40,5" stroke="#00B894" stroke-width="0.7" fill="none" opacity="0.25" stroke-linecap="round"/>
+    <path d="M 0,24 C 4,34 10,40 16,43" stroke="#00B894" stroke-width="0.7" fill="none" opacity="0.25" stroke-linecap="round"/>
+    <path d="M 56,24 C 52,34 46,40 40,43" stroke="#00B894" stroke-width="0.7" fill="none" opacity="0.25" stroke-linecap="round"/>
+  </g>
+
+  <!-- === WORDMARK === -->
+  <!-- "NETR" in teal -->
+  <text x="82" y="50" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-weight="700" font-size="34" letter-spacing="2" fill="#00B894">NETR</text>
+  <!-- "IQ" emphasized — brighter, slightly larger weight feel -->
+  <text x="193" y="50" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-weight="800" font-size="34" letter-spacing="2" fill="#FFFFFF">IQ</text>
+  <!-- ".AI" suffix -->
+  <text x="237" y="50" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-weight="400" font-size="16" fill="#636E72">.AI</text>
+
+  <!-- Tagline -->
+  <text x="82" y="66" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-weight="400" font-size="8.5" letter-spacing="2.5" fill="#636E72">THE INTELLIGENT EYE</text>
+</svg>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — Netriq</title>
+<meta name="description" content="Talk to Netriq. Tell us your camera footprint and what you're trying to solve. We will reply within one business day." />
+<link rel="icon" href="/assets/logos/netriq-favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="brand"><img src="/assets/logos/netriq-logo-dark.svg" alt="Netriq" /></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/platform.html">Platform</a>
+      <a href="/verticals.html">Verticals</a>
+      <a href="/why-netriq.html">Why Netriq</a>
+      <a href="/contact.html" class="btn btn--primary" style="padding:9px 16px;">Get in touch</a>
+    </nav>
+    <button class="btn-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="reveal" style="max-width:780px;">
+      <span class="eyebrow">Contact</span>
+      <h1>Tell us about your cameras. We&rsquo;ll come back with what&rsquo;s possible.</h1>
+      <p class="hero__sub">A short note is enough. Camera count, vendors, sites, and what you&rsquo;re trying to get out of them. We respond within one business day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="contact-grid">
+
+      <aside class="contact-info reveal">
+        <h3>Direct</h3>
+        <dl>
+          <dt>Primary</dt>
+          <dd><a href="mailto:ishaileshpant@nysha.in">ishaileshpant@nysha.in</a></dd>
+          <dt>Business</dt>
+          <dd><a href="mailto:mmv@nysha.in">mmv@nysha.in</a></dd>
+        </dl>
+        <p style="margin-top:24px; font-size:14px; color:var(--gray);">
+          We work hands-on with each prospective deployment &mdash; from a single store to a multi-site rollout. Send us a few lines about what you&rsquo;re running and what you want to change, and we&rsquo;ll set up a walkthrough.
+        </p>
+      </aside>
+
+      <form id="contact-form" class="reveal" novalidate>
+        <!-- Web3Forms access key. Replace WEB3FORMS_ACCESS_KEY with the real key after signup at web3forms.com -->
+        <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="from_name" value="Netriq Website" />
+        <input type="hidden" name="subject" value="New enquiry from netriq.ai" />
+        <input type="hidden" name="cc" value="mmv@nysha.in" />
+        <input type="hidden" name="redirect" value="false" />
+        <!-- honeypot for bots -->
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+
+        <div class="form-row form-row__split">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div>
+            <label for="organisation">Organisation</label>
+            <input id="organisation" name="organisation" type="text" autocomplete="organization" />
+          </div>
+        </div>
+
+        <div class="form-row form-row__split">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div>
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-row form-row__split">
+          <div>
+            <label for="vertical">Type of premises</label>
+            <select id="vertical" name="vertical">
+              <option value="">Select one</option>
+              <option>Gated community / housing</option>
+              <option>Hospital / healthcare</option>
+              <option>School / campus</option>
+              <option>Retail / jewellery</option>
+              <option>Restaurant / hotel</option>
+              <option>Mall</option>
+              <option>Fleet / logistics / yard</option>
+              <option>Office / SMB</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="cameras">Approximate camera count</label>
+            <select id="cameras" name="cameras">
+              <option value="">Select one</option>
+              <option>1 to 16</option>
+              <option>17 to 64</option>
+              <option>65 to 200</option>
+              <option>200+</option>
+              <option>Multi-site</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="message">What are you trying to solve?</label>
+          <textarea id="message" name="message" required placeholder="Camera vendors, current setup, what you want to change."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Send</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-meta">Your message goes directly to the Netriq team. We do not share details with third parties.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <img src="/assets/logos/netriq-logo-white.svg" alt="Netriq" />
+        <p>The Intelligent Eye. AI on every camera you already own.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/platform.html">Platform</a></li>
+          <li><a href="/verticals.html">Verticals</a></li>
+          <li><a href="/why-netriq.html">Why Netriq</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:ishaileshpant@nysha.in">ishaileshpant@nysha.in</a></li>
+          <li><a href="mailto:mmv@nysha.in">mmv@nysha.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <span>&copy; <span id="yr"></span> Netriq. All rights reserved.</span>
+      <span>The Intelligent Eye &mdash; नेत्र + IQ</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
