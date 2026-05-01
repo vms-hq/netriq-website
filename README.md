@@ -14,15 +14,28 @@ This repo eventually serves the apex `netriq.ai` domain (currently routes to the
 
 ## Local preview
 
-Any static server works. Two one-liners:
+Pick whichever fits your machine.
+
+### Script (no deps beyond Python or Node)
 
 ```sh
-python3 -m http.server 8000
-# or
-npx --yes serve .
+./serve            # http://localhost:8000, auto-opens browser
+./serve 9000       # custom port
 ```
 
-Then open `http://localhost:8000`.
+### Docker / Compose
+
+```sh
+docker compose up --build      # http://localhost:8000
+docker compose down            # stop
+```
+
+Or build directly:
+
+```sh
+docker build -t netriq-website .
+docker run --rm -p 8000:80 netriq-website
+```
 
 ## Contact form
 

@@ -1,0 +1,8 @@
+services:
+  netriq-website:
+    build: .
+    image: netriq-website:dev
+    container_name: netriq-website
+    ports:
+      - "8000:80"
+    restart: unless-stopped
