@@ -26,14 +26,25 @@ Then open `http://localhost:8000`.
 
 ## Contact form
 
-The form posts to [Web3Forms](https://web3forms.com) — a free, no-account-required form relay that supports CC. Setup:
+The form posts to [Web3Forms](https://web3forms.com) (Free tier — `leads-netriq.ai` form). Submissions deliver to `ishaileshpant@nysha.in`.
 
-1. Sign up for a free access key at <https://web3forms.com/#start>.
-2. Configure the access key's destination email as `ishaileshpant@nysha.in`.
-3. Open `contact.html`, find the placeholder string `WEB3FORMS_ACCESS_KEY`, and replace it with the real access key.
-4. Confirm `<input name="cc" value="mmv@nysha.in" />` is intact — that adds the second recipient.
+### Dual-recipient delivery (mmv@nysha.in)
 
-Submissions land in the configured inbox. The honeypot field (`botcheck`) blocks the most common bot traffic.
+Free tier delivers to **one** registered email. The `<input name="cc" value="mmv@nysha.in" />` field in our form is silently ignored on Free (CC is a Pro feature). To get both recipients without subscribing:
+
+- **Recommended**: set up a forwarding rule on `ishaileshpant@nysha.in` that auto-forwards mail with subject `New enquiry from netriq.ai` to `mmv@nysha.in`, OR
+- create a distribution alias (e.g. `leads@nysha.in`) that fans out to both, then change the Web3Forms destination to that alias.
+
+### Upgrade to Pro (₹399/mo) only if you need
+
+- Native multi-recipient / CC enforcement
+- Webhook fan-out into Slack / Sheets / Notion
+- File uploads in the form
+- More than 250 submissions/month (Free cap)
+
+The `cc` hidden input stays in the markup either way — harmless on Free, immediate when/if you upgrade.
+
+The honeypot field (`botcheck`) blocks the most common bot traffic.
 
 ## Brand assets
 
