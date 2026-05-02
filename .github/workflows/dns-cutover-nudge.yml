@@ -1,0 +1,113 @@
+name: DNS cutover nudge
+
+# Read-only check: is netriq.ai still pointing at the demo instance?
+# Opens (or updates) a tracking issue if so. Self-quiet once DNS has flipped.
+#
+# Activates on/after 2026-05-16. Before that date the run exits silently.
+
+on:
+  schedule:
+    - cron: '0 4 * * 6'    # every Saturday 04:00 UTC = 09:30 IST
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Skip until 2026-05-16
+        id: gate
+        run: |
+          today=$(date -u +%Y-%m-%d)
+          if [[ "$today" < "2026-05-16" ]]; then
+            echo "before activation date — skipping"
+            echo "active=false" >>"$GITHUB_OUTPUT"
+          else
+            echo "active=true" >>"$GITHUB_OUTPUT"
+          fi
+
+      - name: Resolve netriq.ai
+        if: steps.gate.outputs.active == 'true'
+        id: dns
+        run: |
+          ip=$(dig +short A netriq.ai @1.1.1.1 | tail -1)
+          [[ -z "$ip" ]] && ip="(no record)"
+          echo "ip=$ip" >>"$GITHUB_OUTPUT"
+          echo "netriq.ai → $ip"
+
+      - name: Verify v1.0.0 release still exists
+        if: steps.gate.outputs.active == 'true'
+        id: rel
+        run: |
+          status=$(curl -s -o /dev/null -w '%{http_code}' https://github.com/vms-hq/netriq-website/releases/tag/v1.0.0)
+          echo "release_status=$status" >>"$GITHUB_OUTPUT"
+
+      - name: README sanity (no placeholders crept in)
+        if: steps.gate.outputs.active == 'true'
+        id: readme
+        run: |
+          if grep -nE 'TODO|TBD|XXX|placeholder' README.md; then
+            echo "has_placeholders=true" >>"$GITHUB_OUTPUT"
+          else
+            echo "has_placeholders=false" >>"$GITHUB_OUTPUT"
+          fi
+
+      - name: File / update tracking issue if still on demo
+        if: steps.gate.outputs.active == 'true' && steps.dns.outputs.ip == '5.223.63.207'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'DNS cutover pending: netriq.ai still points at demo';
+            const body = [
+              `As of ${new Date().toISOString().slice(0,10)}, \`netriq.ai\` resolves to **5.223.63.207** (the demo instance).`,
+              ``,
+              `Repo state:`,
+              `- Release v1.0.0 — HTTP \`${{ steps.rel.outputs.release_status }}\``,
+              `- README placeholders — \`${{ steps.readme.outputs.has_placeholders }}\``,
+              ``,
+              `Next step: pick a deployment path from \`README.md\` and flip DNS.`,
+              ``,
+              `_(this issue is auto-managed by \`.github/workflows/dns-cutover-nudge.yml\`)_`
+            ].join('\n');
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: 'open', labels: 'dns-cutover'
+            });
+            if (issues.length) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: issues[0].number, body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title, body, labels: ['dns-cutover', 'auto']
+              });
+            }
+
+      - name: Close tracking issue if DNS has flipped
+        if: steps.gate.outputs.active == 'true' && steps.dns.outputs.ip != '5.223.63.207' && steps.dns.outputs.ip != '(no record)'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: 'open', labels: 'dns-cutover'
+            });
+            for (const issue of issues) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: issue.number,
+                body: `DNS now resolves to \`${{ steps.dns.outputs.ip }}\` — closing.`
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: issue.number, state: 'closed'
+              });
+            }

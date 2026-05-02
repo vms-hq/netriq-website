@@ -114,6 +114,30 @@ To get both recipients without subscribing:
 
 The honeypot field (`botcheck`) blocks the most common bot traffic.
 
+## Automation
+
+Two GitHub Actions workflows live in `.github/workflows/`:
+
+### `sync-screenshots.yml`
+
+Weekly cron (Sunday 03:30 UTC = 09:00 IST). Sparse-checkouts `vms-hq/business/docs/marketing/screenshots/`, diffs the PII-safe allowlist (dashboard, live-view, poi-tracking, gate-log, devices, settings) against `assets/img/`, and opens a PR via `peter-evans/create-pull-request` if anything changed. The PR has a manual eyeball checklist; nothing reaches `main` without a human merge.
+
+**One-time setup** — add a repo secret named `BUSINESS_REPO_PAT`:
+
+1. Generate a fine-grained PAT at <https://github.com/settings/personal-access-tokens/new>
+   - Resource owner: `vms-hq`
+   - Repository access: `vms-hq/business` only
+   - Permissions: **Contents** read-only, **Metadata** read-only
+   - Expiration: 1 year (set a calendar reminder to rotate)
+2. Paste it at <https://github.com/vms-hq/netriq-website/settings/secrets/actions> as `BUSINESS_REPO_PAT`
+3. Run the workflow once manually from the Actions tab to verify
+
+The script `scripts/sync-screenshots.sh` is the same logic for local invocation.
+
+### `dns-cutover-nudge.yml`
+
+Saturdays from 2026-05-16 onward. Resolves `netriq.ai` and opens (or updates) a tracking issue if it still points at the demo instance (5.223.63.207). Auto-closes the issue once DNS flips. No setup required — uses the default `GITHUB_TOKEN`.
+
 ## Versioning
 
 - `v1.0.0` — initial public release. Five pages, dark theme, contact form wired, DNS-ready.
