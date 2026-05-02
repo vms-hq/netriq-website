@@ -122,15 +122,7 @@ Two GitHub Actions workflows live in `.github/workflows/`:
 
 Weekly cron (Sunday 03:30 UTC = 09:00 IST). Sparse-checkouts `vms-hq/business/docs/marketing/screenshots/`, diffs the PII-safe allowlist (dashboard, live-view, poi-tracking, gate-log, devices, settings) against `assets/img/`, and opens a PR via `peter-evans/create-pull-request` if anything changed. The PR has a manual eyeball checklist; nothing reaches `main` without a human merge.
 
-**One-time setup** — add a repo secret named `BUSINESS_REPO_PAT`:
-
-1. Generate a fine-grained PAT at <https://github.com/settings/personal-access-tokens/new>
-   - Resource owner: `vms-hq`
-   - Repository access: `vms-hq/business` only
-   - Permissions: **Contents** read-only, **Metadata** read-only
-   - Expiration: 1 year (set a calendar reminder to rotate)
-2. Paste it at <https://github.com/vms-hq/netriq-website/settings/secrets/actions> as `BUSINESS_REPO_PAT`
-3. Run the workflow once manually from the Actions tab to verify
+**Setup** — uses the existing org-level `GO_PRIVATE_TOKEN` secret (already in use by `core` and `agent` workflows for private Go module fetches). If the workflow can't see it on first run, open <https://github.com/organizations/vms-hq/settings/secrets/actions/GO_PRIVATE_TOKEN> and add `netriq-website` to the secret's repository access list. No new PAT to create.
 
 The script `scripts/sync-screenshots.sh` is the same logic for local invocation.
 

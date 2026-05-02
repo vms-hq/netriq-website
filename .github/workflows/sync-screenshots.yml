@@ -4,14 +4,11 @@ name: Sync screenshots from business repo
 # Runs weekly. Opens a PR (never push to main) so a human eyeballs each diff
 # for faces / readable plates / customer names before publishing.
 #
-# Required repo secret:
-#   BUSINESS_REPO_PAT — fine-grained GitHub PAT with read access to
-#                       vms-hq/business. Generate at
-#                       https://github.com/settings/personal-access-tokens/new
-#                       (resource owner: vms-hq, repo: vms-hq/business,
-#                        permissions: Contents:read, Metadata:read).
-#                       Paste the value into
-#                       https://github.com/vms-hq/netriq-website/settings/secrets/actions
+# Uses the org-level GO_PRIVATE_TOKEN secret (already used by core / agent
+# workflows to fetch private vms-hq Go modules — same read access we need
+# here). If netriq-website doesn't see it on first run, the secret's
+# "Repository access" list needs this repo added at:
+#   https://github.com/organizations/vms-hq/settings/secrets/actions/GO_PRIVATE_TOKEN
 
 on:
   schedule:
@@ -33,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: vms-hq/business
-          token: ${{ secrets.BUSINESS_REPO_PAT }}
+          token: ${{ secrets.GO_PRIVATE_TOKEN }}
           path: business-src
           sparse-checkout: |
             docs/marketing/screenshots
