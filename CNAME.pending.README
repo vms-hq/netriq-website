@@ -1,0 +1,10 @@
+This file holds the intended custom domain for GitHub Pages once DNS for
+`netriq.ai` flips off the demo VMS cluster (currently at Hetzner 5.223.63.207).
+
+To restore: `git mv CNAME.pending CNAME`, commit, push. Pages will pick it up
+on the next build. Verify with:
+
+  curl -I https://netriq.ai/
+
+See also: .github/workflows/dns-cutover-nudge.yml (the weekly check that
+notices when DNS flips and stops nagging).
