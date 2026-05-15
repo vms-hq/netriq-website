@@ -1,4 +1,4 @@
-/* Netriq.AI — site stylesheet. Dark by default, teal as the only accent. */
+/* NetrIQ.AI — site stylesheet. Dark by default, teal as the only accent. */
 
 :root {
   --teal: #00C8A0;
@@ -726,6 +726,48 @@ p { color: var(--text-soft); }
 .screenshot__dot:nth-child(2) { background: #FEBC2E; }
 .screenshot__dot:nth-child(3) { background: #28C840; }
 .screenshot img { display: block; width: 100%; }
+
+/* ============================================================
+   Screen-card grid (Featured screens on Platform page)
+   ============================================================ */
+.screen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 22px;
+}
+.screen-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: 0 16px 36px -22px rgba(0, 0, 0, 0.55);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  display: flex;
+  flex-direction: column;
+}
+.screen-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 22px 48px -22px rgba(0, 0, 0, 0.65);
+}
+.screen-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top center;
+  border-bottom: 1px solid var(--border);
+}
+.screen-card figcaption {
+  padding: 16px 18px 18px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+.screen-card figcaption strong { color: var(--text); font-weight: 600; }
+@media (max-width: 720px) {
+  .screen-grid { grid-template-columns: 1fr; gap: 16px; }
+}
 
 /* ============================================================
    Verticals TOC

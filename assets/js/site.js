@@ -1,4 +1,4 @@
-// Netriq.AI — site script. Vanilla, no deps.
+// NetrIQ.AI — site script. Vanilla, no deps.
 
 (function () {
   // mobile nav
