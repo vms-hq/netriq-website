@@ -11,9 +11,17 @@
 #   gh CLI authenticated against vms-hq with repo write
 #   git user.email / user.name set on this checkout
 #
-# Allowlist below is the set verified PII-clean during the v1.0.0 audit.
+# Allowlist below is the set verified PII-clean during the 2026-05-15 audit.
 # If a new screenshot is needed on the site, add it here AND eyeball the
 # source frame for faces / readable plates / customer names before adding.
+#
+# NOTE: bom-*.png screens carry "INTERNAL ONLY" marketing context (pricing,
+# competitor research) and are deliberately NOT in this allowlist.
+#
+# NOTE: analytics.png + events.png contain the "Sightings Groups" / detection
+# thumbnail bands which can hold partial faces. They are imported through
+# scripts/face_blur.py (mosaic-redacted), not via this sync script. If you
+# refresh them, re-run the blur pipeline before committing.
 
 set -euo pipefail
 
@@ -22,14 +30,23 @@ BUSINESS_DIR="${BUSINESS_DIR:-${ROOT}/../business}"
 SRC="${BUSINESS_DIR}/docs/marketing/screenshots"
 DST="${ROOT}/assets/img"
 
-# PII-safe allowlist (verified 2026-05-02; re-audit yearly):
+# PII-safe allowlist (verified 2026-05-15; re-audit yearly):
+#   alerts.png      — alerts list, text-only
 #   dashboard.png   — chart of detections by class, no faces / no plates
-#   live-view.png   — loading-state grid, no live frames
-#   poi-tracking.png — empty state ("No objects of interest registered")
-#   gate-log.png    — vehicle thumbnails, plates show "not detected"
 #   devices.png     — camera list with credentials masked as ****
+#   gate-log.png    — vehicle thumbnails, plates show "not detected"
+#   groups.png      — group config, no people
+#   live-view.png   — loading-state grid, no live frames
+#   login.png       — login screen, no people
+#   poi-tracking.png — empty state ("No objects of interest registered")
+#   recordings.png  — timeline view, no people
 #   settings.png    — config UI, no data
-ALLOWLIST=(dashboard.png live-view.png poi-tracking.png gate-log.png devices.png settings.png)
+#   vehicle-registry.png — plates only, no faces
+ALLOWLIST=(
+  alerts.png dashboard.png devices.png gate-log.png groups.png
+  live-view.png login.png poi-tracking.png recordings.png settings.png
+  vehicle-registry.png
+)
 
 DRY_RUN="${DRY_RUN:-0}"
 
