@@ -49,6 +49,8 @@
           <div class="hero__chips">
             <span>Hikvision</span>
             <span>Dahua</span>
+            <span>CP Plus</span>
+            <span>Sparsh</span>
             <span>Frigate</span>
             <span>ONVIF</span>
             <span>RTSP</span>
@@ -75,7 +77,7 @@
     <div class="fgroup__list">
       <div class="fgroup__item">
         <h4>Multi-vendor ingestion</h4>
-        <p>Native support for Hikvision and Dahua, ingest from Frigate NVRs, and any ONVIF / RTSP camera.</p>
+        <p>Native support for Hikvision, Dahua, CP Plus and Sparsh; ingest from Frigate NVRs; and any ONVIF / RTSP camera.</p>
       </div>
       <div class="fgroup__item">
         <h4>Auto-discovery</h4>
@@ -140,7 +142,7 @@
         </div>
         <div class="fgroup__item">
           <h4>License plate recognition</h4>
-          <p>HSRP-tuned OCR for Indian plates, with consensus across multiple frames per track. Vehicle registry and gate log are auto-populated.</p>
+          <p>HSRP-tuned OCR with multi-frame consensus per track. Handles regional plate formats and low-light gate conditions. Vehicle registry and gate log are auto-populated.</p>
         </div>
         <div class="fgroup__item">
           <h4>Persons of Interest</h4>
@@ -336,34 +338,88 @@
       <p class="lead" style="margin-top:14px;">Same engine across the line. Editions differ in which capabilities are unlocked, not in which code base you run.</p>
     </div>
 
-    <div class="grid-2 reveal" style="margin-top:36px; gap:24px;">
-      <div class="card">
-        <span class="eyebrow" style="color:var(--text-mute);">Enterprise</span>
-        <h3>NetrIQ Suite</h3>
-        <p class="lead" style="margin-top:8px;">The full feature surface &mdash; visual search, PoI Re-ID, tailgating, PTZ-360, zone rules, multi-channel notify, forensic export with chain-of-custody, themeable console.</p>
-        <p style="margin-top:14px; font-size:14.5px; color:var(--text-mute);">For large multi-site estates with mixed-vendor camera fleets and central security operations.</p>
+    <div class="edition-grid reveal" style="margin-top:36px;">
+
+      <div class="edition-card edition-card--featured">
+        <div class="edition-card__head">
+          <span class="eyebrow" style="color:var(--teal);">Enterprise &middot; flagship</span>
+          <h3>NetrIQ Suite</h3>
+          <p class="lead" style="margin-top:8px;">The full surface area. Built for multi-site estates with mixed-vendor cameras and central security operations.</p>
+        </div>
+        <ul class="edition-card__list">
+          <li>Natural-language visual search across recorded footage</li>
+          <li>Persons of Interest with cross-camera Re-ID, class-aware matching</li>
+          <li>Tailgating detection (pure-CV, no access-control integration)</li>
+          <li>PTZ &amp; 360&deg; dewarp with virtual sub-views</li>
+          <li>Zone rules engine: unmanned-gate, occupancy, intrusion, tailgating</li>
+          <li>Multi-channel notify (in-app + email + WhatsApp dispatcher)</li>
+          <li>Forensic export with chain-of-custody (SHA-256 manifests)</li>
+          <li>Themeable console &mdash; 10 palettes, per-section type sizing</li>
+          <li>Multi-site, role-based access, audit log</li>
+        </ul>
+        <p class="edition-card__fit">Fit for: enterprise security operations, large campuses, multi-tenant IT office estates, hospital chains.</p>
       </div>
-      <div class="card">
-        <span class="eyebrow" style="color:var(--text-mute);">Mid-market</span>
-        <h3>NetrIQ Spaces</h3>
-        <p class="lead" style="margin-top:8px;">Live view, recording, detection, LPR, zone rules, gate log, vehicle registry, WhatsApp alerts. The core operational surface without the enterprise extras.</p>
-        <p style="margin-top:14px; font-size:14.5px; color:var(--text-mute);">For gated communities, schools, offices, and single-site businesses that need watching, not just recording.</p>
+
+      <div class="edition-card">
+        <div class="edition-card__head">
+          <span class="eyebrow" style="color:var(--text-mute);">Mid-market &middot; core operational surface</span>
+          <h3>NetrIQ Spaces</h3>
+          <p class="lead" style="margin-top:8px;">Watching &mdash; not just recording &mdash; for one or a handful of sites that don&rsquo;t need the enterprise extras.</p>
+        </div>
+        <ul class="edition-card__list">
+          <li>Live view &amp; multi-camera grid with detection overlay</li>
+          <li>Continuous recording with timeline scrub + event markers</li>
+          <li>Real-time object detection (person, vehicle, animal, objects)</li>
+          <li>License plate recognition (HSRP-tuned, multi-frame consensus)</li>
+          <li>Zone rules: unmanned-gate, occupancy thresholds, intrusion</li>
+          <li>Gate log + vehicle registry, image-attached, exportable</li>
+          <li>WhatsApp + email alerting with de-duplication</li>
+          <li>Camera groups, role scoping, multi-user</li>
+        </ul>
+        <p class="edition-card__fit">Fit for: gated communities, schools, mid-size offices, single-site retail, restaurants and clinics.</p>
       </div>
-      <div class="card">
-        <span class="eyebrow" style="color:var(--text-mute);">VMS-only</span>
-        <h3>NetrIQ VMS</h3>
-        <p class="lead" style="margin-top:8px;">Camera ingestion, live view, recording, playback, basic detection, gate log. The video management foundation &mdash; AI add-ons activated per camera.</p>
-        <p style="margin-top:14px; font-size:14.5px; color:var(--text-mute);">For deployments standardising on a software VMS today and bringing AI online tier by tier.</p>
+
+      <div class="edition-card">
+        <div class="edition-card__head">
+          <span class="eyebrow" style="color:var(--text-mute);">VMS-only &middot; the foundation</span>
+          <h3>NetrIQ VMS</h3>
+          <p class="lead" style="margin-top:8px;">The video management foundation, with AI capabilities you can switch on per camera as budgets allow.</p>
+        </div>
+        <ul class="edition-card__list">
+          <li>Camera ingestion: Hikvision, Dahua, CP Plus, Sparsh, ONVIF, RTSP</li>
+          <li>Live view, recording, timeline playback with event-anchor seek</li>
+          <li>Auto-discovery + bulk camera onboarding</li>
+          <li>Snapshot fallback when RTSP drops</li>
+          <li>Basic detection (person + vehicle) included</li>
+          <li>Gate log with manual plate entry</li>
+          <li>AI add-ons (visual search, PoI, plates, zone rules) activate per camera</li>
+          <li>Same console &mdash; upgrade path doesn&rsquo;t re-install</li>
+        </ul>
+        <p class="edition-card__fit">Fit for: estates standardising on a software VMS today and bringing AI online tier by tier without a rip-and-replace.</p>
       </div>
-      <div class="card">
-        <span class="eyebrow" style="color:var(--text-mute);">Vertical</span>
-        <h3>NetrIQ Dine</h3>
-        <p class="lead" style="margin-top:8px;">Tuned for restaurants and kitchens: PPE compliance, pest detection, hygiene checkpoints, service-area attention, valet plate logs. Same engine, vertical preset.</p>
-        <p style="margin-top:14px; font-size:14.5px; color:var(--text-mute);">For QSR, fine-dining chains, and central kitchens that need food-safety and ops visibility, not just security.</p>
+
+      <div class="edition-card">
+        <div class="edition-card__head">
+          <span class="eyebrow" style="color:var(--text-mute);">Vertical &middot; restaurant preset</span>
+          <h3>NetrIQ Dine</h3>
+          <p class="lead" style="margin-top:8px;">The Suite engine, tuned for food-service operations &mdash; security plus food-safety plus ops in one console.</p>
+        </div>
+        <ul class="edition-card__list">
+          <li>PPE compliance detection (gloves, hair-net, apron, mask)</li>
+          <li>Pest detection in kitchen / storage areas</li>
+          <li>Hygiene checkpoint compliance (handwash, sanitiser stations)</li>
+          <li>Service-area attention &mdash; greet, table, queue wait</li>
+          <li>Valet / drive-through plate logs</li>
+          <li>Pre-tuned models &amp; zone presets for QSR / fine-dining layouts</li>
+          <li>WhatsApp shift-handover alerts &amp; manager escalation</li>
+          <li>Vertical reporting templates</li>
+        </ul>
+        <p class="edition-card__fit">Fit for: QSR chains, fine-dining groups, cloud kitchens, central commissaries.</p>
       </div>
+
     </div>
 
-    <p class="reveal" style="margin-top:28px; font-size:14.5px; color:var(--text-mute); max-width:760px;">All editions share the same engine, the same camera support, and the same deployment options. You can move up an edition without re-installing &mdash; capabilities flip live on the existing stack.</p>
+    <p class="reveal" style="margin-top:32px; font-size:14.5px; color:var(--text-mute); max-width:760px;">All editions share the same engine, the same camera support, and the same deployment options. You can move up an edition without re-installing &mdash; capabilities flip live on the existing stack.</p>
   </div>
 </section>
 
@@ -454,11 +510,12 @@
         </ul>
       </div>
       <div>
-        <h5>Get in touch</h5>
+        <h5>Reach us</h5>
         <ul>
-          <li><a href="mailto:ishaileshpant@nysha.in">ishaileshpant@nysha.in</a></li>
-          <li><a href="mailto:mmv@nysha.in">mmv@nysha.in</a></li>
+          <li><a href="/contact.html">Request a walkthrough</a></li>
+          <li><a href="/contact.html">Get a quote</a></li>
         </ul>
+        <p style="margin-top:10px; font-size:13px; color:var(--text-mute); line-height:1.55;">We reply within one business day.</p>
       </div>
     </div>
     <div class="site-footer__base">

@@ -728,6 +728,75 @@ p { color: var(--text-soft); }
 .screenshot img { display: block; width: 100%; }
 
 /* ============================================================
+   Editions grid (NetrIQ Suite / Spaces / VMS / Dine)
+   ============================================================ */
+.edition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+.edition-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+.edition-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 20px 44px -22px rgba(0, 0, 0, 0.6);
+}
+.edition-card--featured {
+  border-color: rgba(0, 200, 160, 0.35);
+  background:
+    linear-gradient(180deg, rgba(0, 200, 160, 0.07) 0%, transparent 38%),
+    var(--surface);
+}
+.edition-card--featured:hover { border-color: var(--teal); }
+.edition-card__head h3 {
+  margin-top: 6px;
+  font-size: 26px;
+}
+.edition-card__list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+.edition-card__list li {
+  position: relative;
+  padding: 7px 0 7px 22px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  border-bottom: 1px solid var(--border);
+}
+.edition-card__list li:last-child { border-bottom: 0; }
+.edition-card__list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 14px;
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  border: 1.5px solid var(--teal);
+  border-right: 0;
+  border-bottom: 0;
+  transform: rotate(135deg);
+  transform-origin: 50% 50%;
+  border-top-color: var(--teal);
+}
+.edition-card__fit {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+  font-size: 13.5px;
+  color: var(--text-mute);
+  line-height: 1.55;
+}
+
+/* ============================================================
    Screen-card grid (Featured screens on Platform page)
    ============================================================ */
 .screen-grid {
