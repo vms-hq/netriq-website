@@ -1,0 +1,108 @@
+name: Sync screenshots from business repo
+
+# Auto-refresh PII-safe product screenshots from vms-hq/business → assets/img.
+# Runs weekly. Opens a PR (never push to main) so a human eyeballs each diff
+# for faces / readable plates / customer names before publishing.
+#
+# Uses the org-level GO_PRIVATE_TOKEN secret (already used by core / agent
+# workflows to fetch private vms-hq Go modules — same read access we need
+# here). If netriq-website doesn't see it on first run, the secret's
+# "Repository access" list needs this repo added at:
+#   https://github.com/organizations/vms-hq/settings/secrets/actions/GO_PRIVATE_TOKEN
+
+on:
+  schedule:
+    - cron: '30 3 * * 0'   # every Sunday 03:30 UTC = 09:00 IST
+  workflow_dispatch: {}    # manual run from the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout netriq-website
+        uses: actions/checkout@v4
+
+      - name: Checkout vms-hq/business (sparse, screenshots only)
+        uses: actions/checkout@v4
+        with:
+          repository: vms-hq/business
+          token: ${{ secrets.GO_PRIVATE_TOKEN }}
+          path: business-src
+          sparse-checkout: |
+            docs/marketing/screenshots
+          sparse-checkout-cone-mode: false
+
+      - name: Diff allowlisted screenshots
+        id: diff
+        run: |
+          set -euo pipefail
+          ALLOWLIST=(dashboard.png live-view.png poi-tracking.png gate-log.png devices.png settings.png)
+          changed=()
+          missing=()
+          for f in "${ALLOWLIST[@]}"; do
+            src="business-src/docs/marketing/screenshots/$f"
+            dst="assets/img/$f"
+            if [[ ! -f "$src" ]]; then
+              missing+=("$f")
+              continue
+            fi
+            if [[ ! -f "$dst" ]] || ! cmp -s "$src" "$dst"; then
+              cp "$src" "$dst"
+              changed+=("$f")
+            fi
+          done
+
+          {
+            echo "changed_count=${#changed[@]}"
+            echo "missing_count=${#missing[@]}"
+          } >>"$GITHUB_OUTPUT"
+
+          if [[ ${#changed[@]} -gt 0 ]]; then
+            printf '%s\n' "${changed[@]}" >changed.txt
+            echo "changed:"
+            printf '  - %s\n' "${changed[@]}"
+          else
+            echo "no changes"
+          fi
+          if [[ ${#missing[@]} -gt 0 ]]; then
+            echo "missing in source:"
+            printf '  - %s\n' "${missing[@]}"
+          fi
+
+      - name: Open PR if changed
+        if: steps.diff.outputs.changed_count != '0'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          add-paths: assets/img/*
+          branch: auto/screenshots
+          delete-branch: true
+          title: 'auto: refresh website screenshots'
+          commit-message: |
+            auto: refresh screenshots from business repo
+
+            Source: vms-hq/business/docs/marketing/screenshots/
+            Allowlist verified PII-safe at v1.0.0 audit.
+          body: |
+            ## Auto-generated screenshot refresh
+
+            Files in `assets/img/` that differ from `vms-hq/business/docs/marketing/screenshots/` were copied over by the weekly sync workflow.
+
+            ## Eyeball before merging
+
+            - [ ] No faces visible in any frame
+            - [ ] No readable plate text (HSRP plates → must be illegible or "not detected")
+            - [ ] No customer / patient / staff names in any list / panel
+            - [ ] No real email addresses or phone numbers in form / config screens
+            - [ ] No internal hostnames / IPs not already public
+
+            If anything fails the eyeball, close this PR and remove the offending file from the allowlist in `.github/workflows/sync-screenshots.yml`.
+
+            ---
+            Triggered by `${{ github.workflow }}` · run [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          labels: |
+            screenshots
+            auto

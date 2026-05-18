@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#00B894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Chart bars -->
+  <rect x="3" y="12" width="4" height="9" rx="1"/>
+  <rect x="10" y="7" width="4" height="14" rx="1"/>
+  <rect x="17" y="3" width="4" height="18" rx="1"/>
+  <!-- Eye above the chart (AI insight watching data) -->
+  <ellipse cx="12" cy="3" rx="3" ry="1.5" stroke-width="1" opacity="0.6"/>
+  <circle cx="12" cy="3" r="0.6" fill="#00B894" stroke="none" opacity="0.7"/>
+  <!-- Insight beam from eye downward -->
+  <line x1="12" y1="4.5" x2="12" y2="7" stroke-dasharray="1 1" opacity="0.3" stroke-width="0.8"/>
+</svg>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Page not found — NetrIQ</title>
+<link rel="icon" href="/assets/logos/netriq-favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="brand" aria-label="NetrIQ home">
+      <img class="brand__icon" src="/assets/logos/netriq-icon-teal.svg" alt="" />
+      <span class="brand__mark"><span class="netr">Netr</span><span class="iq">IQ</span><span class="tld">.ai</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/platform.html">Platform</a>
+      <a href="/verticals.html">Verticals</a>
+      <a href="/why-netriq.html">Why NetrIQ</a>
+      <a href="/contact.html" class="btn btn--primary">Get in touch</a>
+    </nav>
+    <button class="btn-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero__inner" style="text-align:center;">
+    <span class="eyebrow" style="justify-self:center;">404</span>
+    <h1 style="margin:14px auto 0;">Off-camera.</h1>
+    <p class="hero__sub" style="margin:24px auto 0;">The page you were looking for isn&rsquo;t at this address. Try one of the links below.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a href="/" class="btn btn--primary">Back to home</a>
+      <a href="/platform.html" class="btn btn--ghost">Platform</a>
+      <a href="/verticals.html" class="btn btn--ghost">Verticals</a>
+      <a href="/contact.html" class="btn btn--ghost">Contact</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__base" style="border-top:0; margin-top:0;">
+      <span>&copy; <span id="yr"></span> NetrIQ. All rights reserved.</span>
+      <span>नेत्र + IQ &middot; the intelligent eye</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

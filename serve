@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Netriq website — local dev server. Usage: ./serve [PORT]
+set -euo pipefail
+
+PORT="${1:-${PORT:-8000}}"
+cd "$(dirname "$0")"
+
+URL="http://localhost:${PORT}"
+echo ""
+echo "  Netriq website"
+echo "  ──────────────"
+echo "  ${URL}"
+echo ""
+
+# auto-open on macOS / Linux (best effort, non-blocking)
+( sleep 0.6
+  if command -v open >/dev/null 2>&1; then open "${URL}"
+  elif command -v xdg-open >/dev/null 2>&1; then xdg-open "${URL}" >/dev/null 2>&1 || true
+  fi
+) &
+
+if command -v python3 >/dev/null 2>&1; then
+  exec python3 -m http.server "${PORT}" --bind 127.0.0.1
+elif command -v npx >/dev/null 2>&1; then
+  exec npx --yes serve --listen "${PORT}" .
+else
+  echo "Need python3 or npx in PATH." >&2
+  exit 1
+fi

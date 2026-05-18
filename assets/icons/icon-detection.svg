@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#00B894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Bounding box corners (detection frame) -->
+  <path d="M3 8V5a2 2 0 0 1 2-2h3"/>
+  <path d="M16 3h3a2 2 0 0 1 2 2v3"/>
+  <path d="M21 16v3a2 2 0 0 1-2 2h-3"/>
+  <path d="M8 21H5a2 2 0 0 1-2-2v-3"/>
+  <!-- Person silhouette -->
+  <circle cx="12" cy="8.5" r="2"/>
+  <path d="M8 18v-1a4 4 0 0 1 8 0v1"/>
+  <!-- Eye tracking indicator (top-right corner) -->
+  <ellipse cx="19" cy="5" rx="1.8" ry="1" stroke-width="1" opacity="0.7"/>
+  <circle cx="19" cy="5" r="0.5" fill="#00B894" stroke="none" opacity="0.8"/>
+</svg>

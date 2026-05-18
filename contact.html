@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — NetrIQ</title>
+<meta name="description" content="Talk to NetrIQ. Tell us your camera footprint and what you're trying to solve. We will reply within one business day." />
+<link rel="icon" href="/assets/logos/netriq-favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="brand" aria-label="NetrIQ home">
+      <img class="brand__icon" src="/assets/logos/netriq-icon-teal.svg" alt="" />
+      <span class="brand__mark"><span class="netr">Netr</span><span class="iq">IQ</span><span class="tld">.ai</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/platform.html">Platform</a>
+      <a href="/verticals.html">Verticals</a>
+      <a href="/why-netriq.html">Why NetrIQ</a>
+      <a href="/contact.html" class="btn btn--primary">Get in touch</a>
+    </nav>
+    <button class="btn-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero hero--page">
+  <div class="container">
+    <div class="hero--page__grid">
+      <div class="reveal">
+        <span class="eyebrow">Contact</span>
+        <h1>Tell us about your cameras. We&rsquo;ll come back with what&rsquo;s possible.</h1>
+        <p class="hero__sub">A short note is enough. Camera count, vendors, sites, and what you&rsquo;re trying to get out of them. We respond within one business day.</p>
+      </div>
+      <aside class="hero--page__aside reveal">
+        <h3>What helps us reply faster</h3>
+        <div class="hero__stack">
+          <div class="hero__stack__row"><strong>01</strong><span>How many cameras and across how many sites</span></div>
+          <div class="hero__stack__row"><strong>02</strong><span>Camera vendors and any NVRs in place</span></div>
+          <div class="hero__stack__row"><strong>03</strong><span>What you&rsquo;re trying to detect, log, or alert on</span></div>
+          <div class="hero__stack__row"><strong>04</strong><span>Cloud / on-prem / hybrid preference, if you have one</span></div>
+        </div>
+        <div style="margin-top:22px; padding-top:18px; border-top:1px solid var(--border); font-size:13px; color:var(--text-mute); line-height:1.55;">
+          We reply within one business day to every submission.
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="contact-grid">
+
+      <aside class="contact-info reveal">
+        <h3>What happens next</h3>
+        <dl>
+          <dt>1 business day</dt>
+          <dd>You hear back from our team with a short qualification note and a proposed walkthrough slot.</dd>
+          <dt>30-minute walkthrough</dt>
+          <dd>Live screen-share against a real deployment &mdash; not slides. We tailor the demo to the cameras and use cases you described.</dd>
+          <dt>Pilot or quote</dt>
+          <dd>If there&rsquo;s a fit, we scope a pilot or send a quote sized to your camera count and edition (Suite / Spaces / VMS / Dine).</dd>
+        </dl>
+        <p style="margin-top:22px; font-size:14px; color:var(--text-mute);">
+          We work hands-on with each prospective deployment &mdash; from a single store to a multi-site rollout. Send us a few lines about what you&rsquo;re running and what you want to change, and we&rsquo;ll set up a walkthrough.
+        </p>
+      </aside>
+
+      <form id="contact-form" class="reveal" novalidate
+            action="https://formsubmit.co/ajax/leads@netriq.ai" method="POST"
+            data-mailto-fallback="leads@netriq.ai">
+        <!-- formsubmit.co AJAX endpoint. Recipient (`leads@netriq.ai`) is a
+             Cloudflare Email Routing alias that forwards to the team mailbox.
+             First submission to this form triggers a one-time confirmation email
+             to the alias; clicking that link activates ongoing delivery.
+             After activation, swap the URL above for the hashed form
+             `https://formsubmit.co/ajax/<hash>` (formsubmit shows the hash in
+             the confirmation email) so the alias also drops out of HTML source.
+             Spam protection: client-side honeypot below + formsubmit's server
+             checks. We disable their built-in CAPTCHA via _captcha=false. -->
+        <input type="hidden" name="_subject" value="New enquiry from netriq.ai" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- honeypot for bots (our own; formsubmit also honors _honey) -->
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+        <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" />
+
+        <div class="form-row form-row__split">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div>
+            <label for="organisation">Organisation</label>
+            <input id="organisation" name="organisation" type="text" autocomplete="organization" />
+          </div>
+        </div>
+
+        <div class="form-row form-row__split">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div>
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-row form-row__split">
+          <div>
+            <label for="vertical">Type of premises</label>
+            <select id="vertical" name="vertical">
+              <option value="">Select one</option>
+              <option>Gated community / housing</option>
+              <option>Hospital / healthcare</option>
+              <option>School / campus</option>
+              <option>Retail / jewellery</option>
+              <option>Restaurant / hotel</option>
+              <option>Mall</option>
+              <option>Fleet / logistics / yard</option>
+              <option>Office / SMB</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="cameras">Approximate camera count</label>
+            <select id="cameras" name="cameras">
+              <option value="">Select one</option>
+              <option>1 to 16</option>
+              <option>17 to 64</option>
+              <option>65 to 200</option>
+              <option>200+</option>
+              <option>Multi-site</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="message">What are you trying to solve?</label>
+          <textarea id="message" name="message" required placeholder="Camera vendors, current setup, what you want to change."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Send</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-meta">Your message goes directly to the NetrIQ team. We do not share details with third parties.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="/" class="brand">
+          <img class="brand__icon" src="/assets/logos/netriq-icon-teal.svg" alt="" />
+          <span class="brand__mark"><span class="netr">Netr</span><span class="iq">IQ</span><span class="tld">.ai</span></span>
+        </a>
+        <p>The intelligent eye. AI on every camera you already own.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/platform.html">Platform</a></li>
+          <li><a href="/verticals.html">Verticals</a></li>
+          <li><a href="/why-netriq.html">Why NetrIQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Reach us</h5>
+        <ul>
+          <li><a href="/contact.html">Request a walkthrough</a></li>
+          <li><a href="/contact.html">Get a quote</a></li>
+        </ul>
+        <p style="margin-top:10px; font-size:13px; color:var(--text-mute); line-height:1.55;">We reply within one business day.</p>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <span>&copy; <span id="yr"></span> NetrIQ. All rights reserved.</span>
+      <span>नेत्र + IQ &middot; the intelligent eye</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

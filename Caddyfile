@@ -1,0 +1,45 @@
+# Caddyfile for serving the NetrIQ website behind Cloudflare-fronted TLS.
+# Use this when self-hosting the static site; not used by GitHub Pages.
+#
+#   :80   — HTTP on port 80 (Cloudflare or other reverse-proxy terminates TLS)
+#   :443  — direct HTTPS if serving without a TLS terminator in front
+#
+# Usage:
+#   caddy run --config Caddyfile
+
+{
+    admin off
+    auto_https off
+}
+
+:80 {
+    root * /srv/netriq-website
+    encode zstd gzip
+
+    @assets path_regexp ^/assets/.*\.(svg|png|jpg|jpeg|webp|woff2?|css|js)$
+    header @assets Cache-Control "public, max-age=604800, must-revalidate"
+
+    @html path *.html /
+    header @html Cache-Control "public, max-age=300, must-revalidate"
+
+    header {
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "interest-cohort=()"
+        -Server
+    }
+
+    try_files {path} {path}.html {path}/index.html /404.html
+    file_server
+
+    handle_errors {
+        @404 expression {http.error.status_code} == 404
+        rewrite @404 /404.html
+        file_server
+    }
+
+    log {
+        output stdout
+        format console
+    }
+}
