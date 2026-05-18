@@ -72,18 +72,24 @@
         </p>
       </aside>
 
-      <form id="contact-form" class="reveal" novalidate>
-        <!-- Web3Forms public access key (safe to embed; rate-limit + spam is server-side).
-             Recipient mapping is configured on the Web3Forms dashboard against form
-             `leads-netriq.ai`. Submissions reach the team via that backend mapping plus a
-             mailbox-side forwarding rule. No recipient email addresses appear in this HTML
-             source — change recipients on the Web3Forms dashboard, not here. -->
-        <input type="hidden" name="access_key" value="1b68ebdd-fb43-4377-af24-4538096ab4c7" />
-        <input type="hidden" name="from_name" value="NetrIQ Website" />
-        <input type="hidden" name="subject" value="New enquiry from netriq.ai" />
-        <input type="hidden" name="redirect" value="false" />
-        <!-- honeypot for bots -->
+      <form id="contact-form" class="reveal" novalidate
+            action="https://formsubmit.co/ajax/leads@netriq.ai" method="POST"
+            data-mailto-fallback="leads@netriq.ai">
+        <!-- formsubmit.co AJAX endpoint. Recipient (`leads@netriq.ai`) is a
+             Cloudflare Email Routing alias that forwards to the team mailbox.
+             First submission to this form triggers a one-time confirmation email
+             to the alias; clicking that link activates ongoing delivery.
+             After activation, swap the URL above for the hashed form
+             `https://formsubmit.co/ajax/<hash>` (formsubmit shows the hash in
+             the confirmation email) so the alias also drops out of HTML source.
+             Spam protection: client-side honeypot below + formsubmit's server
+             checks. We disable their built-in CAPTCHA via _captcha=false. -->
+        <input type="hidden" name="_subject" value="New enquiry from netriq.ai" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- honeypot for bots (our own; formsubmit also honors _honey) -->
         <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+        <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" />
 
         <div class="form-row form-row__split">
           <div>
