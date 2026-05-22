@@ -40,6 +40,46 @@
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }
 
+  // hero product tour — auto-loop crossfade through product screens
+  var shots = document.querySelectorAll('.cr-shots .cr-shot');
+  if (shots.length > 1) {
+    var frame = document.querySelector('.cr-frame');
+    var pathEl = frame && frame.querySelector('.cr-frame__path');
+    var labelEl = frame && frame.querySelector('.cr-frame__screen');
+    var ticksWrap = frame && frame.querySelector('.cr-frame__ticks');
+    var idx = 0, timer = null, ticks = [];
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function go(n) {
+      idx = (n + shots.length) % shots.length;
+      shots.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      ticks.forEach(function (t, i) { t.setAttribute('aria-current', String(i === idx)); });
+      var cur = shots[idx];
+      if (pathEl && cur.dataset.screen) pathEl.textContent = 'netriq.ai / ' + cur.dataset.screen;
+      if (labelEl && cur.dataset.label) labelEl.textContent = cur.dataset.label;
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() { if (!reduce && !timer) timer = setInterval(function () { go(idx + 1); }, 3400); }
+
+    if (ticksWrap) {
+      shots.forEach(function (s, i) {
+        var t = document.createElement('button');
+        t.type = 'button';
+        t.className = 'cr-tick';
+        t.setAttribute('aria-label', s.dataset.label || ('Screen ' + (i + 1)));
+        t.addEventListener('click', function () { stop(); go(i); start(); });
+        ticksWrap.appendChild(t);
+        ticks.push(t);
+      });
+    }
+    if (frame) {
+      frame.addEventListener('mouseenter', stop);
+      frame.addEventListener('mouseleave', start);
+    }
+    go(0);
+    start();
+  }
+
   // Contact form posts to the backend at form.action (formsubmit.co AJAX
   // endpoint). On any submission failure — backend down, CORS, network drop —
   // we fall back to a mailto: link populated with the form contents so the
