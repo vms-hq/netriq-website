@@ -46,6 +46,7 @@
     var frame = document.querySelector('.cr-frame');
     var pathEl = frame && frame.querySelector('.cr-frame__path');
     var labelEl = frame && frame.querySelector('.cr-frame__screen');
+    var descEl = frame && frame.querySelector('.cr-frame__desc');
     var ticksWrap = frame && frame.querySelector('.cr-frame__ticks');
     var idx = 0, timer = null, ticks = [];
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -57,6 +58,7 @@
       var cur = shots[idx];
       if (pathEl && cur.dataset.screen) pathEl.textContent = 'netriq.ai / ' + cur.dataset.screen;
       if (labelEl && cur.dataset.label) labelEl.textContent = cur.dataset.label;
+      if (descEl && cur.dataset.desc) descEl.textContent = cur.dataset.desc;
     }
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
     function start() { if (!reduce && !timer) timer = setInterval(function () { go(idx + 1); }, 3400); }
