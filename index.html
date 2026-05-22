@@ -34,40 +34,48 @@
 <!-- HERO -->
 <section class="cr-hero">
   <div class="container cr-hero__inner">
-    <div class="reveal">
-      <span class="cr-kicker"><span class="cr-dot cr-dot--ok"></span> Surveillance · software-defined</span>
-      <h1>Most CCTV records.<span class="dim">It doesn't watch.</span></h1>
-      <p class="cr-hero__sub">NetrIQ puts AI on the cameras you already run — across any vendor mix and any network. Software only. Nothing to rip out, no cameras to buy.</p>
-      <div class="btn-row">
-        <a href="/contact.html" class="btn btn--primary">Request a walkthrough</a>
-        <a href="/platform.html" class="btn btn--ghost">See the platform →</a>
-      </div>
-    </div>
+    <span class="cr-kicker reveal"><span class="cr-dot cr-dot--ok"></span> Surveillance · software-defined</span>
 
     <div class="cr-tour reveal">
-      <span class="cr-tour__tag cr-tour__tag--a" aria-hidden="true">Person · 0.98</span>
-      <span class="cr-tour__tag cr-tour__tag--b" aria-hidden="true">Vehicle</span>
       <div class="cr-frame">
+        <div class="cr-telemetry">
+          <div class="cr-telemetry__cell">
+            <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Vendors</span>
+            <span class="cr-telemetry__v">6+ <small>Hik · Dahua · CP Plus · Sparsh · Frigate · ONVIF</small></span>
+          </div>
+          <div class="cr-telemetry__cell">
+            <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Networks</span>
+            <span class="cr-telemetry__v">Any <small>intranet · internet · 4G SIM · no public IP</small></span>
+          </div>
+          <div class="cr-telemetry__cell">
+            <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Storage</span>
+            <span class="cr-telemetry__v">Hybrid <small>local · cloud · your choice</small></span>
+          </div>
+          <div class="cr-telemetry__cell">
+            <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Plates</span>
+            <span class="cr-telemetry__v">HSRP <small>multi-frame consensus OCR</small></span>
+          </div>
+        </div>
         <div class="cr-frame__bar">
           <span class="cr-frame__dots"><i></i><i></i><i></i></span>
-          <span class="cr-frame__path">netriq.ai / dashboard</span>
+          <span class="cr-frame__path">netriq.ai / live-view</span>
           <span class="cr-frame__live"><span class="cr-dot cr-dot--ok"></span> Live</span>
         </div>
         <div class="cr-shots" aria-label="NetrIQ product screens">
-          <img class="cr-shot is-active" src="/assets/img/dashboard.png" data-screen="dashboard" data-label="Dashboard" alt="NetrIQ dashboard: detection counts by class, cameras online, active alerts" />
-          <img class="cr-shot" src="/assets/img/live-view.png" data-screen="live-view" data-label="Live view" alt="NetrIQ live view: multi-camera wall with sub-second WebRTC streams" />
-          <img class="cr-shot" src="/assets/img/events.png" data-screen="events" data-label="Events" alt="NetrIQ event feed: detections filtered to what matters" />
-          <img class="cr-shot" src="/assets/img/alerts.png" data-screen="alerts" data-label="Alerts" alt="NetrIQ alerts: zone-rule and detection alerts routed to the team" />
-          <img class="cr-shot" src="/assets/img/gate-log.png" data-screen="gate-log" data-label="Gate log" alt="NetrIQ gate log: vehicle entries with recognised plates" />
-          <img class="cr-shot" src="/assets/img/vehicle-registry.png" data-screen="vehicle-registry" data-label="Vehicle registry" alt="NetrIQ vehicle registry: a queryable record of plates seen" />
-          <img class="cr-shot" src="/assets/img/poi-tracking.png" data-screen="poi-tracking" data-label="PoI tracking" alt="NetrIQ persons-of-interest tracking across cameras" />
-          <img class="cr-shot" src="/assets/img/analytics.png" data-screen="analytics" data-label="Analytics" alt="NetrIQ analytics: counts, occupancy and trends" />
-          <img class="cr-shot" src="/assets/img/recordings.png" data-screen="recordings" data-label="Recordings" alt="NetrIQ recordings: playback with event-anchor seek" />
+          <img class="cr-shot is-active" src="/assets/img/live-view.png?v=2" data-screen="live-view" data-label="Unified live view" data-desc="every camera in one wall — sub-second WebRTC" alt="NetrIQ unified live view: multi-camera wall with detection overlays" />
+          <img class="cr-shot" src="/assets/img/dashboard.png?v=2" data-screen="dashboard" data-label="Operations dashboard" data-desc="detections by class, camera health, active alerts" alt="NetrIQ dashboard: detection counts by class, cameras online, active alerts" />
+          <img class="cr-shot" src="/assets/img/events.png?v=2" data-screen="events" data-label="Detection events" data-desc="every detection, filtered to what matters" alt="NetrIQ event feed: detections filtered to what matters" />
+          <img class="cr-shot" src="/assets/img/alerts.png?v=2" data-screen="alerts" data-label="Alerts" data-desc="rule-driven, routed to your team" alt="NetrIQ alerts: zone-rule and detection alerts routed to the team" />
+          <img class="cr-shot" src="/assets/img/gate-log.png?v=2" data-screen="gate-log" data-label="Gate log" data-desc="vehicles in and out, plates read automatically" alt="NetrIQ gate log: vehicle entries with plate recognition" />
+          <img class="cr-shot" src="/assets/img/poi-tracking.png?v=2" data-screen="poi-tracking" data-label="Persons of Interest" data-desc="marked once, tracked across every camera" alt="NetrIQ persons-of-interest tracking across cameras" />
+          <img class="cr-shot" src="/assets/img/analytics.png?v=2" data-screen="analytics" data-label="Analytics" data-desc="counts, occupancy and object trails" alt="NetrIQ analytics: counts, occupancy and object trails" />
+          <img class="cr-shot" src="/assets/img/recordings.png?v=2" data-screen="recordings" data-label="Recordings" data-desc="playback with event-anchor seek" alt="NetrIQ recordings: playback with event-anchor seek" />
           <span class="cr-scan" aria-hidden="true"></span>
         </div>
         <div class="cr-frame__foot">
           <span class="cr-frame__rec" aria-hidden="true"><span class="cr-dot cr-dot--rec"></span> Rec</span>
-          <span class="cr-frame__screen">Dashboard</span>
+          <span class="cr-frame__screen">Unified live view</span>
+          <span class="cr-frame__desc">every camera in one wall — sub-second WebRTC</span>
           <span class="cr-frame__ticks" role="tablist" aria-label="Product screen"></span>
         </div>
       </div>
@@ -77,22 +85,12 @@
       <i class="cr-ret cr-ret--br" aria-hidden="true"></i>
     </div>
 
-    <div class="cr-telemetry reveal">
-      <div class="cr-telemetry__cell">
-        <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Vendors</span>
-        <span class="cr-telemetry__v">6+ <small>Hik · Dahua · CP Plus · Sparsh · Frigate · ONVIF</small></span>
-      </div>
-      <div class="cr-telemetry__cell">
-        <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Networks</span>
-        <span class="cr-telemetry__v">Any <small>intranet · internet · 4G SIM · no public IP</small></span>
-      </div>
-      <div class="cr-telemetry__cell">
-        <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Storage</span>
-        <span class="cr-telemetry__v">Hybrid <small>local · cloud · your choice</small></span>
-      </div>
-      <div class="cr-telemetry__cell">
-        <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Plates</span>
-        <span class="cr-telemetry__v">HSRP <small>multi-frame consensus OCR</small></span>
+    <div class="cr-hero__below reveal">
+      <p class="cr-hero__tagline">Most CCTV records. <span class="dim">It doesn't watch.</span></p>
+      <p class="cr-hero__sub">NetrIQ puts AI on the cameras you already run — any vendor, any network. Software only, nothing to rip out.</p>
+      <div class="btn-row">
+        <a href="/contact.html" class="btn btn--primary">Request a walkthrough</a>
+        <a href="/platform.html" class="btn btn--ghost">See the platform →</a>
       </div>
     </div>
   </div>
