@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="sand">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NetrIQ — surveillance software for the cameras you already own</title>
-<meta name="description" content="NetrIQ is the AI layer for existing CCTV. Hikvision, Dahua, CP Plus, Sparsh, ONVIF, 4G SIM cams — one platform, one console, no rip-and-replace." />
+<meta name="description" content="NetrIQ adds AI to existing CCTV. Hikvision, Dahua, CP Plus, Sparsh, ONVIF, 4G SIM cams — one platform, one console, no rip-and-replace." />
 <link rel="icon" href="/assets/logos/netriq-favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,261 +32,186 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="container hero__inner">
-    <div class="hero__top reveal">
-      <span class="eyebrow">netr (नेत्र) + iq · the intelligent eye</span>
-      <h1>
-        Most CCTV records.<br />
-        <em>It doesn't watch.</em>
-      </h1>
-      <p class="hero__sub">
-        Cameras get installed. Nobody watches the feeds. Footage gets pulled only after something goes wrong. NetrIQ is the software that fixes that — it adds AI to the camera estate you already own, across whatever vendor mix and network reality your sites actually run on.
-      </p>
+<section class="cr-hero">
+  <div class="container cr-hero__inner">
+    <div class="reveal">
+      <span class="cr-kicker"><span class="cr-dot cr-dot--ok"></span> Surveillance · software-defined</span>
+      <h1>Most CCTV records.<span class="dim">It doesn't watch.</span></h1>
+      <p class="cr-hero__sub">NetrIQ puts AI on the cameras you already run — across any vendor mix and any network. Software only. Nothing to rip out, no cameras to buy.</p>
       <div class="btn-row">
         <a href="/contact.html" class="btn btn--primary">Request a walkthrough</a>
         <a href="/platform.html" class="btn btn--ghost">See the platform →</a>
       </div>
     </div>
 
-    <div class="hero__shot reveal">
-      <div class="hero__shot__frame">
-        <div class="hero__shot__bar">
-          <span class="hero__shot__dot"></span>
-          <span class="hero__shot__dot"></span>
-          <span class="hero__shot__dot"></span>
-          <span class="hero__shot__url">netriq.ai · live operations</span>
+    <div class="cr-tour reveal">
+      <span class="cr-tour__tag cr-tour__tag--a" aria-hidden="true">Person · 0.98</span>
+      <span class="cr-tour__tag cr-tour__tag--b" aria-hidden="true">Vehicle</span>
+      <div class="cr-frame">
+        <div class="cr-frame__bar">
+          <span class="cr-frame__dots"><i></i><i></i><i></i></span>
+          <span class="cr-frame__path">netriq.ai / dashboard</span>
+          <span class="cr-frame__live"><span class="cr-dot cr-dot--ok"></span> Live</span>
         </div>
-        <img src="/assets/img/dashboard.png" alt="NetrIQ operations dashboard with detection counts by class, online cameras, and active alerts" />
+        <div class="cr-shots" aria-label="NetrIQ product screens">
+          <img class="cr-shot is-active" src="/assets/img/dashboard.png" data-screen="dashboard" data-label="Dashboard" alt="NetrIQ dashboard: detection counts by class, cameras online, active alerts" />
+          <img class="cr-shot" src="/assets/img/live-view.png" data-screen="live-view" data-label="Live view" alt="NetrIQ live view: multi-camera wall with sub-second WebRTC streams" />
+          <img class="cr-shot" src="/assets/img/events.png" data-screen="events" data-label="Events" alt="NetrIQ event feed: detections filtered to what matters" />
+          <img class="cr-shot" src="/assets/img/alerts.png" data-screen="alerts" data-label="Alerts" alt="NetrIQ alerts: zone-rule and detection alerts routed to the team" />
+          <img class="cr-shot" src="/assets/img/gate-log.png" data-screen="gate-log" data-label="Gate log" alt="NetrIQ gate log: vehicle entries with recognised plates" />
+          <img class="cr-shot" src="/assets/img/vehicle-registry.png" data-screen="vehicle-registry" data-label="Vehicle registry" alt="NetrIQ vehicle registry: a queryable record of plates seen" />
+          <img class="cr-shot" src="/assets/img/poi-tracking.png" data-screen="poi-tracking" data-label="PoI tracking" alt="NetrIQ persons-of-interest tracking across cameras" />
+          <img class="cr-shot" src="/assets/img/analytics.png" data-screen="analytics" data-label="Analytics" alt="NetrIQ analytics: counts, occupancy and trends" />
+          <img class="cr-shot" src="/assets/img/recordings.png" data-screen="recordings" data-label="Recordings" alt="NetrIQ recordings: playback with event-anchor seek" />
+          <span class="cr-scan" aria-hidden="true"></span>
+        </div>
+        <div class="cr-frame__foot">
+          <span class="cr-frame__rec" aria-hidden="true"><span class="cr-dot cr-dot--rec"></span> Rec</span>
+          <span class="cr-frame__screen">Dashboard</span>
+          <span class="cr-frame__ticks" role="tablist" aria-label="Product screen"></span>
+        </div>
       </div>
+      <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
+      <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
+      <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
+      <i class="cr-ret cr-ret--br" aria-hidden="true"></i>
     </div>
 
-    <div class="hero__metrics reveal">
-      <div class="hero__metric">
-        <strong>Vendors</strong>
-        <p>Hikvision, Dahua, CP Plus, Sparsh, Frigate, ONVIF, 4G SIM</p>
+    <div class="cr-telemetry reveal">
+      <div class="cr-telemetry__cell">
+        <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Vendors</span>
+        <span class="cr-telemetry__v">6+ <small>Hik · Dahua · CP Plus · Sparsh · Frigate · ONVIF</small></span>
       </div>
-      <div class="hero__metric">
-        <strong>Networks</strong>
-        <p>Intranet, internet, mixed, no public IP</p>
+      <div class="cr-telemetry__cell">
+        <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Networks</span>
+        <span class="cr-telemetry__v">Any <small>intranet · internet · 4G SIM · no public IP</small></span>
       </div>
-      <div class="hero__metric">
-        <strong>Storage</strong>
-        <p>Local, cloud, hybrid — your choice</p>
+      <div class="cr-telemetry__cell">
+        <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Storage</span>
+        <span class="cr-telemetry__v">Hybrid <small>local · cloud · your choice</small></span>
       </div>
-      <div class="hero__metric">
-        <strong>Plates</strong>
-        <p>HSRP-tuned plate OCR with multi-frame consensus</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- USPS -->
-<section class="section section--inset">
-  <div class="container">
-    <div class="reveal" style="max-width:720px;">
-      <span class="eyebrow">why teams pick netriq</span>
-      <h2>Built for the camera reality your sites already have.</h2>
-    </div>
-
-    <div class="grid-4" style="margin-top:48px;">
-      <div class="card reveal">
-        <div class="icon-tile"><img src="/assets/icons/icon-network.svg" alt="" /></div>
-        <h3>Any camera, any network</h3>
-        <p>Hikvision, Dahua, CP Plus, Sparsh, Frigate NVRs, generic ONVIF, plus Wi-Fi and 4G SIM cameras. Mixed vendors and mixed networks across multiple gates aren't a special case for us. They're the default.</p>
-      </div>
-      <div class="card reveal">
-        <div class="icon-tile"><img src="/assets/icons/icon-ai-camera.svg" alt="" /></div>
-        <h3>No rip-and-replace</h3>
-        <p>NetrIQ is software. We don't sell cameras. The hardware you already paid for stays where it is. We add the watching layer on top.</p>
-      </div>
-      <div class="card reveal">
-        <div class="icon-tile"><img src="/assets/icons/icon-cloud.svg" alt="" /></div>
-        <h3>Hybrid by design</h3>
-        <p>Edge handles real-time detection. Cloud handles remote view, multi-site, and the cross-camera intelligence. No port forwarding. No static IP. No tunnel for your team to maintain.</p>
-      </div>
-      <div class="card reveal">
-        <div class="icon-tile"><img src="/assets/icons/icon-secure.svg" alt="" /></div>
-        <h3>Hardened for the field</h3>
-        <p>Intermittent uplinks, mixed-vintage cameras, HSRP plates, low-light gates &mdash; the conditions real deployments actually run in. We test against those, not against the lab.</p>
+      <div class="cr-telemetry__cell">
+        <span class="cr-telemetry__k"><span class="cr-dot cr-dot--ok"></span> Plates</span>
+        <span class="cr-telemetry__v">HSRP <small>multi-frame consensus OCR</small></span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CAPABILITY TRIPLET -->
-<section class="section">
+<!-- OPERATING ENVELOPE -->
+<section class="cr-sec">
   <div class="container">
-    <div class="reveal" style="max-width:720px;">
-      <span class="eyebrow">what it does</span>
-      <h2>Capture, understand, act &mdash; on the same feed.</h2>
-      <p class="lead" style="margin-top:14px;">A VMS records. NetrIQ records and watches. Live and after the fact.</p>
+    <div class="cr-shead reveal">
+      <span class="cr-shead__code">01 — ENVELOPE</span>
+      <div class="cr-shead__title">
+        <h2>Built for the camera reality your sites already have.</h2>
+        <p>Mixed vendors, mixed networks, ageing hardware across many gates. For us that's the default, not the edge case.</p>
+      </div>
     </div>
 
-    <div class="capability reveal">
-      <div class="capability__col">
-        <span class="capability__num">01 / CAPTURE</span>
-        <h3>Bring every camera into one view.</h3>
-        <p>Auto-discovery scans your LAN, reads codecs, registers cameras in bulk. SIM and Wi-Fi cameras stream over a relay so you don't need a public IP at every site.</p>
+    <div class="cr-spec reveal">
+      <div class="cr-spec__row">
+        <span class="cr-spec__k">Cameras</span>
+        <span class="cr-spec__v"><b>Hikvision, Dahua, CP Plus, Sparsh</b> natively · <b>Frigate</b> NVRs · any <b>generic ONVIF</b> · Wi-Fi and <b>4G SIM</b> cams.</span>
+      </div>
+      <div class="cr-spec__row">
+        <span class="cr-spec__k">Networks</span>
+        <span class="cr-spec__v">Intranet, internet, or mixed. <span>Remote sites work with no public IP — the Site Agent bridges over a relay.</span></span>
+      </div>
+      <div class="cr-spec__row">
+        <span class="cr-spec__k">Deployment</span>
+        <span class="cr-spec__v">Software only. <span>We don't sell cameras. The hardware you paid for stays where it is.</span></span>
+      </div>
+      <div class="cr-spec__row">
+        <span class="cr-spec__k">Field</span>
+        <span class="cr-spec__v">Intermittent uplinks, mixed-vintage cameras, HSRP plates, low-light gates. <span>Tested against the conditions, not the lab.</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNAL PATH -->
+<section class="cr-sec cr-sec--band">
+  <div class="container">
+    <div class="cr-shead reveal">
+      <span class="cr-shead__code">02 — SIGNAL PATH</span>
+      <div class="cr-shead__title">
+        <h2>What happens to a frame.</h2>
+        <p>A VMS records and waits to be searched. NetrIQ reads every frame as it arrives — live, and across the archive.</p>
+      </div>
+    </div>
+
+    <div class="cr-flow reveal">
+      <div class="cr-stage">
+        <div class="cr-stage__hd"><span class="cr-stage__no">01</span><span class="cr-stage__name">Capture</span></div>
+        <p>Auto-discovery scans the LAN, reads codecs, registers cameras in bulk.</p>
         <ul>
-          <li>RTSP, ONVIF, Hikvision, Dahua, CP Plus, Sparsh, Frigate</li>
           <li>WebRTC live view, sub-second latency</li>
-          <li>H.265 and H.264, automatic codec fallback</li>
-          <li>Continuous recording with retention controls</li>
+          <li>H.265 / H.264, automatic fallback</li>
+          <li>Continuous recording + retention</li>
         </ul>
       </div>
-      <div class="capability__col">
-        <span class="capability__num">02 / UNDERSTAND</span>
-        <h3>The AI that watches the wall.</h3>
-        <p>Real-time object detection, license-plate recognition, and cross-camera person/object tracking. The system filters noise so you only see what matters.</p>
+      <div class="cr-stage">
+        <div class="cr-stage__hd"><span class="cr-stage__no">02</span><span class="cr-stage__name">Understand</span></div>
+        <p>Detection, plate recognition, and cross-camera tracking filter noise down to what matters.</p>
         <ul>
-          <li>Person, vehicle, and object detection</li>
-          <li>License-plate recognition (HSRP-tuned)</li>
+          <li>Person, vehicle &amp; object detection</li>
+          <li>License plates, HSRP-tuned</li>
           <li>Persons of Interest, tracked across cameras</li>
-          <li>Polygon zones, counting, occupancy</li>
         </ul>
       </div>
-      <div class="capability__col">
-        <span class="capability__num">03 / ACT</span>
-        <h3>From signal to response.</h3>
-        <p>Alerts route to WhatsApp or email. Forensic scan replays archived footage with the same AI. Vehicle registry and gate log give you a queryable record, not a tape to scrub.</p>
+      <div class="cr-stage">
+        <div class="cr-stage__hd"><span class="cr-stage__no">03</span><span class="cr-stage__name">Act</span></div>
+        <p>Signals route to your team and leave a queryable record — not a tape to scrub.</p>
         <ul>
-          <li>WhatsApp and email alerting</li>
+          <li>WhatsApp &amp; email alerts</li>
           <li>Forensic scan over recorded footage</li>
-          <li>Gate log and vehicle registry</li>
-          <li>Searchable detection history</li>
+          <li>Gate log &amp; vehicle registry</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VERTICALS -->
-<section class="section section--inset">
+<!-- ARCHITECTURE RACK -->
+<section class="cr-sec">
   <div class="container">
-    <div class="reveal" style="max-width:720px;">
-      <span class="eyebrow">where it runs</span>
-      <h2>Same platform, different priorities.</h2>
-      <p class="lead" style="margin-top:14px;">The cameras and pain points differ by environment. The platform doesn't.</p>
-    </div>
-
-    <div class="vert-strip reveal">
-      <a class="vert-pill" href="/verticals.html#housing">
-        <h4>Gated communities</h4>
-        <p>Vehicle entry, visitor flow, perimeter, after-hours alerts.</p>
-      </a>
-      <a class="vert-pill" href="/verticals.html#healthcare">
-        <h4>Hospitals</h4>
-        <p>Patient-area attention, restricted zones, vehicle gates, lobby flow.</p>
-      </a>
-      <a class="vert-pill" href="/verticals.html#education">
-        <h4>Schools &amp; campuses</h4>
-        <p>Gate enforcement, perimeter, restricted zones, evening usage.</p>
-      </a>
-      <a class="vert-pill" href="/verticals.html#retail">
-        <h4>Retail &amp; jewellery</h4>
-        <p>Counter coverage, footfall, after-hours intrusion, plate logs.</p>
-      </a>
-      <a class="vert-pill" href="/verticals.html#hospitality">
-        <h4>Restaurants &amp; hotels</h4>
-        <p>Service-area attention, guest flow, valet plate logs.</p>
-      </a>
-      <a class="vert-pill" href="/verticals.html#malls">
-        <h4>Malls</h4>
-        <p>Anchor-zone coverage, parking flow, incident reconstruction.</p>
-      </a>
-      <a class="vert-pill" href="/verticals.html#fleet">
-        <h4>Fleet &amp; logistics</h4>
-        <p>Yard cameras, gate plate logs, dwell time, dock activity.</p>
-      </a>
-      <a class="vert-pill" href="/verticals.html#it-office">
-        <h4>IT office spaces</h4>
-        <p>Tenant floors, server rooms, badge-gate tailgating, after-hours access.</p>
-      </a>
-      <a class="vert-pill" href="/verticals.html#smb">
-        <h4>SMB &amp; offices</h4>
-        <p>Right-sized AI without enterprise-VMS pricing.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- EDITIONS TEASER -->
-<section class="section">
-  <div class="container">
-    <div class="reveal" style="max-width:720px;">
-      <span class="eyebrow">editions</span>
-      <h2>Four editions. Same engine.</h2>
-      <p class="lead" style="margin-top:14px;">Pick the surface that matches the site &mdash; you can move up without re-installing.</p>
-    </div>
-
-    <div class="grid-4 reveal" style="margin-top:36px;">
-      <a class="card" href="/platform.html#editions" style="display:block;">
-        <span class="eyebrow" style="color:var(--teal);">Enterprise &middot; flagship</span>
-        <h3>NetrIQ Suite</h3>
-        <p>Full surface: visual search, PoI Re-ID, tailgating, PTZ-360, zone rules, multi-channel notify, forensic export with chain-of-custody. Multi-site security operations.</p>
-      </a>
-      <a class="card" href="/platform.html#editions" style="display:block;">
-        <span class="eyebrow" style="color:var(--text-mute);">Mid-market &middot; core</span>
-        <h3>NetrIQ Spaces</h3>
-        <p>Live view, recording, real-time detection, LPR, zone rules, gate log, vehicle registry, WhatsApp alerts. Watching, not just recording, for single-site businesses.</p>
-      </a>
-      <a class="card" href="/platform.html#editions" style="display:block;">
-        <span class="eyebrow" style="color:var(--text-mute);">VMS-only &middot; foundation</span>
-        <h3>NetrIQ VMS</h3>
-        <p>Ingestion, live view, recording, playback with event-anchor seek, snapshot fallback, basic detection. AI add-ons activate per camera without re-installing.</p>
-      </a>
-      <a class="card" href="/platform.html#editions" style="display:block;">
-        <span class="eyebrow" style="color:var(--text-mute);">Vertical &middot; restaurant preset</span>
-        <h3>NetrIQ Dine</h3>
-        <p>Suite engine tuned for food-service: PPE compliance, pest detection, hygiene checkpoints, service-area attention, valet plate logs.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ARCHITECTURE -->
-<section class="section section--inset">
-  <div class="container">
-    <div class="grid-2" style="gap:64px; align-items:center;">
-      <div class="reveal">
-        <span class="eyebrow">open by design</span>
-        <h2>If a camera speaks RTSP or ONVIF, NetrIQ understands it.</h2>
-        <p class="lead" style="margin-top:18px;">
-          Standards over proprietary. We integrate natively with Hikvision, Dahua, CP Plus and Sparsh, ingest from Frigate NVRs, and discover any ONVIF camera on the network.
-        </p>
-        <p class="lead" style="margin-top:14px;">
-          For remote sites, our Site Agent installs as a single binary and bridges cameras to the cloud over a relay. No port forwarding. No static IP. No firewall holes for your IT team to keep open.
-        </p>
-        <div class="btn-row">
-          <a href="/platform.html" class="btn btn--ghost">Platform details →</a>
+    <div class="cr-arch">
+      <div class="cr-arch__lead reveal">
+        <div class="cr-shead" style="margin-bottom:0;">
+          <span class="cr-shead__code">03 — ARCHITECTURE</span>
+          <div class="cr-shead__title">
+            <h2>If a camera speaks RTSP or ONVIF, NetrIQ understands it.</h2>
+          </div>
         </div>
+        <p>Standards over proprietary. Native integration with Hikvision, Dahua, CP Plus and Sparsh; ingestion from Frigate; discovery of any ONVIF camera on the network.</p>
+        <p>The Site Agent installs as a single binary and bridges remote cameras to the cloud over a relay — no port forwarding, no static IP, no firewall holes for IT to keep open.</p>
+        <div class="btn-row"><a href="/platform.html" class="btn btn--ghost">Platform details →</a></div>
       </div>
 
-      <div class="diagram reveal">
-        <div class="diagram__layer">
-          <span class="layer-label">EDGE</span>
+      <div class="cr-rack reveal">
+        <div class="cr-rack__unit">
+          <span class="cr-rack__label">Edge</span>
           <h4>Site Agent</h4>
           <ul>
-            <li>Single binary, Linux / Pi / x86</li>
+            <li>Single binary · Linux / Pi / x86</li>
             <li>RTSP capture, codec normalisation</li>
-            <li>Snapshot fallback when RTSP drops</li>
+            <li>Snapshot fallback on RTSP drop</li>
             <li>Token-based site activation</li>
           </ul>
         </div>
-        <div class="diagram__layer">
-          <span class="layer-label">DETECTION</span>
+        <div class="cr-rack__unit">
+          <span class="cr-rack__label">Detection</span>
           <h4>AI Engine</h4>
           <ul>
             <li>YOLO-class object detection</li>
             <li>License-plate OCR</li>
-            <li>OSNet Re-ID for cross-camera tracking</li>
-            <li>Forensic scan over recorded footage</li>
+            <li>OSNet Re-ID, cross-camera</li>
+            <li>Forensic scan over archive</li>
           </ul>
         </div>
-        <div class="diagram__layer">
-          <span class="layer-label">CONTROL</span>
+        <div class="cr-rack__unit">
+          <span class="cr-rack__label">Control</span>
           <h4>Cloud Console</h4>
           <ul>
             <li>Live view, playback, dashboards</li>
@@ -300,14 +225,93 @@
   </div>
 </section>
 
+<!-- VERTICALS DIRECTORY -->
+<section class="cr-sec cr-sec--band">
+  <div class="container">
+    <div class="cr-shead reveal">
+      <span class="cr-shead__code">04 — DEPLOYMENTS</span>
+      <div class="cr-shead__title">
+        <h2>Same platform, different priorities.</h2>
+        <p>The cameras and the pain points change by environment. The engine underneath doesn't.</p>
+      </div>
+    </div>
+
+    <div class="cr-dir reveal">
+      <a class="cr-dir__row" href="/verticals.html#housing">
+        <span class="cr-dir__ch">CH01</span>
+        <span><h4>Gated communities</h4><p>Vehicle entry, visitor flow, after-hours.</p></span>
+      </a>
+      <a class="cr-dir__row" href="/verticals.html#healthcare">
+        <span class="cr-dir__ch">CH02</span>
+        <span><h4>Hospitals</h4><p>Patient areas, restricted zones, gates.</p></span>
+      </a>
+      <a class="cr-dir__row" href="/verticals.html#education">
+        <span class="cr-dir__ch">CH03</span>
+        <span><h4>Schools &amp; campuses</h4><p>Gate enforcement, perimeter, evenings.</p></span>
+      </a>
+      <a class="cr-dir__row" href="/verticals.html#retail">
+        <span class="cr-dir__ch">CH04</span>
+        <span><h4>Retail &amp; jewellery</h4><p>Counter coverage, footfall, plate logs.</p></span>
+      </a>
+      <a class="cr-dir__row" href="/verticals.html#hospitality">
+        <span class="cr-dir__ch">CH05</span>
+        <span><h4>Restaurants &amp; hotels</h4><p>Service areas, guest flow, valet plates.</p></span>
+      </a>
+      <a class="cr-dir__row" href="/verticals.html#malls">
+        <span class="cr-dir__ch">CH06</span>
+        <span><h4>Malls</h4><p>Anchor zones, parking, reconstruction.</p></span>
+      </a>
+      <a class="cr-dir__row" href="/verticals.html#fleet">
+        <span class="cr-dir__ch">CH07</span>
+        <span><h4>Fleet &amp; logistics</h4><p>Yard cameras, gate plates, dwell time.</p></span>
+      </a>
+      <a class="cr-dir__row" href="/verticals.html#it-office">
+        <span class="cr-dir__ch">CH08</span>
+        <span><h4>IT office spaces</h4><p>Tenant floors, server rooms, tailgating.</p></span>
+      </a>
+      <a class="cr-dir__row" href="/verticals.html#smb">
+        <span class="cr-dir__ch">CH09</span>
+        <span><h4>SMB &amp; offices</h4><p>Right-sized AI, no enterprise pricing.</p></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EDITIONS -->
+<section class="cr-sec">
+  <div class="container">
+    <div class="cr-shead reveal">
+      <span class="cr-shead__code">05 — EDITIONS</span>
+      <div class="cr-shead__title">
+        <h2>Two editions. Every vertical runs on them.</h2>
+        <p>Pick NetrIQ VMS or NetrIQ Suite per site. Verticals — housing, healthcare, retail, hospitality, fleet — are presets on top, not separate products. Move up later without re-installing.</p>
+      </div>
+    </div>
+
+    <div class="cr-eds reveal">
+      <a class="cr-ed" href="/platform.html#editions">
+        <span class="cr-ed__tier">Foundation</span>
+        <h3>NetrIQ VMS</h3>
+        <p>The video-management base every deployment starts on: ingestion, live view, recording, event-anchor playback, and basic detection across every supported camera.</p>
+        <span class="cr-ed__more">View →</span>
+      </a>
+      <a class="cr-ed cr-ed--flag" href="/platform.html#editions">
+        <span class="cr-ed__tier">Flagship</span>
+        <h3>NetrIQ Suite</h3>
+        <p>Everything in VMS plus the full AI surface — visual search, PoI Re-ID, tailgating, PTZ-360, zone rules, LPR, gate log, multi-channel alerts, and forensic export with chain-of-custody.</p>
+        <span class="cr-ed__more">View →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
-<section class="section section--inset">
-  <div class="container" style="text-align:center;">
-    <div class="reveal" style="max-width:680px; margin:0 auto;">
-      <span class="eyebrow">talk to us</span>
+<section class="cr-sec cr-sec--band">
+  <div class="container">
+    <div class="cr-cta reveal">
       <h2>Bring your cameras. We'll show you what they've been missing.</h2>
-      <p class="lead" style="margin:14px auto 0;">A 30-minute walkthrough on a real deployment. No slides-only pitches.</p>
-      <div class="btn-row" style="justify-content:center;">
+      <p>A 30-minute walkthrough on a live deployment — not a slides-only pitch.</p>
+      <div class="btn-row">
         <a href="/contact.html" class="btn btn--primary">Request a walkthrough</a>
         <a href="/contact.html" class="btn btn--ghost">Get a quote</a>
       </div>
