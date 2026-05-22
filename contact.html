@@ -70,21 +70,15 @@
       </aside>
 
       <form id="contact-form" class="reveal" novalidate
-            action="https://formsubmit.co/ajax/leads@netriq.ai" method="POST"
+            action="https://forms.netriq.ai/contact" method="POST"
             data-mailto-fallback="leads@netriq.ai">
-        <!-- formsubmit.co AJAX endpoint. Recipient (`leads@netriq.ai`) is a
-             Cloudflare Email Routing alias that forwards to the team mailbox.
-             First submission to this form triggers a one-time confirmation email
-             to the alias; clicking that link activates ongoing delivery.
-             After activation, swap the URL above for the hashed form
-             `https://formsubmit.co/ajax/<hash>` (formsubmit shows the hash in
-             the confirmation email) so the alias also drops out of HTML source.
-             Spam protection: client-side honeypot below + formsubmit's server
-             checks. We disable their built-in CAPTCHA via _captcha=false. -->
-        <input type="hidden" name="_subject" value="New enquiry from netriq.ai" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <!-- honeypot for bots (our own; formsubmit also honors _honey) -->
+        <!-- Backend: a Cloudflare Worker (worker/) that validates the POST and
+             delivers the message via Cloudflare Email Routing's send_email
+             binding to leads@netriq.ai. The Worker enforces honeypot, required
+             fields, and origin-aware CORS. If the Worker is unreachable for any
+             reason, site.js falls back to a mailto: link populated with all
+             form values (data-mailto-fallback above). -->
+        <!-- honeypot for bots -->
         <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
         <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" />
 

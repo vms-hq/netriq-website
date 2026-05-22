@@ -80,8 +80,8 @@
     start();
   }
 
-  // Contact form posts to the backend at form.action (formsubmit.co AJAX
-  // endpoint). On any submission failure — backend down, CORS, network drop —
+  // Contact form posts to the backend at form.action (the Cloudflare Worker at
+  // forms.netriq.ai/contact, source under worker/). On any failure — Worker down, CORS, network drop —
   // we fall back to a mailto: link populated with the form contents so the
   // user can complete via their mail client. The fallback target lives on a
   // data-mailto-fallback attribute on the form (no plain email in the

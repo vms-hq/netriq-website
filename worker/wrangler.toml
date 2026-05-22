@@ -1,0 +1,40 @@
+name = "netriq-contact-form"
+main = "src/index.js"
+compatibility_date = "2026-05-01"
+workers_dev = false
+
+# Send_email binding. Cloudflare allows this Worker to deliver email ONLY to
+# the destination_address below, and that address MUST be a verified entry on
+# `Email → Email Routing → Destination addresses` (i.e. an external mailbox
+# you've added and clicked the verification link on — NOT a custom address
+# like leads@netriq.ai).
+#
+# Two practical options:
+#   1. Put the team mailbox directly here. Simplest. The mailbox address ends
+#      up in this public repo — acceptable for a contact form, but a real
+#      tradeoff to think about.
+#   2. Add a dedicated mailbox like `netriq-leads@your-mailprovider` whose
+#      sole job is to receive form submissions, and set up a forward rule in
+#      that mailbox to your real team inbox. Limits the exposure surface.
+#
+# Anyone reading this file CANNOT send mail via the binding without Cloudflare
+# account access — knowing the address ≠ being able to use it.
+[[send_email]]
+name = "LEADS"
+destination_address = "leads@nysha.in"
+
+[vars]
+# "To:" header on the outbound MIME. Keep identical to destination_address —
+# Cloudflare rejects sends whose To: doesn't match.
+LEADS_TO = "leads@nysha.in"
+
+# Route the Worker behind the netriq.ai zone. forms.netriq.ai must exist as a
+# proxied (orange-cloud) record — a CNAME to a placeholder like
+# `netriq.ai` works, since the Worker route takes over before any origin is
+# contacted. See README.md for the dashboard steps.
+#
+# Apex/www stay grey-cloud (DNS-only) for GitHub Pages cert provisioning —
+# do not flip them to proxied or Pages cert renewal breaks.
+[[routes]]
+pattern = "forms.netriq.ai/contact"
+zone_name = "netriq.ai"

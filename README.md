@@ -10,7 +10,7 @@ Hand-written static HTML / CSS / vanilla JS. No build step, no framework.
 - `/platform.html` — what NetrIQ does today (shipping features only)
 - `/verticals.html` — vertical fit (gated communities, hospitals, schools, retail, hospitality, malls, fleet, IT offices, SMB)
 - `/why-netriq.html` — differentiation, tier model, get-a-quote
-- `/contact.html` — contact form (formsubmit.co with mailto fallback)
+- `/contact.html` — contact form (Cloudflare Worker → Email Routing, with mailto fallback)
 - `/404.html` — friendly fallback
 
 ## Local preview
@@ -32,7 +32,7 @@ To deploy: merge to `main`. Pages picks up the change on the next build (~30–6
 
 ## Contact form
 
-The form posts to a hosted form-relay (`formsubmit.co`) which delivers submissions to a NetrIQ team alias. On any backend failure, the form falls back to a `mailto:` link populated with all field values so a deliverable message is always produced.
+The form posts to a Cloudflare Worker at `https://forms.netriq.ai/contact` (source under `worker/`), which validates the submission and delivers it to a NetrIQ team alias via Cloudflare Email Routing's native `send_email` binding — no third-party form-relay. On any Worker failure, the form falls back to a `mailto:` link populated with all field values so a deliverable message is always produced. Setup, deploy and smoke-test steps live in `worker/README.md`.
 
 Recipient mapping is configured on Cloudflare Email Routing and on the form-relay account. No recipient email addresses appear in this repo's source.
 
