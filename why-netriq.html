@@ -29,12 +29,12 @@
   </div>
 </header>
 
-<section class="cr-phero">
+<section class="cr-phero cr-phero--why">
   <div class="container cr-phero__inner">
     <div class="cr-phero__grid">
       <div class="reveal">
         <span class="cr-kicker"><span class="cr-dot cr-dot--ok"></span> Why NetrIQ</span>
-        <h1>Open over locked-in. Hybrid over single-mode. Software over hardware bundles.</h1>
+        <h1>Open over locked-in.<br>Hybrid over single-mode.<br>Software over hardware bundles.</h1>
         <p class="cr-phero__sub">The market splits into expensive enterprise stacks, cheap proprietary hardware, and cloud-only newcomers that demand their own cameras. NetrIQ sits across the gap &mdash; an open, AI-native layer that runs on what you already own.</p>
       </div>
       <aside class="cr-phero__aside reveal">
@@ -66,117 +66,110 @@
   </div>
 </section>
 
-<!-- THE DIFFERENCE -->
-<section class="cr-sec">
+<!-- WHY-NETRIQ SHOWCASE — three arguments as one auto-rotating frame
+     (reuses the .cr-vtab/.cr-vpanel showcase JS; no fit-scaling here since
+     it sits below the hero and is read at natural size). -->
+<section class="cr-sec cr-show--why">
   <div class="container">
-    <div class="cr-shead reveal">
-      <span class="cr-shead__code">01 — THE DIFFERENCE</span>
-      <div class="cr-shead__title">
+    <div class="cr-vtabs reveal" role="tablist" aria-label="Why NetrIQ">
+      <button class="cr-vtab is-active" role="tab"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> The difference</button>
+      <button class="cr-vtab" role="tab"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> The intelligent eye</button>
+      <button class="cr-vtab" role="tab"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><path d="M7.5 7.5h.01"/></svg> Pricing</button>
+    </div>
+
+    <div class="cr-vframe reveal">
+      <!-- Panel 1: THE DIFFERENCE -->
+      <article class="cr-vpanel is-active">
+        <span class="cr-vpanel__code">01 — THE DIFFERENCE</span>
         <h2>What this means for you.</h2>
         <p>The pain we remove, next to what most VMS deployments still look like.</p>
-      </div>
-    </div>
+        <div class="cr-grid cr-grid--2">
+          <div class="cr-cell">
+            <h4>The way most VMS works</h4>
+            <ul class="cr-list cr-list--bad">
+              <li>One vendor &mdash; their cameras and software, or nothing</li>
+              <li>Per-camera licences plus annual maintenance</li>
+              <li>Rip-and-replace your CCTV before anything works</li>
+              <li>Static IP, port forwarding, VPN to view remotely</li>
+              <li>AI gated behind another licence</li>
+            </ul>
+          </div>
+          <div class="cr-cell">
+            <h4>The way NetrIQ works</h4>
+            <ul class="cr-list">
+              <li>Any vendor, any network &mdash; one console</li>
+              <li>Tier-priced per camera, for the analytics you want</li>
+              <li>Software-only; a Site Agent bridges existing cameras</li>
+              <li>Cloud relay for remote view &mdash; no public IP</li>
+              <li>AI on by default: detection, plates, PoI, forensic</li>
+            </ul>
+          </div>
+        </div>
+      </article>
 
-    <div class="cr-grid cr-grid--2 reveal">
-      <div class="cr-cell">
-        <h4>The way most VMS works</h4>
-        <ul class="cr-list cr-list--bad">
-          <li>One vendor &mdash; their cameras and software, or nothing</li>
-          <li>Per-camera licences plus annual maintenance</li>
-          <li>Rip-and-replace your CCTV before anything works</li>
-          <li>Static IP, port forwarding, VPN to view remotely</li>
-          <li>AI gated behind another licence</li>
-        </ul>
-      </div>
-      <div class="cr-cell">
-        <h4>The way NetrIQ works</h4>
-        <ul class="cr-list">
-          <li>Any vendor, any network &mdash; one console</li>
-          <li>Tier-priced per camera, for the analytics you want</li>
-          <li>Software-only; a Site Agent bridges existing cameras</li>
-          <li>Cloud relay for remote view &mdash; no public IP</li>
-          <li>AI on by default: detection, plates, PoI, forensic</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ARGUMENTS -->
-<section class="cr-sec cr-sec--band">
-  <div class="container">
-    <div class="cr-shead reveal">
-      <span class="cr-shead__code">02 — ARGUMENTS</span>
-      <div class="cr-shead__title">
+      <!-- Panel 2: THE INTELLIGENT EYE -->
+      <article class="cr-vpanel">
+        <span class="cr-vpanel__code">02 — THE INTELLIGENT EYE</span>
         <h2>What we mean by &ldquo;the intelligent eye.&rdquo;</h2>
-      </div>
-    </div>
+        <div class="cr-grid cr-grid--2">
+          <div class="cr-cell">
+            <span class="cr-cell__k">01</span>
+            <h3>Vendor- &amp; network-agnostic</h3>
+            <p>Hikvision, Dahua, CP Plus, Sparsh, ONVIF, Wi-Fi, 4G SIM &mdash; public IP or none. The platform absorbs the mix.</p>
+          </div>
+          <div class="cr-cell">
+            <span class="cr-cell__k">02</span>
+            <h3>Hybrid by design</h3>
+            <p>Edge detection fires the second it should; recording stays local; the cloud handles remote view and cross-camera intelligence.</p>
+          </div>
+          <div class="cr-cell">
+            <span class="cr-cell__k">03</span>
+            <h3>Software-only and open</h3>
+            <p>We don&rsquo;t sell cameras. You keep hardware leverage, choice and portability &mdash; pair NDAA-compliant cameras where regulated.</p>
+          </div>
+          <div class="cr-cell">
+            <span class="cr-cell__k">04</span>
+            <h3>Hardened for the field</h3>
+            <p>HSRP plates with multi-frame consensus; tested against low light, vendor-mix and network drops &mdash; not the showroom.</p>
+          </div>
+        </div>
+      </article>
 
-    <div class="cr-grid cr-grid--2 reveal">
-      <div class="cr-cell">
-        <span class="cr-cell__k">01</span>
-        <h3>Vendor- &amp; network-agnostic</h3>
-        <p>Hikvision, Dahua, CP Plus, Sparsh, ONVIF, Wi-Fi, 4G SIM &mdash; public IP or none. The platform absorbs the mix.</p>
-      </div>
-      <div class="cr-cell">
-        <span class="cr-cell__k">02</span>
-        <h3>Hybrid by design</h3>
-        <p>Edge detection fires the second it should; recording stays local; the cloud handles remote view and cross-camera intelligence.</p>
-      </div>
-      <div class="cr-cell">
-        <span class="cr-cell__k">03</span>
-        <h3>Software-only and open</h3>
-        <p>We don&rsquo;t sell cameras. You keep hardware leverage, choice and portability &mdash; pair NDAA-compliant cameras where regulated.</p>
-      </div>
-      <div class="cr-cell">
-        <span class="cr-cell__k">04</span>
-        <h3>Hardened for the field</h3>
-        <p>HSRP plates with multi-frame consensus; tested against low light, vendor-mix and network drops &mdash; not the showroom.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="cr-sec" id="pricing">
-  <div class="container">
-    <div class="cr-shead reveal">
-      <span class="cr-shead__code">03 — PRICING</span>
-      <div class="cr-shead__title">
+      <!-- Panel 3: PRICING -->
+      <article class="cr-vpanel" id="pricing">
+        <span class="cr-vpanel__code">03 — PRICING</span>
         <h2>Pay for what you turn on, per camera.</h2>
         <p>A car-park gate camera doesn&rsquo;t need the same tier as the control-room live wall. NetrIQ prices by camera tier, not by count alone.</p>
-      </div>
-    </div>
-
-    <div class="cr-grid cr-grid--3 reveal">
-      <div class="cr-cell">
-        <h3>Record &amp; detect</h3>
-        <p>Continuous recording plus baseline detection with rule alerts. The right tier for most cameras.</p>
-      </div>
-      <div class="cr-cell">
-        <h3>Plates &amp; gates</h3>
-        <p>LPR on top of record + detect. Auto-populated gate log and vehicle registry.</p>
-      </div>
-      <div class="cr-cell">
-        <h3>Analytics &amp; PoI</h3>
-        <p>Counting, occupancy, heatmaps and cross-camera Persons-of-Interest tracking.</p>
-      </div>
-      <div class="cr-cell">
-        <h3>Live wall</h3>
-        <p>Full live-view for the operations video wall; no analytics requirement.</p>
-      </div>
-      <div class="cr-cell">
-        <h3>Forensic-on-demand</h3>
-        <p>Low-cost archive tier; forensic detection runs only when you ask.</p>
-      </div>
-      <div class="cr-cell">
-        <h3>Custom</h3>
-        <p>Multi-site, multi-tenant, regulated. Sized on the actual deployment.</p>
-      </div>
-    </div>
-
-    <div class="btn-row reveal" style="margin-top:28px;">
-      <a href="/contact.html" class="btn btn--primary">Get a quote</a>
+        <div class="cr-grid cr-grid--3">
+          <div class="cr-cell">
+            <h3>Record &amp; detect</h3>
+            <p>Continuous recording plus baseline detection with rule alerts. The right tier for most cameras.</p>
+          </div>
+          <div class="cr-cell">
+            <h3>Plates &amp; gates</h3>
+            <p>LPR on top of record + detect. Auto-populated gate log and vehicle registry.</p>
+          </div>
+          <div class="cr-cell">
+            <h3>Analytics &amp; PoI</h3>
+            <p>Counting, occupancy, heatmaps and cross-camera Persons-of-Interest tracking.</p>
+          </div>
+          <div class="cr-cell">
+            <h3>Live wall</h3>
+            <p>Full live-view for the operations video wall; no analytics requirement.</p>
+          </div>
+          <div class="cr-cell">
+            <h3>Forensic-on-demand</h3>
+            <p>Low-cost archive tier; forensic detection runs only when you ask.</p>
+          </div>
+          <div class="cr-cell">
+            <h3>Custom</h3>
+            <p>Multi-site, multi-tenant, regulated. Sized on the actual deployment.</p>
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:18px;">
+          <a href="/contact.html" class="btn btn--primary">Get a quote</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
