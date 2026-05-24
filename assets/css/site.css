@@ -507,7 +507,7 @@ p { color: var(--text-soft); }
 .cr-dot--crit { background: var(--red); box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.16); }
 
 /* ── HERO ───────────────────────────────────────────────────── */
-.cr-hero { position: relative; padding: clamp(56px, 8vw, 104px) 0 clamp(40px, 5vw, 64px); overflow: hidden; }
+.cr-hero { position: relative; padding: clamp(20px, 3vw, 36px) 0 clamp(28px, 4vw, 44px); overflow: hidden; }
 .cr-hero::before {
   content: ''; position: absolute; inset: 0; z-index: 0;
   background-image:
@@ -570,7 +570,7 @@ p { color: var(--text-soft); }
 .cr-tick:hover { background: var(--text-mute); }
 
 /* ── detection-overlay motif — CV/DVR domain signal ─────────── */
-.cr-tour { position: relative; margin-top: clamp(40px, 5vw, 60px); }
+.cr-tour { position: relative; margin-top: clamp(14px, 1.8vw, 22px); }
 .cr-tour .cr-frame { margin-top: 0; }
 
 /* viewfinder corner reticles bracketing the frame */
