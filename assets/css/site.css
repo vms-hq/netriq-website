@@ -68,8 +68,8 @@ p { color: var(--text-soft); }
 }
 
 .container { max-width: var(--maxw); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
-.section { padding: clamp(72px, 10vw, 130px) 0; position: relative; }
-.section--tight { padding: clamp(48px, 6vw, 80px) 0; }
+.section { padding: clamp(36px, 4.5vw, 60px) 0; position: relative; }
+.section--tight { padding: clamp(24px, 3vw, 40px) 0; }
 .section--inset {
   background: var(--bg-1);
   border-top: 1px solid var(--border);
@@ -253,7 +253,7 @@ p { color: var(--text-soft); }
 /* ============================================================
    Platform feature groups
    ============================================================ */
-.fgroup { padding: 60px 0; border-top: 1px solid var(--border); }
+.fgroup { padding: 40px 0; border-top: 1px solid var(--border); }
 .fgroup:first-of-type { border-top: 0; }
 .fgroup__head { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; margin-bottom: 36px; }
 .fgroup__head h2 { font-size: clamp(28px, 3vw, 36px); }
@@ -482,7 +482,7 @@ p { color: var(--text-soft); }
 .mono { font-family: var(--font-mono); }
 
 /* --- shared section header: hairline rule + mono index ------- */
-.cr-sec { padding: clamp(60px, 8vw, 108px) 0; }
+.cr-sec { padding: clamp(32px, 4vw, 54px) 0; }
 .cr-sec--band { background: var(--bg-1); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .cr-shead {
   display: grid; grid-template-columns: auto 1fr; gap: 14px 22px;
@@ -890,7 +890,7 @@ p { color: var(--text-soft); }
 @media (max-width: 820px) { .cr-eds { grid-template-columns: 1fr; } .cr-ed { border-right: 0; border-bottom: 1px solid var(--line); } .cr-ed:last-child { border-bottom: 0; } }
 
 /* ── CLOSING CTA ────────────────────────────────────────────── */
-.cr-cta { border: 1px solid var(--line); padding: clamp(40px, 6vw, 72px); text-align: center; }
+.cr-cta { border: 1px solid var(--line); padding: clamp(30px, 4vw, 52px); text-align: center; }
 .cr-cta h2 { font-size: clamp(26px, 3.4vw, 42px); max-width: 20ch; margin: 0 auto; }
 .cr-cta p { font-size: clamp(16px, 1.3vw, 18.5px); color: var(--text-soft); margin: 16px auto 0; max-width: 52ch; }
 .cr-cta .btn-row { justify-content: center; }
