@@ -10,6 +10,43 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
 <link rel="stylesheet" href="/assets/css/site.css" />
+<style>
+  /* Per-vertical signature colours for the showcase tab icons (duotone chip).
+     Page-scoped here (the strip lives only on this page) — does not touch site.css.
+     Label stays neutral; only the icon carries the vertical's colour. */
+  .cr-vtabs .cr-vtab            { --vc: var(--teal); }
+  .cr-vtab[data-vert="housing"]    { --vc: #00C8A0; }  /* gated communities — brand teal */
+  .cr-vtab[data-vert="healthcare"] { --vc: #FF6B6B; }  /* hospitals — coral */
+  .cr-vtab[data-vert="education"]  { --vc: #F5B945; }  /* schools — amber */
+  .cr-vtab[data-vert="retail"]     { --vc: #B794F6; }  /* retail & jewellery — amethyst */
+  .cr-vtab[data-vert="dine"]       { --vc: #FB923C; }  /* dine — orange */
+  .cr-vtab[data-vert="hotels"]     { --vc: #E0B057; }  /* luxury hotels — gold */
+  .cr-vtab[data-vert="malls"]      { --vc: #38BDF8; }  /* malls — sky blue */
+  .cr-vtab[data-vert="fleet"]      { --vc: #34D399; }  /* fleet — green */
+  .cr-vtab[data-vert="it-office"]  { --vc: #22D3EE; }  /* IT office — cyan */
+  .cr-vtab[data-vert="smb"]        { --vc: #818CF8; }  /* SMB & factory — indigo */
+
+  /* Duotone chip: line icon on a soft tint of its vertical colour */
+  .cr-vtabs .cr-vtab svg {
+    width: 24px; height: 24px; padding: 4px; box-sizing: border-box;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--vc) 15%, transparent);
+    stroke: var(--vc); opacity: 1;
+    transition: background 0.18s ease, stroke 0.18s ease;
+  }
+  .cr-vtabs .cr-vtab:hover svg {
+    background: color-mix(in srgb, var(--vc) 24%, transparent);
+  }
+  /* Active tab adopts its OWN vertical colour (border + tint + chip) */
+  .cr-vtabs .cr-vtab.is-active {
+    border-color: color-mix(in srgb, var(--vc) 55%, var(--line));
+    background: color-mix(in srgb, var(--vc) 9%, var(--surface));
+  }
+  .cr-vtabs .cr-vtab.is-active svg {
+    background: color-mix(in srgb, var(--vc) 26%, transparent);
+    stroke: var(--vc);
+  }
+</style>
 </head>
 <body>
 
