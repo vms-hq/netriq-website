@@ -555,6 +555,12 @@ p { color: var(--text-soft); }
 
 /* hero product tour — crossfade carousel */
 .cr-shots { position: relative; aspect-ratio: 16 / 9; background: var(--bg-2); }
+/* Short laptop screens (11"/13"): cap the wall so the whole tour frame —
+   telemetry, chrome bar, wall and the REC/description footer — stays in
+   view on load. 16"+ (taller than 960px) keep the full natural 16:9 wall. */
+@media (max-height: 960px) {
+  .cr-shots { max-height: calc(100vh - 400px); }
+}
 .cr-shots .cr-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.7s ease; }
 .cr-shots .cr-shot.is-active { opacity: 1; }
 .cr-frame__foot {
