@@ -122,6 +122,10 @@ p { color: var(--text-soft); }
 .nav a { font-size: 15px; color: var(--text-soft); transition: color 0.18s ease; }
 .nav a:hover, .nav a.is-active { color: var(--text); }
 .nav a.is-active { color: var(--teal); }
+/* CTA button in the nav is an <a>, so .nav a's colour would otherwise win
+   over .btn--primary (lower specificity) and dim the label — re-assert it. */
+.nav a.btn--primary { color: var(--btn-primary-fg); }
+.nav a.btn--primary:hover { color: #FFFFFF; }
 .btn-burger { display: none; background: none; border: 0; padding: 6px; cursor: pointer; }
 .btn-burger span { display: block; width: 22px; height: 1.5px; background: var(--text); margin: 4px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
 
@@ -868,9 +872,9 @@ html[data-theme="sand"] {
   --amber: #B45309;
   --red: #C2410C;
   --header-bg: rgba(251, 250, 247, 0.85);
-  --btn-primary-bg: #1F1B16;
-  --btn-primary-fg: #FBFAF7;
+  --btn-primary-bg: #0F766E;
+  --btn-primary-fg: #FFFFFF;
   --frame-bar-bg: #EFEBE2;
 }
-html[data-theme="sand"] .btn--primary:hover { background: var(--teal); border-color: var(--teal); color: #FFFFFF; }
+html[data-theme="sand"] .btn--primary:hover { background: var(--teal-strong); border-color: var(--teal-strong); color: #FFFFFF; }
 html[data-theme="sand"] ::selection { background: #0F766E; color: #FFFFFF; }
