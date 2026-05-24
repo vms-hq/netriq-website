@@ -653,6 +653,43 @@ p { color: var(--text-soft); }
 .cr-phero__aside h3 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mute); font-weight: 600; margin-bottom: 16px; }
 .cr-phero__aside .toc { margin-top: 0; }
 
+/* ── why-netriq hero tuning (scoped) ───────────────────────────
+   each headline phrase on its own line; tighter hero; the "At a glance"
+   card stretches to fill the column so no vertical space is wasted. */
+.cr-phero--why { padding: clamp(26px, 3.2vw, 44px) 0 clamp(18px, 2.2vw, 28px); }
+.cr-phero--why h1 { max-width: none; font-size: clamp(25px, 3.2vw, 40px); line-height: 1.12; }
+.cr-phero--why + .cr-sec { padding-top: clamp(26px, 3.2vw, 42px); }
+.cr-phero--why .cr-phero__aside { align-self: stretch; display: flex; flex-direction: column; padding: 24px 26px; }
+.cr-phero--why .cr-phero__aside h3 { font-size: 12px; margin-bottom: 18px; }
+.cr-phero--why .hero__compare { flex: 1; gap: 26px; }
+.cr-phero--why .hero__compare > div { display: flex; flex-direction: column; }
+.cr-phero--why .hero__compare > div h4 { font-size: 12px; margin-bottom: 14px; }
+.cr-phero--why .hero__compare ul { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.cr-phero--why .hero__compare li { font-size: 14.5px; padding: 8px 0; }
+
+/* why-netriq argument showcase: 3 sections as one auto-rotating frame.
+   Stable frame height so the auto-rotate doesn't shift the CTA below. */
+.cr-show--why .cr-vtab { padding: 7px 13px; font-size: 13.5px; }
+.cr-show--why .cr-vframe { min-height: 452px; }
+
+/* home hero: kicker (left) + tagline (right) on one line; descriptive lead
+   sits just above the frame; CTAs just below it. */
+.cr-hero__topline { display: flex; align-items: center; justify-content: space-between; gap: 20px clamp(24px, 5vw, 64px); flex-wrap: wrap; margin-top: clamp(8px, 1.4vw, 16px); }
+.cr-hero__topline .cr-hero__tagline { margin: 0; text-align: right; }
+.cr-hero__lead { margin: clamp(14px, 2vw, 22px) 0 clamp(12px, 1.7vw, 18px); font-size: clamp(14.5px, 1.3vw, 16.5px); line-height: 1.55; color: var(--text-soft); max-width: none; }
+.cr-hero__cta { margin-top: clamp(14px, 1.8vw, 20px); }
+@media (max-width: 760px) {
+  .cr-hero__topline { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .cr-hero__topline .cr-hero__tagline { text-align: left; }
+}
+
+/* home "how it works" showcase: sections 01-04 as one auto-rotating frame */
+.cr-show--home .cr-vtab { padding: 7px 13px; font-size: 13.5px; }
+.cr-show--home .cr-vframe { min-height: 360px; }
+.cr-show--home .cr-rack--row { flex-direction: row; gap: 14px; }
+.cr-show--home .cr-rack--row .cr-rack__unit { flex: 1; }
+@media (max-width: 760px) { .cr-show--home .cr-rack--row { flex-direction: column; } }
+
 /* ── reticle-framed in-page screenshot ──────────────────────── */
 .cr-figure { position: relative; }
 .cr-figure .screenshot { box-shadow: none; }

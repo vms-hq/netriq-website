@@ -115,7 +115,7 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     return fit;
   }
-  fitBlock(document.querySelector('.cr-tour'), 18);
+  fitBlock(document.querySelector('.cr-tour'), 80);
   var vfit = fitBlock(document.querySelector('.cr-vfit'), 26, 0.92);
 
   // vertical showcase — auto-rotate the tab strip + content frame on load;
