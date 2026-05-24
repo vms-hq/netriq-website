@@ -122,6 +122,10 @@ p { color: var(--text-soft); }
 .nav a { font-size: 15px; color: var(--text-soft); transition: color 0.18s ease; }
 .nav a:hover, .nav a.is-active { color: var(--text); }
 .nav a.is-active { color: var(--teal); }
+/* CTA button in the nav is an <a>, so .nav a's colour would otherwise win
+   over .btn--primary (lower specificity) and dim the label — re-assert it. */
+.nav a.btn--primary { color: var(--btn-primary-fg); }
+.nav a.btn--primary:hover { color: #FFFFFF; }
 .btn-burger { display: none; background: none; border: 0; padding: 6px; cursor: pointer; }
 .btn-burger span { display: block; width: 22px; height: 1.5px; background: var(--text); margin: 4px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
 
@@ -555,12 +559,6 @@ p { color: var(--text-soft); }
 
 /* hero product tour — crossfade carousel */
 .cr-shots { position: relative; aspect-ratio: 16 / 9; background: var(--bg-2); }
-/* Short laptop screens (11"/13"): cap the wall so the whole tour frame —
-   telemetry, chrome bar, wall and the REC/description footer — stays in
-   view on load. 16"+ (taller than 960px) keep the full natural 16:9 wall. */
-@media (max-height: 960px) {
-  .cr-shots { max-height: calc(100vh - 400px); }
-}
 .cr-shots .cr-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.7s ease; }
 .cr-shots .cr-shot.is-active { opacity: 1; }
 .cr-frame__foot {
@@ -578,6 +576,18 @@ p { color: var(--text-soft); }
 /* ── detection-overlay motif — CV/DVR domain signal ─────────── */
 .cr-tour { position: relative; margin-top: clamp(14px, 1.8vw, 22px); }
 .cr-tour .cr-frame { margin-top: 0; }
+/* Fit the whole tour frame to the viewport on short screens by scaling its
+   WIDTH (the 16:9 wall scales with it) — keeps the screenshot crisp and the
+   chrome aligned instead of cropping. Tall/maximised screens are unaffected
+   (the cap exceeds the container, so it never kicks in). Keyed to real
+   viewport height, so it self-corrects for browser chrome / bookmarks bar. */
+@media (max-height: 920px) {
+  .cr-hero { padding-top: clamp(8px, 1.4vw, 16px); padding-bottom: 0; }
+}
+/* JS (fitBlock in site.js) scales .cr-tour as one unit to fit the viewport
+   height on short screens — keeps the 16:9 wall + telemetry crisp and aligned
+   (no re-wrap, no crop), unlike capping a single element. */
+.cr-tour.is-fit { transform-origin: top center; will-change: transform; }
 
 /* viewfinder corner reticles bracketing the frame */
 .cr-ret { position: absolute; width: 16px; height: 16px; z-index: 3; opacity: 0.75; pointer-events: none; }
@@ -683,6 +693,17 @@ p { color: var(--text-soft); }
 .cr-sec--showcase { padding-top: clamp(14px, 1.8vw, 20px); }
 .cr-sec--showcase .cr-vtabs { gap: 7px; }
 .cr-sec--showcase .cr-vtab { padding: 7px 13px; font-size: 13.5px; }
+/* Short viewports (13" laptops, browser chrome eating height): compact the
+   hero so the showcase frame rises fully into view. Keyed to real viewport
+   height, so it self-corrects for the bookmarks bar / dock. */
+@media (max-height: 840px) {
+  .cr-phero--tight { padding: clamp(8px, 1.2vw, 14px) 0 6px; }
+  .cr-phero--tight h1 { margin-top: 4px; font-size: clamp(20px, 2.1vw, 27px); max-width: none; }
+  .cr-phero--tight .cr-phero__sub { margin-top: 6px; font-size: 14px; line-height: 1.45; }
+  .cr-sec--showcase { padding-top: 10px; }
+  .cr-sec--showcase .cr-vtab { padding: 6px 12px; font-size: 13px; }
+  .cr-vframe { margin-top: 10px; }
+}
 
 .vsprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 .cr-vtabs { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -851,9 +872,9 @@ html[data-theme="sand"] {
   --amber: #B45309;
   --red: #C2410C;
   --header-bg: rgba(251, 250, 247, 0.85);
-  --btn-primary-bg: #1F1B16;
-  --btn-primary-fg: #FBFAF7;
+  --btn-primary-bg: #0F766E;
+  --btn-primary-fg: #FFFFFF;
   --frame-bar-bg: #EFEBE2;
 }
-html[data-theme="sand"] .btn--primary:hover { background: var(--teal); border-color: var(--teal); color: #FFFFFF; }
+html[data-theme="sand"] .btn--primary:hover { background: var(--teal-strong); border-color: var(--teal-strong); color: #FFFFFF; }
 html[data-theme="sand"] ::selection { background: #0F766E; color: #FFFFFF; }

@@ -82,6 +82,42 @@
     start();
   }
 
+  // fit-to-viewport: scale a block as ONE unit so the whole thing stays in
+  // view on short screens (13" laptops, browser chrome eating height) while
+  // keeping every child crisp and aligned — no element-level cropping or
+  // text re-wrap. Keyed to the real viewport height, so it self-corrects for
+  // the bookmarks bar / dock.
+  function fitBlock(el, reservedBelow, minScale) {
+    if (!el) return function () {};
+    reservedBelow = reservedBelow || 18;
+    minScale = minScale || 0.6;
+    function fit() {
+      el.style.transform = 'none';
+      el.style.height = 'auto';
+      el.classList.remove('is-fit');
+      var natural = el.offsetHeight;
+      var top = el.getBoundingClientRect().top;
+      var avail = window.innerHeight - top - reservedBelow;
+      var s = avail / natural;
+      if (s >= 0.995) return;            // tall screen — leave at natural size
+      if (s < minScale) s = minScale;    // never shrink to unreadable
+      el.classList.add('is-fit');
+      el.style.transformOrigin = 'top center';
+      el.style.transform = 'scale(' + s.toFixed(4) + ')';
+      el.style.height = Math.ceil(natural * s) + 'px';
+    }
+    fit();
+    var raf;
+    window.addEventListener('resize', function () {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(fit);
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    return fit;
+  }
+  fitBlock(document.querySelector('.cr-tour'), 18);
+  var vfit = fitBlock(document.querySelector('.cr-vfit'), 26, 0.7);
+
   // vertical showcase — auto-rotate the tab strip + content frame on load;
   // an explicit tab click pauses the loop (stays on the chosen vertical).
   var vtabs = document.querySelectorAll('.cr-vtab');
@@ -93,6 +129,7 @@
       vidx = (n + vtabs.length) % vtabs.length;
       vtabs.forEach(function (t, i) { t.classList.toggle('is-active', i === vidx); t.setAttribute('aria-selected', String(i === vidx)); });
       vpanels.forEach(function (p, i) { p.classList.toggle('is-active', i === vidx); });
+      if (vfit) vfit(); // re-fit: panels differ in height, keep the showcase in view
     }
     function vstop() { if (vtimer) { clearInterval(vtimer); vtimer = null; } }
     function vstart() { if (!vreduce && !vtimer) vtimer = setInterval(function () { vgo(vidx + 1); }, 4500); }
