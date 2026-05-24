@@ -675,6 +675,15 @@ p { color: var(--text-soft); }
 .cr-list--bad li::before { display: none; }
 
 /* ── vertical showcase: tab strip (top) + static frame (bottom) ─ */
+/* Tighten the verticals page so the showcase frame sits in view on load:
+   trim the hero (header→hero gap) and the section top (hero→frame gap). */
+.cr-phero--tight { padding: clamp(14px, 1.8vw, 24px) 0 clamp(10px, 1.4vw, 16px); }
+.cr-phero--tight h1 { margin-top: 8px; font-size: clamp(26px, 3.2vw, 40px); }
+.cr-phero--tight .cr-phero__sub { margin-top: 9px; }
+.cr-sec--showcase { padding-top: clamp(14px, 1.8vw, 20px); }
+.cr-sec--showcase .cr-vtabs { gap: 7px; }
+.cr-sec--showcase .cr-vtab { padding: 7px 13px; font-size: 13.5px; }
+
 .vsprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 .cr-vtabs { display: flex; flex-wrap: wrap; gap: 8px; }
 .cr-vtab {
@@ -690,16 +699,21 @@ p { color: var(--text-soft); }
 .cr-vtab.is-active svg { stroke: var(--teal); opacity: 1; }
 
 .cr-vframe {
-  position: relative; margin-top: 22px;
+  position: relative; margin-top: 12px;
   border: 1px solid var(--line); background: var(--surface);
-  padding: clamp(24px, 3.5vw, 40px); min-height: 320px;
+  padding: clamp(16px, 2vw, 24px); min-height: 260px;
 }
 .cr-vpanel { display: none; }
 .cr-vpanel.is-active { display: block; animation: cr-vfade 0.35s ease; }
 @keyframes cr-vfade { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
 .cr-vpanel__code { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); }
-.cr-vpanel h2 { font-size: clamp(24px, 3vw, 34px); margin: 10px 0 8px; }
-.cr-vpanel > p { font-size: clamp(16px, 1.4vw, 18px); color: var(--text-soft); max-width: 62ch; margin-bottom: 22px; }
+.cr-vpanel h2 { font-size: clamp(21px, 2.4vw, 28px); margin: 6px 0 5px; }
+.cr-vpanel > p { font-size: clamp(15px, 1.3vw, 16px); color: var(--text-soft); max-width: 62ch; margin-bottom: 10px; }
+/* compact the bullet rhythm inside the frame so tall panels fit without scroll */
+.cr-vframe .cr-cell { padding: 14px 18px; }
+.cr-vframe .cr-cell h4 { margin-bottom: 8px; }
+.cr-vframe .cr-list li { padding: 5px 0 5px 18px; font-size: 14px; }
+.cr-vframe .cr-list li::before { top: 11px; }
 @media (prefers-reduced-motion: reduce) { .cr-vpanel.is-active { animation: none; } }
 
 /* telemetry status strip — sits at the TOP of the product frame */
