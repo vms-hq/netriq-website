@@ -746,7 +746,7 @@ p { color: var(--text-soft); }
 .cr-telemetry__cell:last-child { border-right: 0; }
 .cr-telemetry__k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mute); display: inline-flex; align-items: center; gap: 8px; }
 .cr-telemetry__v { font-family: var(--font-mono); font-size: clamp(16px, 1.8vw, 21px); font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
-.cr-telemetry__v small { font-size: 13px; color: var(--text-mute); font-weight: 400; letter-spacing: 0; }
+.cr-telemetry__v small { display: block; margin-top: 3px; font-size: 12px; line-height: 1.35; color: var(--text-mute); font-weight: 400; letter-spacing: 0; }
 @media (max-width: 720px) {
   .cr-telemetry { grid-template-columns: repeat(2, 1fr); }
   .cr-telemetry__cell:nth-child(2n) { border-right: 0; }
