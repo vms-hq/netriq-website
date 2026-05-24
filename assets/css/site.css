@@ -690,10 +690,11 @@ p { color: var(--text-soft); }
 .cr-show--home .cr-rack--row .cr-rack__unit { flex: 1; }
 @media (max-width: 760px) { .cr-show--home .cr-rack--row { flex-direction: column; } }
 
-/* platform hero — full-width single-line headline above the sub/aside grid */
-.cr-phero--platform { padding: clamp(26px, 3.3vw, 48px) 0 clamp(20px, 2.5vw, 34px); }
+/* platform hero — compact full-width headline; showcase sits right below it */
+.cr-phero--platform { padding: clamp(24px, 3vw, 42px) 0 clamp(8px, 1.4vw, 16px); border-bottom: 0; }
 .cr-phero--platform h1 { max-width: none; font-size: clamp(19px, 2.55vw, 31px); line-height: 1.14; margin-top: 14px; }
-.cr-phero--platform .cr-phero__grid { margin-top: clamp(16px, 2.4vw, 28px); }
+.cr-phero--platform .cr-phero__sub { margin-top: 12px; }
+.cr-show--platform { padding-top: clamp(8px, 1.4vw, 16px); }
 
 /* platform "what NetrIQ does" showcase — text left, screen grab right */
 .cr-show--platform .cr-vtab { padding: 7px 13px; font-size: 13.5px; }
