@@ -678,7 +678,7 @@ p { color: var(--text-soft); }
 
 /* compact hairline list */
 .cr-list { list-style: none; margin: 0; padding: 0; }
-.cr-list li { font-size: 14.5px; line-height: 1.5; color: var(--text-soft); padding: 8px 0 8px 18px; position: relative; border-top: 1px solid var(--line-soft); }
+.cr-list li { font-size: 15px; line-height: 1.5; color: var(--text-soft); padding: 8px 0 8px 18px; position: relative; border-top: 1px solid var(--line-soft); }
 .cr-list li:first-child { border-top: 0; }
 .cr-list li::before { content: ''; position: absolute; left: 0; top: 13px; width: 9px; height: 1.5px; background: var(--teal); }
 .cr-list--bad li { color: var(--text-mute); text-decoration: line-through; text-decoration-color: var(--text-faint); padding-left: 0; }
@@ -720,20 +720,21 @@ p { color: var(--text-soft); }
 .cr-vtab.is-active svg { stroke: var(--teal); opacity: 1; }
 
 .cr-vframe {
-  position: relative; margin-top: 12px;
+  position: relative; margin-top: 10px;
   border: 1px solid var(--line); background: var(--surface);
-  padding: clamp(16px, 2vw, 24px); min-height: 260px;
+  padding: clamp(14px, 1.6vw, 18px); min-height: 0;
 }
 .cr-vpanel { display: none; }
 .cr-vpanel.is-active { display: block; animation: cr-vfade 0.35s ease; }
 @keyframes cr-vfade { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
 .cr-vpanel__code { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); }
-.cr-vpanel h2 { font-size: clamp(21px, 2.4vw, 28px); margin: 6px 0 5px; }
-.cr-vpanel > p { font-size: clamp(15px, 1.3vw, 16px); color: var(--text-soft); max-width: 62ch; margin-bottom: 10px; }
-/* compact the bullet rhythm inside the frame so tall panels fit without scroll */
-.cr-vframe .cr-cell { padding: 14px 18px; }
+.cr-vpanel h2 { font-size: clamp(20px, 2.2vw, 26px); margin: 4px 0 4px; }
+.cr-vpanel > p { font-size: 15px; line-height: 1.4; color: var(--text-soft); max-width: 64ch; margin-bottom: 8px; }
+/* tight vertical rhythm so a readable 15px stays in view without shrinking;
+   darker bullet text for contrast on the warm paper bg */
+.cr-vframe .cr-cell { padding: 12px 18px; }
 .cr-vframe .cr-cell h4 { margin-bottom: 8px; }
-.cr-vframe .cr-list li { padding: 5px 0 5px 18px; font-size: 14px; }
+.cr-vframe .cr-list li { padding: 4px 0 4px 18px; font-size: 15px; line-height: 1.35; color: var(--text); }
 .cr-vframe .cr-list li::before { top: 11px; }
 @media (prefers-reduced-motion: reduce) { .cr-vpanel.is-active { animation: none; } }
 

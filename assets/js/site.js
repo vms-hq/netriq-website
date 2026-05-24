@@ -116,7 +116,7 @@
     return fit;
   }
   fitBlock(document.querySelector('.cr-tour'), 18);
-  var vfit = fitBlock(document.querySelector('.cr-vfit'), 26, 0.7);
+  var vfit = fitBlock(document.querySelector('.cr-vfit'), 26, 0.92);
 
   // vertical showcase — auto-rotate the tab strip + content frame on load;
   // an explicit tab click pauses the loop (stays on the chosen vertical).
