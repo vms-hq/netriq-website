@@ -82,6 +82,27 @@
     start();
   }
 
+  // vertical showcase — auto-rotate the tab strip + content frame on load;
+  // an explicit tab click pauses the loop (stays on the chosen vertical).
+  var vtabs = document.querySelectorAll('.cr-vtab');
+  if (vtabs.length > 1) {
+    var vpanels = document.querySelectorAll('.cr-vpanel');
+    var vidx = 0, vtimer = null;
+    var vreduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function vgo(n) {
+      vidx = (n + vtabs.length) % vtabs.length;
+      vtabs.forEach(function (t, i) { t.classList.toggle('is-active', i === vidx); t.setAttribute('aria-selected', String(i === vidx)); });
+      vpanels.forEach(function (p, i) { p.classList.toggle('is-active', i === vidx); });
+    }
+    function vstop() { if (vtimer) { clearInterval(vtimer); vtimer = null; } }
+    function vstart() { if (!vreduce && !vtimer) vtimer = setInterval(function () { vgo(vidx + 1); }, 4500); }
+    vtabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { vstop(); vgo(i); }); // explicit click pauses the loop
+    });
+    vgo(0);
+    vstart();
+  }
+
   // Contact form posts to the backend at form.action (formsubmit.co AJAX
   // endpoint). On any submission failure — backend down, CORS, network drop —
   // we fall back to a mailto: link populated with the form contents so the
