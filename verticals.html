@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Verticals — NetrIQ</title>
-<meta name="description" content="NetrIQ across gated communities, hospitals, schools, retail, hospitality, malls, fleet, IT offices and SMB." />
+<meta name="description" content="NetrIQ across gated communities, hospitals, schools, retail, dining, hotels, malls, fleet, IT offices and factories." />
 <link rel="icon" href="/assets/logos/netriq-favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,11 +19,12 @@
   <symbol id="v-hospital" viewBox="0 0 24 24"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2z"/></symbol>
   <symbol id="v-school" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
   <symbol id="v-retail" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
-  <symbol id="v-hospitality" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+  <symbol id="v-dine" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+  <symbol id="v-hotel" viewBox="0 0 24 24"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></symbol>
   <symbol id="v-malls" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
   <symbol id="v-fleet" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
   <symbol id="v-itoffice" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
-  <symbol id="v-smb" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+  <symbol id="v-factory" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></symbol>
 </svg>
 
 <header class="site-header">
@@ -42,112 +43,122 @@
   </div>
 </header>
 
-<section class="cr-phero">
+<section class="cr-phero cr-phero--tight">
   <div class="container cr-phero__inner">
     <div class="reveal" style="max-width:760px;">
       <span class="cr-kicker"><span class="cr-dot cr-dot--ok"></span> Verticals</span>
       <h1>Same platform, different priorities.</h1>
-      <p class="cr-phero__sub">The cameras and the pain points change by environment; the engine doesn&rsquo;t. Every vertical runs on NetrIQ VMS or Suite &mdash; the preset just tunes the AI, alerts and reporting. Pick one below.</p>
+      <p class="cr-phero__sub">The cameras and pain points change by environment; the engine doesn&rsquo;t. Every vertical runs on NetrIQ VMS or Suite &mdash; the preset just tunes the AI and alerts.</p>
     </div>
   </div>
 </section>
 
 <!-- Interactive vertical showcase: tab strip (top) + static frame (bottom).
      Auto-rotates on load; an explicit tab click pauses the loop. -->
-<section class="cr-sec">
+<section class="cr-sec cr-sec--showcase">
   <div class="container">
     <div class="cr-vtabs reveal" role="tablist" aria-label="Verticals">
       <button class="cr-vtab is-active" role="tab" data-vert="housing"><svg aria-hidden="true"><use href="#v-housing"/></svg> Gated communities</button>
       <button class="cr-vtab" role="tab" data-vert="healthcare"><svg aria-hidden="true"><use href="#v-hospital"/></svg> Hospitals</button>
-      <button class="cr-vtab" role="tab" data-vert="education"><svg aria-hidden="true"><use href="#v-school"/></svg> Schools</button>
+      <button class="cr-vtab" role="tab" data-vert="education"><svg aria-hidden="true"><use href="#v-school"/></svg> Schools &amp; campus</button>
       <button class="cr-vtab" role="tab" data-vert="retail"><svg aria-hidden="true"><use href="#v-retail"/></svg> Retail &amp; jewellery</button>
-      <button class="cr-vtab" role="tab" data-vert="hospitality"><svg aria-hidden="true"><use href="#v-hospitality"/></svg> Restaurants &amp; hotels</button>
+      <button class="cr-vtab" role="tab" data-vert="dine"><svg aria-hidden="true"><use href="#v-dine"/></svg> Dine</button>
+      <button class="cr-vtab" role="tab" data-vert="hotels"><svg aria-hidden="true"><use href="#v-hotel"/></svg> Luxury hotels</button>
       <button class="cr-vtab" role="tab" data-vert="malls"><svg aria-hidden="true"><use href="#v-malls"/></svg> Malls</button>
       <button class="cr-vtab" role="tab" data-vert="fleet"><svg aria-hidden="true"><use href="#v-fleet"/></svg> Fleet</button>
       <button class="cr-vtab" role="tab" data-vert="it-office"><svg aria-hidden="true"><use href="#v-itoffice"/></svg> IT office spaces</button>
-      <button class="cr-vtab" role="tab" data-vert="smb"><svg aria-hidden="true"><use href="#v-smb"/></svg> SMB &amp; offices</button>
+      <button class="cr-vtab" role="tab" data-vert="smb"><svg aria-hidden="true"><use href="#v-factory"/></svg> SMB &amp; factory</button>
     </div>
 
     <div class="cr-vframe reveal">
       <article class="cr-vpanel is-active" data-vert="housing">
         <span class="cr-vpanel__code">CH01 — GATED COMMUNITIES</span>
-        <h2>The CCTV is installed. The system isn&rsquo;t working.</h2>
-        <p>30&ndash;200 cameras across vendors, gates and DVR generations &mdash; watched as one system.</p>
+        <h2>One view across every tower, block and gate.</h2>
+        <p>30&ndash;200 cameras across vendors and DVR generations &mdash; watched as one system, not a wall of feeds.</p>
         <div class="cr-grid cr-grid--2">
-          <div class="cr-cell"><h4>What it does</h4><ul class="cr-list"><li>One console across every gate and vendor</li><li>Plate-driven gate log: residents, visitors, blacklist</li><li>After-hours perimeter alerts to WhatsApp</li></ul></div>
-          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>16-screen walls nobody watches</li><li>Paper visitor registers at the gate</li><li>Cameras offline for days before anyone notices</li></ul></div>
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified dashboard across towers, blocks &amp; common areas</li><li>Guard-presence detection</li><li>Perimeter-breach detection</li><li>After-hours intrusion alerts</li><li>Unauthorised help &amp; delivery-personnel tracking</li><li>Resident &amp; visitor number-plate recognition</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>Per-tower DVRs that never talk to each other</li><li>A 16-screen wall no one can actually watch</li><li>Scrubbing footage to find which camera caught it</li><li>&ldquo;Was the guard on post?&rdquo; guesswork</li></ul></div>
         </div>
       </article>
       <article class="cr-vpanel" data-vert="healthcare">
         <span class="cr-vpanel__code">CH02 — HOSPITALS</span>
         <h2>Coverage where attention matters most.</h2>
-        <p>Lobbies, gates, restricted zones and parking carved into role-scoped views for security, facilities and admin.</p>
+        <p>Buildings, departments and separate NVRs &mdash; one role-scoped view for security, facilities and admin.</p>
         <div class="cr-grid cr-grid--2">
-          <div class="cr-cell"><h4>Use cases</h4><ul class="cr-list"><li>Vehicle-gate plate logs (ambulance / staff / visitor)</li><li>Restricted-zone after-hours alerts</li><li>Lobby and corridor occupancy</li></ul></div>
-          <div class="cr-cell"><h4>Why it fits</h4><ul class="cr-list"><li>Vendor-agnostic on the cameras already installed</li><li>Role-based access with a full audit log</li><li>On-prem recording where compliance requires it</li></ul></div>
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified view across buildings, departments &amp; NVRs</li><li>Restricted zones &mdash; ICU, NICU, OT monitoring</li><li>Ambulance-bay protection</li><li>Cross-camera person tracking</li><li>People counting at reception &amp; key areas</li><li>Department heat maps (peak / off-peak)</li><li>Guard-presence detection</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>A separate NVR per block with no single view</li><li>Restricted-zone entries nobody is watching</li><li>Manual head-counts at reception</li><li>Hunting camera-to-camera to follow one person</li></ul></div>
         </div>
       </article>
       <article class="cr-vpanel" data-vert="education">
-        <span class="cr-vpanel__code">CH03 — SCHOOLS &amp; CAMPUSES</span>
+        <span class="cr-vpanel__code">CH03 — SCHOOLS &amp; CAMPUS</span>
         <h2>From entry gate to back lane &mdash; one record.</h2>
         <p>A wide camera footprint, limited security staff. NetrIQ does the watching so staff can respond.</p>
         <div class="cr-grid cr-grid--2">
-          <div class="cr-cell"><h4>Use cases</h4><ul class="cr-list"><li>Gate plate logs of pickup and visitor vehicles</li><li>After-hours and weekend perimeter alerts</li><li>Restricted zones: labs, stores, server rooms</li></ul></div>
-          <div class="cr-cell"><h4>Operational fit</h4><ul class="cr-list"><li>Works across the campus multi-vintage mix</li><li>Cloud access for management from anywhere</li><li>Multi-site for school chains</li></ul></div>
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified view across buildings, floors, common &amp; play areas</li><li>After-hours intrusion detection</li><li>Restricted-area monitoring</li><li>Incident investigation across all cameras</li><li>Automatic vehicle arrival / departure via LPR</li><li>Campus transport dashboard &mdash; all buses, one view</li><li>Security-guard monitoring</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>Footage reviewed only after a complaint</li><li>Tracking buses over phone calls</li><li>Blind after-hours and weekend perimeter</li><li>Per-building camera silos</li></ul></div>
         </div>
       </article>
       <article class="cr-vpanel" data-vert="retail">
         <span class="cr-vpanel__code">CH04 — RETAIL &amp; JEWELLERY</span>
         <h2>Counter to back room. Day to night.</h2>
-        <p>Active watching, not passive recording &mdash; counters, footfall and after-hours intrusion in one view.</p>
+        <p>Active watching across every outlet &mdash; plus the analytics to understand who walks in.</p>
         <div class="cr-grid cr-grid--2">
-          <div class="cr-cell"><h4>Use cases</h4><ul class="cr-list"><li>Counter and till coverage with overlays</li><li>Footfall counting across entries</li><li>After-hours intrusion alerts; PoI tracking</li></ul></div>
-          <div class="cr-cell"><h4>Operational fit</h4><ul class="cr-list"><li>One console for the whole chain</li><li>Per-store and per-region roles</li><li>History searchable by time, camera, class</li></ul></div>
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified dashboard across all outlets &amp; stores</li><li>After-hours intrusion detection</li><li>Incident investigation across all cameras</li><li>Person-of-interest / watchlist alerts</li><li>Security-guard monitoring</li><li>Customer analytics (new, repeat, time-of-day)</li><li>Zone heat maps (where customers gather)</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>Each store an island with its own DVR</li><li>No read on new vs repeat footfall</li><li>Scrubbing tapes after a shrinkage event</li><li>Flagged faces re-entering unnoticed</li></ul></div>
         </div>
       </article>
-      <article class="cr-vpanel" data-vert="hospitality">
-        <span class="cr-vpanel__code">CH05 — RESTAURANTS &amp; HOTELS</span>
-        <h2>Service-area attention without staff overhead.</h2>
-        <p>Kitchens, service corridors, valet lanes and lobbies &mdash; answered without anyone watching screens.</p>
+      <article class="cr-vpanel" data-vert="dine">
+        <span class="cr-vpanel__code">CH05 — DINE</span>
+        <h2>Every outlet, every shift &mdash; one console.</h2>
+        <p>Security, food-safety and customer flow across floors, buildings and outlets.</p>
         <div class="cr-grid cr-grid--2">
-          <div class="cr-cell"><h4>Use cases</h4><ul class="cr-list"><li>Service-area presence and zone activity</li><li>Valet plate logs and dwell time</li><li>After-hours back-of-house alerts</li></ul></div>
-          <div class="cr-cell"><h4>Operational fit</h4><ul class="cr-list"><li>Multi-property under one console</li><li>Roles for ops, finance and security</li><li>Runs on existing cameras &mdash; no rip-and-replace</li></ul></div>
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified view across floors, buildings &amp; outlets</li><li>Kitchen hygiene &amp; compliance monitoring</li><li>Customer analytics (new, repeat, time-of-day)</li><li>Zone heat maps (gathering &amp; idle time)</li><li>Restricted-zone monitoring</li><li>ANPR &amp; vehicle detection</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>Hygiene lapses caught only on audit day</li><li>Footfall and peak-hour guesswork</li><li>Per-outlet DVRs with no chain view</li><li>Counting covers and queues by eye</li></ul></div>
+        </div>
+      </article>
+      <article class="cr-vpanel" data-vert="hotels">
+        <span class="cr-vpanel__code">CH06 — LUXURY HOTELS</span>
+        <h2>Across the property, one operations layer.</h2>
+        <p>Floors, buildings, common areas and parking &mdash; security, service and compliance together.</p>
+        <div class="cr-grid cr-grid--2">
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified view across floors, buildings, common areas &amp; parking</li><li>Kitchen hygiene &amp; compliance monitoring</li><li>Customer analytics (new, repeat, time-of-day)</li><li>Restricted-zone monitoring</li><li>ANPR &amp; vehicle detection</li><li>Guest-experience monitoring</li><li>Guard-presence detection</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>Disconnected systems per wing or property</li><li>Valet and arrivals logged by hand</li><li>Service gaps surfaced only by complaints</li><li>Unwatched back-of-house zones</li></ul></div>
         </div>
       </article>
       <article class="cr-vpanel" data-vert="malls">
-        <span class="cr-vpanel__code">CH06 — MALLS</span>
+        <span class="cr-vpanel__code">CH07 — MALLS</span>
         <h2>Anchor zones, parking, common areas &mdash; one layer.</h2>
         <p>The largest mixed-vendor estates we see, presented as one system with one detection pipeline.</p>
         <div class="cr-grid cr-grid--2">
-          <div class="cr-cell"><h4>Use cases</h4><ul class="cr-list"><li>Common-area occupancy and footfall by zone</li><li>Parking plate logs and dwell</li><li>Estate-wide PoI tracking; incident reconstruction</li></ul></div>
-          <div class="cr-cell"><h4>Operational fit</h4><ul class="cr-list"><li>Hikvision, Dahua, CP Plus, Sparsh, ONVIF</li><li>Groups per anchor with scoped access</li><li>Heatmaps and analytics for tenant reporting</li></ul></div>
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified view across floors, common areas &amp; parking</li><li>Security-guard presence detection</li><li>Customer analytics (new, repeat, time-of-day)</li><li>Zone heat maps (where customers gather)</li><li>Estate-wide person-of-interest tracking</li><li>Restricted-zone monitoring</li><li>ANPR &amp; vehicle detection</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>Anchor-by-anchor camera silos</li><li>Footfall guessed, not measured</li><li>Slow incident reconstruction across hours of footage</li><li>Parking movement logged by hand</li></ul></div>
         </div>
       </article>
       <article class="cr-vpanel" data-vert="fleet">
-        <span class="cr-vpanel__code">CH07 — FLEET &amp; LOGISTICS</span>
-        <h2>Yards, gates, docks &mdash; the moving parts in one log.</h2>
-        <p>A record built automatically from the cameras already at the yard.</p>
+        <span class="cr-vpanel__code">CH08 — FLEET</span>
+        <h2>Every bus and vehicle, one dashboard.</h2>
+        <p>Driver safety and gate movements, built from the cameras already on board and at the yard.</p>
         <div class="cr-grid cr-grid--2">
-          <div class="cr-cell"><h4>Use cases</h4><ul class="cr-list"><li>Gate plate logs with timestamps and snapshots</li><li>Yard occupancy and dock dwell per truck</li><li>4G SIM cameras at remote yards</li></ul></div>
-          <div class="cr-cell"><h4>Operational fit</h4><ul class="cr-list"><li>Multi-site across depots, yards, warehouses</li><li>Cloud console with on-site Site Agent</li><li>Plate registry exportable for audits</li></ul></div>
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified dashboard across all buses / vehicles</li><li>Authorised-driver detection</li><li>Driver mobile-use &amp; drowsiness detection</li><li>Automatic vehicle arrival / departure via ANPR</li><li>Visitor &amp; children pickup-zone monitoring</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>Each vehicle a blind box</li><li>Unsafe driving caught only after an incident</li><li>Gate movements kept in a manual register</li><li>No proof of who was actually driving</li></ul></div>
         </div>
       </article>
       <article class="cr-vpanel" data-vert="it-office">
-        <span class="cr-vpanel__code">CH08 — IT OFFICE SPACES</span>
+        <span class="cr-vpanel__code">CH09 — IT OFFICE SPACES</span>
         <h2>Tenant floors, server rooms, after-hours access.</h2>
-        <p>AI over the existing camera fleet without touching the badge stack.</p>
+        <p>AI over the existing camera fleet without touching the badge stack &mdash; with audit-ready evidence.</p>
         <div class="cr-grid cr-grid--2">
-          <div class="cr-cell"><h4>Use cases</h4><ul class="cr-list"><li>Tailgating detection &mdash; pure-CV, no access-control integration</li><li>Server-room and DC-cage ingress / dwell</li><li>After-hours floor occupancy; visitor PoI watchlists</li></ul></div>
-          <div class="cr-cell"><h4>Operational fit</h4><ul class="cr-list"><li>SSO-friendly roles (admin / operator / viewer)</li><li>Multi-tenant, per-floor group scoping</li><li>Compliance hooks coming: SOC 2, ISO 27001</li></ul></div>
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified dashboard across buildings, common areas &amp; parking</li><li>Security-guard presence detection</li><li>SOC 2 compliance reports</li><li>Tailgating detection (pure-CV)</li><li>Person-of-interest / watchlist alerts</li><li>Restricted-area monitoring</li><li>Occupancy reports</li><li>After-hours intrusion detection</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>Tailgating the badge logs never catch</li><li>Compliance evidence assembled by hand</li><li>Server-room / DC-cage ingress nobody watches</li><li>Per-floor camera silos</li></ul></div>
         </div>
       </article>
       <article class="cr-vpanel" data-vert="smb">
-        <span class="cr-vpanel__code">CH09 — SMB &amp; OFFICES</span>
-        <h2>Right-sized AI without enterprise-VMS pricing.</h2>
-        <p>Real AI, multi-site and role-based &mdash; priced for small footprints.</p>
+        <span class="cr-vpanel__code">CH10 — SMB &amp; FACTORY</span>
+        <h2>Safety and security on the shop floor.</h2>
+        <p>Real AI across the building or factory &mdash; safety, compliance and security, priced for small footprints.</p>
         <div class="cr-grid cr-grid--2">
-          <div class="cr-cell"><h4>Use cases</h4><ul class="cr-list"><li>Entry, lobby and parking coverage</li><li>Off-hours detection alerts</li><li>Parking-gate plate log</li></ul></div>
-          <div class="cr-cell"><h4>Operational fit</h4><ul class="cr-list"><li>Cameras you already own &mdash; no new hardware</li><li>As many or few roles as you need</li><li>Tier-priced &mdash; pay for what you turn on</li></ul></div>
+          <div class="cr-cell"><h4>What it covers</h4><ul class="cr-list"><li>Unified view across the building / factory</li><li>PPE &amp; safety-gear monitoring &amp; alerts</li><li>Mobile-phone use on the shop floor</li><li>Fire-hazard detection</li><li>Restricted-zone monitoring</li><li>After-hours intrusion alerts</li><li>Person-of-interest / watchlist</li></ul></div>
+          <div class="cr-cell"><h4>What it removes</h4><ul class="cr-list"><li>Safety violations seen only after an accident</li><li>Manual floor walk-throughs</li><li>No record of PPE compliance</li><li>After-hours blind spots</li></ul></div>
         </div>
       </article>
     </div>
