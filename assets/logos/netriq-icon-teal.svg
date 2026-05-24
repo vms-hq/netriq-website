@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
     <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00B894"/>
+      <stop offset="0%" stop-color="#00C8A0"/>
       <stop offset="100%" stop-color="#00A884"/>
     </linearGradient>
     <linearGradient id="irisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00B894"/>
+      <stop offset="0%" stop-color="#00C8A0"/>
       <stop offset="50%" stop-color="#00D2A8"/>
-      <stop offset="100%" stop-color="#00B894"/>
+      <stop offset="100%" stop-color="#00C8A0"/>
     </linearGradient>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -15,7 +15,7 @@
     </filter>
   </defs>
   <!-- Rounded dark container -->
-  <rect width="64" height="64" rx="14" fill="#2D3436"/>
+  <rect width="64" height="64" rx="14" fill="#14181C"/>
 
   <!-- Intelligent Eye — centered at 32,32 -->
   <g transform="translate(0, 0)">
@@ -27,31 +27,31 @@
     <circle cx="32" cy="32" r="13" stroke="url(#irisGrad)" stroke-width="1.8" fill="none"/>
 
     <!-- Circuit/intelligence traces radiating from iris -->
-    <line x1="32" y1="19" x2="32" y2="23" stroke="#00B894" stroke-width="1" opacity="0.6"/>
-    <line x1="32" y1="41" x2="32" y2="45" stroke="#00B894" stroke-width="1" opacity="0.6"/>
-    <line x1="19" y1="32" x2="23" y2="32" stroke="#00B894" stroke-width="1" opacity="0.6"/>
-    <line x1="41" y1="32" x2="45" y2="32" stroke="#00B894" stroke-width="1" opacity="0.6"/>
+    <line x1="32" y1="19" x2="32" y2="23" stroke="#00C8A0" stroke-width="1" opacity="0.6"/>
+    <line x1="32" y1="41" x2="32" y2="45" stroke="#00C8A0" stroke-width="1" opacity="0.6"/>
+    <line x1="19" y1="32" x2="23" y2="32" stroke="#00C8A0" stroke-width="1" opacity="0.6"/>
+    <line x1="41" y1="32" x2="45" y2="32" stroke="#00C8A0" stroke-width="1" opacity="0.6"/>
     <!-- Diagonal traces -->
-    <line x1="22.8" y1="22.8" x2="25.5" y2="25.5" stroke="#00B894" stroke-width="0.8" opacity="0.4"/>
-    <line x1="41.2" y1="22.8" x2="38.5" y2="25.5" stroke="#00B894" stroke-width="0.8" opacity="0.4"/>
-    <line x1="22.8" y1="41.2" x2="25.5" y2="38.5" stroke="#00B894" stroke-width="0.8" opacity="0.4"/>
-    <line x1="41.2" y1="41.2" x2="38.5" y2="38.5" stroke="#00B894" stroke-width="0.8" opacity="0.4"/>
+    <line x1="22.8" y1="22.8" x2="25.5" y2="25.5" stroke="#00C8A0" stroke-width="0.8" opacity="0.4"/>
+    <line x1="41.2" y1="22.8" x2="38.5" y2="25.5" stroke="#00C8A0" stroke-width="0.8" opacity="0.4"/>
+    <line x1="22.8" y1="41.2" x2="25.5" y2="38.5" stroke="#00C8A0" stroke-width="0.8" opacity="0.4"/>
+    <line x1="41.2" y1="41.2" x2="38.5" y2="38.5" stroke="#00C8A0" stroke-width="0.8" opacity="0.4"/>
 
     <!-- Camera aperture pupil -->
-    <circle cx="32" cy="32" r="6" fill="#2D3436" stroke="url(#tealGrad)" stroke-width="1.2"/>
+    <circle cx="32" cy="32" r="6" fill="#14181C" stroke="url(#tealGrad)" stroke-width="1.2"/>
     <!-- Aperture blades -->
-    <path d="M 32,26 L 34.5,29.5 L 32,28.5 Z" fill="#00B894" opacity="0.5"/>
-    <path d="M 38,32 L 34.5,29.5 L 35.5,32 Z" fill="#00B894" opacity="0.5"/>
-    <path d="M 32,38 L 29.5,34.5 L 32,35.5 Z" fill="#00B894" opacity="0.5"/>
-    <path d="M 26,32 L 29.5,34.5 L 28.5,32 Z" fill="#00B894" opacity="0.5"/>
+    <path d="M 32,26 L 34.5,29.5 L 32,28.5 Z" fill="#00C8A0" opacity="0.5"/>
+    <path d="M 38,32 L 34.5,29.5 L 35.5,32 Z" fill="#00C8A0" opacity="0.5"/>
+    <path d="M 32,38 L 29.5,34.5 L 32,35.5 Z" fill="#00C8A0" opacity="0.5"/>
+    <path d="M 26,32 L 29.5,34.5 L 28.5,32 Z" fill="#00C8A0" opacity="0.5"/>
 
     <!-- Glowing AI core pupil -->
-    <circle cx="32" cy="32" r="2.5" fill="#00B894" filter="url(#glow)"/>
+    <circle cx="32" cy="32" r="2.5" fill="#00C8A0" filter="url(#glow)"/>
 
     <!-- Outer awareness arcs -->
-    <path d="M 3,32 C 7,20 12,14 18,11" stroke="#00B894" stroke-width="0.8" fill="none" opacity="0.2" stroke-linecap="round"/>
-    <path d="M 61,32 C 57,20 52,14 46,11" stroke="#00B894" stroke-width="0.8" fill="none" opacity="0.2" stroke-linecap="round"/>
-    <path d="M 3,32 C 7,44 12,50 18,53" stroke="#00B894" stroke-width="0.8" fill="none" opacity="0.2" stroke-linecap="round"/>
-    <path d="M 61,32 C 57,44 52,50 46,53" stroke="#00B894" stroke-width="0.8" fill="none" opacity="0.2" stroke-linecap="round"/>
+    <path d="M 3,32 C 7,20 12,14 18,11" stroke="#00C8A0" stroke-width="0.8" fill="none" opacity="0.2" stroke-linecap="round"/>
+    <path d="M 61,32 C 57,20 52,14 46,11" stroke="#00C8A0" stroke-width="0.8" fill="none" opacity="0.2" stroke-linecap="round"/>
+    <path d="M 3,32 C 7,44 12,50 18,53" stroke="#00C8A0" stroke-width="0.8" fill="none" opacity="0.2" stroke-linecap="round"/>
+    <path d="M 61,32 C 57,44 52,50 46,53" stroke="#00C8A0" stroke-width="0.8" fill="none" opacity="0.2" stroke-linecap="round"/>
   </g>
 </svg>
