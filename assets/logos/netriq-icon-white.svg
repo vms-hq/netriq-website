@@ -5,7 +5,7 @@
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#2D3436"/>
+  <rect width="64" height="64" rx="14" fill="#14181C"/>
 
   <!-- White eye on dark -->
   <g>
@@ -20,7 +20,7 @@
     <line x1="41.2" y1="22.8" x2="38.5" y2="25.5" stroke="#FFFFFF" stroke-width="0.8" opacity="0.3"/>
     <line x1="22.8" y1="41.2" x2="25.5" y2="38.5" stroke="#FFFFFF" stroke-width="0.8" opacity="0.3"/>
     <line x1="41.2" y1="41.2" x2="38.5" y2="38.5" stroke="#FFFFFF" stroke-width="0.8" opacity="0.3"/>
-    <circle cx="32" cy="32" r="6" fill="#2D3436" stroke="#FFFFFF" stroke-width="1.2"/>
+    <circle cx="32" cy="32" r="6" fill="#14181C" stroke="#FFFFFF" stroke-width="1.2"/>
     <path d="M 32,26 L 34.5,29.5 L 32,28.5 Z" fill="#FFFFFF" opacity="0.4"/>
     <path d="M 38,32 L 34.5,29.5 L 35.5,32 Z" fill="#FFFFFF" opacity="0.4"/>
     <path d="M 32,38 L 29.5,34.5 L 32,35.5 Z" fill="#FFFFFF" opacity="0.4"/>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
   <defs>
     <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00B894"/>
+      <stop offset="0%" stop-color="#00C8A0"/>
       <stop offset="100%" stop-color="#00A884"/>
     </linearGradient>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -14,39 +14,39 @@
   <!-- Eye logomark (dark variant for light backgrounds) -->
   <g transform="translate(14, 16)">
     <path d="M 4,24 C 10,8 20,2 28,2 C 36,2 46,8 52,24 C 46,40 36,46 28,46 C 20,46 10,40 4,24 Z"
-          stroke="#2D3436" stroke-width="2" fill="none"/>
-    <circle cx="28" cy="24" r="12" stroke="#2D3436" stroke-width="1.5" fill="none" opacity="0.7"/>
+          stroke="#14181C" stroke-width="2" fill="none"/>
+    <circle cx="28" cy="24" r="12" stroke="#14181C" stroke-width="1.5" fill="none" opacity="0.7"/>
     <!-- Circuit traces -->
-    <line x1="28" y1="12" x2="28" y2="16" stroke="#2D3436" stroke-width="0.8" opacity="0.4"/>
-    <line x1="28" y1="32" x2="28" y2="36" stroke="#2D3436" stroke-width="0.8" opacity="0.4"/>
-    <line x1="16" y1="24" x2="20" y2="24" stroke="#2D3436" stroke-width="0.8" opacity="0.4"/>
-    <line x1="36" y1="24" x2="40" y2="24" stroke="#2D3436" stroke-width="0.8" opacity="0.4"/>
-    <line x1="19.5" y1="15.5" x2="22" y2="18" stroke="#2D3436" stroke-width="0.7" opacity="0.25"/>
-    <line x1="36.5" y1="15.5" x2="34" y2="18" stroke="#2D3436" stroke-width="0.7" opacity="0.25"/>
-    <line x1="19.5" y1="32.5" x2="22" y2="30" stroke="#2D3436" stroke-width="0.7" opacity="0.25"/>
-    <line x1="36.5" y1="32.5" x2="34" y2="30" stroke="#2D3436" stroke-width="0.7" opacity="0.25"/>
+    <line x1="28" y1="12" x2="28" y2="16" stroke="#14181C" stroke-width="0.8" opacity="0.4"/>
+    <line x1="28" y1="32" x2="28" y2="36" stroke="#14181C" stroke-width="0.8" opacity="0.4"/>
+    <line x1="16" y1="24" x2="20" y2="24" stroke="#14181C" stroke-width="0.8" opacity="0.4"/>
+    <line x1="36" y1="24" x2="40" y2="24" stroke="#14181C" stroke-width="0.8" opacity="0.4"/>
+    <line x1="19.5" y1="15.5" x2="22" y2="18" stroke="#14181C" stroke-width="0.7" opacity="0.25"/>
+    <line x1="36.5" y1="15.5" x2="34" y2="18" stroke="#14181C" stroke-width="0.7" opacity="0.25"/>
+    <line x1="19.5" y1="32.5" x2="22" y2="30" stroke="#14181C" stroke-width="0.7" opacity="0.25"/>
+    <line x1="36.5" y1="32.5" x2="34" y2="30" stroke="#14181C" stroke-width="0.7" opacity="0.25"/>
     <!-- Aperture pupil -->
-    <circle cx="28" cy="24" r="5.5" fill="#F5F6FA" stroke="#2D3436" stroke-width="1"/>
-    <path d="M 28,18.5 L 30,21 L 28,20 Z" fill="#2D3436" opacity="0.3"/>
-    <path d="M 33.5,24 L 31,22 L 32,24 Z" fill="#2D3436" opacity="0.3"/>
-    <path d="M 28,29.5 L 26,27 L 28,28 Z" fill="#2D3436" opacity="0.3"/>
-    <path d="M 22.5,24 L 25,26 L 24,24 Z" fill="#2D3436" opacity="0.3"/>
+    <circle cx="28" cy="24" r="5.5" fill="#F5F6FA" stroke="#14181C" stroke-width="1"/>
+    <path d="M 28,18.5 L 30,21 L 28,20 Z" fill="#14181C" opacity="0.3"/>
+    <path d="M 33.5,24 L 31,22 L 32,24 Z" fill="#14181C" opacity="0.3"/>
+    <path d="M 28,29.5 L 26,27 L 28,28 Z" fill="#14181C" opacity="0.3"/>
+    <path d="M 22.5,24 L 25,26 L 24,24 Z" fill="#14181C" opacity="0.3"/>
     <!-- Teal pupil core — brand color pops on light bg -->
-    <circle cx="28" cy="24" r="2" fill="#00B894" filter="url(#glow)"/>
+    <circle cx="28" cy="24" r="2" fill="#00C8A0" filter="url(#glow)"/>
     <!-- Scan arcs -->
-    <path d="M 0,24 C 4,14 10,8 16,5" stroke="#2D3436" stroke-width="0.7" fill="none" opacity="0.15" stroke-linecap="round"/>
-    <path d="M 56,24 C 52,14 46,8 40,5" stroke="#2D3436" stroke-width="0.7" fill="none" opacity="0.15" stroke-linecap="round"/>
-    <path d="M 0,24 C 4,34 10,40 16,43" stroke="#2D3436" stroke-width="0.7" fill="none" opacity="0.15" stroke-linecap="round"/>
-    <path d="M 56,24 C 52,34 46,40 40,43" stroke="#2D3436" stroke-width="0.7" fill="none" opacity="0.15" stroke-linecap="round"/>
+    <path d="M 0,24 C 4,14 10,8 16,5" stroke="#14181C" stroke-width="0.7" fill="none" opacity="0.15" stroke-linecap="round"/>
+    <path d="M 56,24 C 52,14 46,8 40,5" stroke="#14181C" stroke-width="0.7" fill="none" opacity="0.15" stroke-linecap="round"/>
+    <path d="M 0,24 C 4,34 10,40 16,43" stroke="#14181C" stroke-width="0.7" fill="none" opacity="0.15" stroke-linecap="round"/>
+    <path d="M 56,24 C 52,34 46,40 40,43" stroke="#14181C" stroke-width="0.7" fill="none" opacity="0.15" stroke-linecap="round"/>
   </g>
 
   <!-- Wordmark -->
   <text x="82" y="50" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
-        font-weight="700" font-size="34" letter-spacing="2" fill="#2D3436">NETR</text>
+        font-weight="700" font-size="34" letter-spacing="2" fill="#14181C">NETR</text>
   <text x="193" y="50" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
-        font-weight="800" font-size="34" letter-spacing="2" fill="#00B894">IQ</text>
+        font-weight="800" font-size="34" letter-spacing="2" fill="#00C8A0">IQ</text>
   <text x="237" y="50" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
-        font-weight="400" font-size="16" fill="#636E72">.AI</text>
+        font-weight="400" font-size="16" fill="#7A848C">.AI</text>
   <text x="82" y="66" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
-        font-weight="400" font-size="8.5" letter-spacing="2.5" fill="#636E72">THE INTELLIGENT EYE</text>
+        font-weight="400" font-size="8.5" letter-spacing="2.5" fill="#7A848C">THE INTELLIGENT EYE</text>
 </svg>

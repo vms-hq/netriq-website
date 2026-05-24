@@ -5,7 +5,7 @@
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect width="320" height="80" rx="12" fill="#2D3436"/>
+  <rect width="320" height="80" rx="12" fill="#14181C"/>
 
   <!-- Eye logomark (white variant) -->
   <g transform="translate(14, 16)">
@@ -22,7 +22,7 @@
     <line x1="19.5" y1="32.5" x2="22" y2="30" stroke="#FFFFFF" stroke-width="0.7" opacity="0.3"/>
     <line x1="36.5" y1="32.5" x2="34" y2="30" stroke="#FFFFFF" stroke-width="0.7" opacity="0.3"/>
     <!-- Aperture pupil -->
-    <circle cx="28" cy="24" r="5.5" fill="#2D3436" stroke="#FFFFFF" stroke-width="1"/>
+    <circle cx="28" cy="24" r="5.5" fill="#14181C" stroke="#FFFFFF" stroke-width="1"/>
     <path d="M 28,18.5 L 30,21 L 28,20 Z" fill="#FFFFFF" opacity="0.4"/>
     <path d="M 33.5,24 L 31,22 L 32,24 Z" fill="#FFFFFF" opacity="0.4"/>
     <path d="M 28,29.5 L 26,27 L 28,28 Z" fill="#FFFFFF" opacity="0.4"/>
