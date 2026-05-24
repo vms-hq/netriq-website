@@ -690,6 +690,20 @@ p { color: var(--text-soft); }
 .cr-show--home .cr-rack--row .cr-rack__unit { flex: 1; }
 @media (max-width: 760px) { .cr-show--home .cr-rack--row { flex-direction: column; } }
 
+/* platform hero — full-width single-line headline above the sub/aside grid */
+.cr-phero--platform { padding: clamp(26px, 3.3vw, 48px) 0 clamp(20px, 2.5vw, 34px); }
+.cr-phero--platform h1 { max-width: none; font-size: clamp(19px, 2.55vw, 31px); line-height: 1.14; margin-top: 14px; }
+.cr-phero--platform .cr-phero__grid { margin-top: clamp(16px, 2.4vw, 28px); }
+
+/* platform "what NetrIQ does" showcase — text left, screen grab right */
+.cr-show--platform .cr-vtab { padding: 7px 13px; font-size: 13.5px; }
+.cr-show--platform .cr-vframe { min-height: 372px; }
+.cr-show--platform .cr-vpanel--split.is-active { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+.cr-vpanel--split .cr-vpanel__text { min-width: 0; }
+.cr-vpanel--split .cr-vpanel__text > p { font-size: 15px; line-height: 1.55; color: var(--text-soft); margin: 6px 0 14px; max-width: 52ch; }
+.cr-vpanel--split .cr-figure { position: relative; margin: 0; }
+@media (max-width: 860px) { .cr-show--platform .cr-vpanel--split.is-active { grid-template-columns: 1fr; gap: 22px; } }
+
 /* ── reticle-framed in-page screenshot ──────────────────────── */
 .cr-figure { position: relative; }
 .cr-figure .screenshot { box-shadow: none; }

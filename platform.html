@@ -29,20 +29,20 @@
   </div>
 </header>
 
-<section class="cr-phero">
+<section class="cr-phero cr-phero--platform">
   <div class="container cr-phero__inner">
+    <span class="cr-kicker reveal"><span class="cr-dot cr-dot--ok"></span> Platform</span>
+    <h1 class="cr-phero--platform__h1 reveal">Everything NetrIQ does today, on the cameras you already have.</h1>
     <div class="cr-phero__grid">
       <div class="reveal">
-        <span class="cr-kicker"><span class="cr-dot cr-dot--ok"></span> Platform</span>
-        <h1>Everything NetrIQ does today, on the cameras you already have.</h1>
         <p class="cr-phero__sub">The live feature set &mdash; in production, deployed, used by customers. No roadmap items.</p>
       </div>
       <aside class="cr-phero__aside reveal">
         <h3>What's inside</h3>
         <div class="hero__stack">
-          <div class="hero__stack__row"><strong>01</strong><span><a href="#capture" style="color:inherit;">Capture</a> &middot; ingestion, live view, recording, playback</span></div>
-          <div class="hero__stack__row"><strong>02</strong><span><a href="#understand" style="color:inherit;">Understand</a> &middot; detection, plates, PoI, forensic scan, zones</span></div>
-          <div class="hero__stack__row"><strong>03</strong><span><a href="#act" style="color:inherit;">Act</a> &middot; alerts, gate log, vehicle registry, search</span></div>
+          <div class="hero__stack__row"><strong>01</strong><span>Capture &middot; ingestion, live view, recording, playback</span></div>
+          <div class="hero__stack__row"><strong>02</strong><span>Understand &middot; detection, plates, PoI, forensic scan, zones</span></div>
+          <div class="hero__stack__row"><strong>03</strong><span>Act &middot; alerts, gate log, vehicle registry, search</span></div>
         </div>
         <div style="margin-top:22px; padding-top:18px; border-top:1px solid var(--border);">
           <h3 style="margin-bottom:12px;">Vendors supported</h3>
@@ -63,224 +63,88 @@
   </div>
 </section>
 
-<!-- CAPTURE -->
-<section class="container">
-  <div class="fgroup reveal" id="capture">
-    <div class="fgroup__head">
-      <div>
-        <span class="cr-shead__code" style="display:inline-block;margin-bottom:12px;">01 — CAPTURE</span>
-        <h2>Bring every camera into one view.</h2>
-      </div>
-      <p class="lead">NetrIQ is camera-agnostic. We connect to whatever you have &mdash; over the network you have &mdash; and present it as one system.</p>
-    </div>
-
-    <div class="fgroup__list">
-      <div class="fgroup__item">
-        <h4>Multi-vendor ingestion</h4>
-        <p>Native support for Hikvision, Dahua, CP Plus and Sparsh; ingest from Frigate NVRs; and any ONVIF / RTSP camera.</p>
-      </div>
-      <div class="fgroup__item">
-        <h4>Auto-discovery</h4>
-        <p>Network scanner finds cameras on the LAN, detects codecs, and registers them in bulk.</p>
-      </div>
-      <div class="fgroup__item">
-        <h4>4G / SIM cameras</h4>
-        <p>RTMP ingest from remote SIM cameras via relay. Per-device auth keys, no public IP needed at the camera.</p>
-      </div>
-      <div class="fgroup__item">
-        <h4>Live view</h4>
-        <p>WebRTC streaming with sub-second latency. H.265 and H.264, automatic codec fallback when a stream fails to decode.</p>
-      </div>
-      <div class="fgroup__item">
-        <h4>Continuous recording</h4>
-        <p>Segment-based recording with configurable retention. Detection events linked to the exact frame in the recording.</p>
-      </div>
-      <div class="fgroup__item">
-        <h4>Event-anchored playback</h4>
-        <p>Click an alert and the timeline opens at the exact frame &mdash; a perceptual-hash anchor closes the sub-vs-main-stream timing gap that normally costs ten seconds of scrubbing.</p>
-      </div>
-      <div class="fgroup__item">
-        <h4>Snapshot fallback</h4>
-        <p>For cameras that drop RTSP or refuse it, NetrIQ auto-falls-back to snapshot polling so the feed keeps flowing.</p>
-      </div>
-      <div class="fgroup__item">
-        <h4>Detection overlay</h4>
-        <p>Bounding boxes drawn on the live feed with class, confidence, and colour-coded labels.</p>
-      </div>
-      <div class="fgroup__item">
-        <h4>PTZ &amp; 360&deg; control</h4>
-        <p>Pan/tilt/zoom from the live grid for PTZ cameras. Native 360&deg; fisheye dewarp with up to four virtual sub-views per dome.</p>
-      </div>
-      <div class="fgroup__item">
-        <h4>Group, organise, share</h4>
-        <p>Camera groups with per-group toggles for detection, sharing, and view layout.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="cr-figure reveal" style="margin: 18px 0 6px;">
-    <div class="screenshot">
-      <img src="/assets/img/live-view.png" alt="NetrIQ live-view grid showing multiple camera feeds with detection overlays" />
-    </div>
-    <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
-    <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
-    <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
-    <i class="cr-ret cr-ret--br" aria-hidden="true"></i>
-  </div>
-</section>
-
-<!-- UNDERSTAND -->
-<section class="section section--inset">
+<!-- HOW IT WORKS — Capture / Understand / Act as one auto-rotating frame,
+     text on the left, screen grab on the right. -->
+<section class="cr-sec cr-show--platform">
   <div class="container">
-    <div class="fgroup reveal" id="understand" style="border-top:0; padding-top:0;">
-      <div class="fgroup__head">
-        <div>
-          <span class="cr-shead__code" style="display:inline-block;margin-bottom:12px;">02 — UNDERSTAND</span>
+    <div class="cr-vtabs reveal" role="tablist" aria-label="What NetrIQ does">
+      <button class="cr-vtab is-active" role="tab"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg> Capture</button>
+      <button class="cr-vtab" role="tab"><svg aria-hidden="true" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg> Understand</button>
+      <button class="cr-vtab" role="tab"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326z"/></svg> Act</button>
+    </div>
+
+    <div class="cr-vframe reveal">
+      <!-- CAPTURE -->
+      <article class="cr-vpanel cr-vpanel--split is-active">
+        <div class="cr-vpanel__text">
+          <span class="cr-vpanel__code">01 — CAPTURE</span>
+          <h2>Bring every camera into one view.</h2>
+          <p>Camera-agnostic by design — we connect to whatever you have, over the network you have, and present it as one system.</p>
+          <ul class="cr-list">
+            <li>Multi-vendor ingestion — Hikvision, Dahua, CP Plus, Sparsh, Frigate NVRs, any ONVIF / RTSP camera</li>
+            <li>Auto-discovery — finds cameras on the LAN and onboards them in bulk</li>
+            <li>Live view — WebRTC, sub-second latency, H.265 / H.264 with automatic fallback</li>
+            <li>Continuous recording — configurable retention, every detection linked to the exact frame</li>
+            <li>Event-anchored playback — click an alert, the timeline opens on the moment, no scrubbing</li>
+            <li>PTZ &amp; 360° — pan/tilt/zoom and fisheye dewarp from the live grid</li>
+          </ul>
+        </div>
+        <div class="cr-figure">
+          <div class="screenshot"><img src="/assets/img/live-view.png?v=4" alt="NetrIQ live-view grid showing multiple camera feeds with detection overlays" /></div>
+          <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
+          <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
+          <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
+          <i class="cr-ret cr-ret--br" aria-hidden="true"></i>
+        </div>
+      </article>
+
+      <!-- UNDERSTAND -->
+      <article class="cr-vpanel cr-vpanel--split">
+        <div class="cr-vpanel__text">
+          <span class="cr-vpanel__code">02 — UNDERSTAND</span>
           <h2>The AI that watches the wall.</h2>
+          <p>A generic VMS detects motion. NetrIQ detects what is moving, identifies it across cameras, and surfaces only what matters.</p>
+          <ul class="cr-list">
+            <li>Object detection — person, vehicle, animal and common classes, in real time</li>
+            <li>License plate recognition — HSRP-tuned; auto-populates the gate log and vehicle registry</li>
+            <li>Persons of Interest — mark once, tracked across every camera by cross-camera re-identification</li>
+            <li>Forensic scan — run the same AI over recorded footage for any time range and cameras</li>
+            <li>Zone rules — unmanned-gate, occupancy, intrusion and tailgating, firing only in context</li>
+            <li>Natural-language search — type a plain-English description, get back matching clips</li>
+          </ul>
         </div>
-        <p class="lead">Generic VMS detects motion. NetrIQ detects what is moving, identifies it across cameras, and only surfaces what matters.</p>
-      </div>
+        <div class="cr-figure">
+          <div class="screenshot"><img src="/assets/img/events.png?v=2" alt="NetrIQ detection events list with thumbnails redacted" /></div>
+          <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
+          <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
+          <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
+          <i class="cr-ret cr-ret--br" aria-hidden="true"></i>
+        </div>
+      </article>
 
-      <div class="fgroup__list">
-        <div class="fgroup__item">
-          <h4>Object detection</h4>
-          <p>Real-time inference for person, vehicle, animal, and common object classes. Switchable models, configurable per-camera frame rate.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>License plate recognition</h4>
-          <p>HSRP-tuned OCR with multi-frame consensus per track. Handles regional plate formats and low-light gate conditions. Vehicle registry and gate log are auto-populated.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Persons of Interest</h4>
-          <p>Mark a person, vehicle, or object once. NetrIQ tracks every appearance across every camera using OSNet Re-ID and forensic backfill.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Cross-camera tracking</h4>
-          <p>Re-identification ties the same individual or vehicle across disjoint feeds. Class-aware so handbag-PoI doesn&rsquo;t match a person.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Forensic scan</h4>
-          <p>Run the same AI over recorded footage. Pick a time range and cameras, get back detections, plates, and PoI matches retroactively.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Counting and occupancy</h4>
-          <p>Counting tasks for any class, on demand. Occupancy zones report dwell and presence. Snapshots stored as proof.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Polygon zones</h4>
-          <p>Draw zones on the camera view. Detection events fire only inside the zone &mdash; cuts false positives sharply.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Zone rules engine</h4>
-          <p>Four rule families out of the box: <em>unmanned gate</em>, <em>occupancy threshold</em>, <em>intrusion</em>, and <em>tailgating</em>. Configure once, fire only when context says so.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Natural-language visual search</h4>
-          <p>Type &ldquo;men in red shirt near gate yesterday after 9pm&rdquo; in plain English. The LLM normalises it; SigLIP+pgvector returns clips ranked by visual similarity. Plate-only queries short-circuit to the OCR lane.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Tailgating detection</h4>
-          <p>Pure-CV detection of a second person slipping through behind an authorised entry &mdash; without depending on access-control integration.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Floor plans</h4>
-          <p>Place cameras on an uploaded floor plan with field-of-view cones. Zones map to the physical space, not just the camera frame.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Heatmaps &amp; analytics</h4>
-          <p>Activity heatmaps, footfall, dwell. Daily and hourly aggregates per camera and per zone.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="container">
-  <div class="grid-2 reveal" style="gap:36px; align-items:center; padding: 56px 0;">
-    <div class="cr-figure">
-      <div class="screenshot">
-        <img src="/assets/img/poi-tracking.png" alt="Persons of Interest panel with cross-camera sightings" />
-      </div>
-      <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
-      <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
-      <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
-      <i class="cr-ret cr-ret--br" aria-hidden="true"></i>
-    </div>
-    <div>
-      <h2>Track a person, vehicle, or object across every camera you own.</h2>
-      <p class="lead" style="margin-top:14px;">
-        Mark a Person of Interest from any detection &mdash; a suspect, a vehicle, a delivery rider, a misplaced bag.
-        NetrIQ backfills sightings across the time range and cameras you choose, then keeps watching forward in real time.
-      </p>
-    </div>
-  </div>
-
-  <div class="grid-2 reveal" style="gap:36px; align-items:center; padding: 32px 0 72px;">
-    <div>
-      <h2>Plate logs that read themselves.</h2>
-      <p class="lead" style="margin-top:14px;">
-        Every vehicle through every gate ends up in the registry with plate, time, camera, and image &mdash; searchable by plate fragment, by time, by gate.
-        Track regulars, flag unknown vehicles, build whitelists.
-      </p>
-    </div>
-    <div class="cr-figure">
-      <div class="screenshot">
-        <img src="/assets/img/gate-log.png" alt="Gate log auto-populated by license plate recognition" />
-      </div>
-      <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
-      <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
-      <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
-      <i class="cr-ret cr-ret--br" aria-hidden="true"></i>
-    </div>
-  </div>
-</section>
-
-<!-- ACT -->
-<section class="section section--inset">
-  <div class="container">
-    <div class="fgroup reveal" id="act" style="border-top:0; padding-top:0;">
-      <div class="fgroup__head">
-        <div>
-          <span class="cr-shead__code" style="display:inline-block;margin-bottom:12px;">03 — ACT</span>
+      <!-- ACT -->
+      <article class="cr-vpanel cr-vpanel--split">
+        <div class="cr-vpanel__text">
+          <span class="cr-vpanel__code">03 — ACT</span>
           <h2>From signal to response.</h2>
+          <p>Detection is only useful if it reaches the right person at the right moment — or answers the right query after the fact.</p>
+          <ul class="cr-list">
+            <li>Multi-channel notify — in-app, email and WhatsApp from one engine, with audience routing and escalation</li>
+            <li>Gate log &amp; vehicle registry — every entry and exit captured automatically, searchable and exportable</li>
+            <li>Detection history — every event with thumbnail, class, confidence, camera, time and a link to the frame</li>
+            <li>Forensic export — evidence packs with hashed clips and signed manifests for chain-of-custody</li>
+            <li>Roles &amp; multi-site — one console across sites, permissions enforced at the API</li>
+            <li>Event de-duplication — duplicate alerts filtered so the inbox stays signal</li>
+          </ul>
         </div>
-        <p class="lead">Detection is only useful if it routes to the right person at the right moment, or to the right query after the fact.</p>
-      </div>
-
-      <div class="fgroup__list">
-        <div class="fgroup__item">
-          <h4>Multi-channel notify</h4>
-          <p>In-app, email, and WhatsApp (Twilio) dispatched through one engine. Per-audience routing, with chain alerts firing concurrent literals so escalation paths don&rsquo;t race each other.</p>
+        <div class="cr-figure">
+          <div class="screenshot"><img src="/assets/img/alerts.png?v=2" alt="NetrIQ alerts list with rule routing and acknowledgement state" /></div>
+          <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
+          <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
+          <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
+          <i class="cr-ret cr-ret--br" aria-hidden="true"></i>
         </div>
-        <div class="fgroup__item">
-          <h4>Gate log</h4>
-          <p>Every entry and exit captured automatically. Searchable, exportable, image-attached.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Detection history</h4>
-          <p>Every event with thumbnail, class, confidence, camera, time, and link to the recording frame.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Event de-duplication</h4>
-          <p>Intelligent filtering reduces duplicate alerts so the inbox stays signal, not noise.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Forensic export with chain-of-custody</h4>
-          <p>Three-gate writer for evidence packs &mdash; SHA-256 manifests, hashed clips, and a signed export log so the bundle stands up downstream.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Roles &amp; access</h4>
-          <p>Admin, operator, viewer. Permissions enforced at the API, not just the UI.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Multi-site</h4>
-          <p>One console across every site. Group cameras, route alerts, and assign access per site.</p>
-        </div>
-        <div class="fgroup__item">
-          <h4>Themeable console</h4>
-          <p>Ten palettes, configurable font, per-section type sizing. Co-branded deployments without forking the front-end.</p>
-        </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
@@ -319,7 +183,7 @@
       </figure>
       <figure class="screen-card">
         <img src="/assets/img/poi-tracking.png" alt="Persons of Interest tracking panel" />
-        <figcaption><strong>Persons of Interest</strong> &middot; mark once, track everywhere. Cross-camera Re-ID with class-aware matching and admin-tunable thresholds.</figcaption>
+        <figcaption><strong>Persons of Interest</strong> &middot; mark once, track everywhere. Cross-camera re-identification with class-aware matching.</figcaption>
       </figure>
       <figure class="screen-card">
         <img src="/assets/img/alerts.png" alt="Alerts list with rule routing and acknowledgement state" />
@@ -339,7 +203,7 @@
       </figure>
       <figure class="screen-card">
         <img src="/assets/img/settings.png" alt="System configuration UI" />
-        <figcaption><strong>System config</strong> &middot; admin-tunable knobs &mdash; thresholds, retention, AI sidecars, integrations. Live-reload, no restart for hot-path values.</figcaption>
+        <figcaption><strong>System config</strong> &middot; admin-tunable knobs &mdash; thresholds, retention, AI add-ons, integrations. Live-reload, no restart for hot-path values.</figcaption>
       </figure>
     </div>
   </div>
@@ -365,7 +229,7 @@
       <div class="cr-ed cr-ed--flag">
         <span class="cr-ed__tier">Flagship</span>
         <h3>NetrIQ Suite</h3>
-        <p>Everything in VMS plus the full AI surface: natural-language visual search, Persons-of-Interest with cross-camera Re-ID, tailgating, PTZ &amp; 360&deg; dewarp, the zone-rules engine (unmanned-gate, occupancy, intrusion, tailgating), LPR with auto gate log &amp; vehicle registry, multi-channel notify (in-app / email / WhatsApp), forensic export with chain-of-custody, themeable console, and multi-site role-based access.</p>
+        <p>Everything in VMS plus the full AI surface: natural-language visual search, Persons-of-Interest with cross-camera re-identification, tailgating, PTZ &amp; 360&deg; dewarp, the zone-rules engine (unmanned-gate, occupancy, intrusion, tailgating), LPR with auto gate log &amp; vehicle registry, multi-channel notify (in-app / email / WhatsApp), forensic export with chain-of-custody, themeable console, and multi-site role-based access.</p>
       </div>
     </div>
 
