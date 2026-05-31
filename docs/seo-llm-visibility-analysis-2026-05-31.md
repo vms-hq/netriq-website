@@ -49,9 +49,35 @@ This document records the gap analysis, the P0 fixes shipped, and the live porta
 
 **Crawl directives** — `robots.txt` now explicitly allows GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Applebot-Extended and CCBot, and points at the sitemap; `sitemap.xml` gained `<lastmod>`.
 
-**Continuous measurement** — `scripts/seo_check.py` (stdlib-only) validates every page's canonical/OG/Twitter/JSON-LD, the llms files, robots and sitemap, and — against the live URL — pulls Core Web Vitals + Lighthouse scores from the PageSpeed Insights API. Wired into `.github/workflows/seo-check.yml` (PR gate + weekly live run). Baseline local run: **41/41 checks pass**.
+**Continuous measurement** — `scripts/seo_check.py` (stdlib-only) validates every page's canonical/OG/Twitter/JSON-LD, the llms files, robots and sitemap, and — against the live URL — pulls Core Web Vitals + Lighthouse scores from the PageSpeed Insights API. Wired into `.github/workflows/seo-check.yml` (PR gate + weekly live run). Local and live runs: **41/41 checks pass**.
 
-## 4. Live portals & target thresholds
+**Performance follow-through** — measuring Core Web Vitals on the live site surfaced a pre-existing LCP problem (≈20 s), fixed in two further PRs:
+
+- **#26 — WebP screenshots.** All product screenshots converted to WebP @1280w (PNG kept as `<picture>` fallback): **4.0 MB → 0.43 MB total (−89%)**; the hero `live-view` image **1.9 MB → 150 KB**. Above-the-fold shot loads eager + `fetchpriority=high`; the rest lazy + low priority. Google Fonts made non-render-blocking; LCP hero image preloaded.
+- **#27 — hero paints at first frame.** The hero (incl. the LCP element) was `opacity:0` until deferred JS ran a 0.55 s reveal, delaying the LCP paint by ~2 s after FCP. `.cr-hero .reveal { opacity: 1 }` paints it immediately; the slide-up still plays; CLS stays 0.
+
+## 4. Final measured results (live, open internet)
+
+Lighthouse (same engine as PageSpeed Insights), measured against `https://netriq.ai` after each deploy on 2026-05-31:
+
+| Metric | Before (original live) | After SEO + WebP | **After hero-reveal (final)** |
+|---|---|---|---|
+| **Mobile Performance** | 61 | 84 | **99** |
+| **Desktop Performance** | 79 | — | **83** |
+| **LCP** (mobile) | 20.2 s | 3.5 s | **1.8 s** |
+| **LCP** (desktop) | 3.2 s | — | **2.5 s** (green) |
+| **FCP** (mobile) | 3.1 s | 3.1 s | **1.0 s** |
+| **Speed Index** (mobile) | 9.7 s | — | **1.0 s** |
+| **TBT / CLS** | 20 ms / 0 | — | **0 / ~0** |
+| **SEO score** | (no structured data) | 100 | **100** |
+| **Best Practices** | 100 | 100 | **100** |
+| **`seo_check.py` checks** | 3 / 42 | 41 / 41 | **41 / 41** |
+
+Headline: **LCP 20.2 s → 1.8 s** and **mobile Performance 61 → 99**, with SEO and Best-Practices at 100 throughout. Structured data, OG cards, `llms.txt` and AI-crawler directives all verified live.
+
+**Remaining lever (not code):** desktop sits at 83, now gated by **origin TTFB** — the page itself is optimal, but GitHub Pages is served Cloudflare-DNS-only (grey-cloud), so there is no edge CDN/Brotli/HTTP-3. Tracked as a separate infra ticket: **[netriq-website#28](https://github.com/vms-hq/netriq-website/issues/28)** (proxy through Cloudflare; spec in `.plans/netriq-cloudflare-proxy-perf.md`). Decision-gated on whether global/non-India traffic matters.
+
+## 5. Live portals & target thresholds
 
 These are the dashboards that expose real, third-party data for the site. **Instant** ones validate the moment the change deploys; **accruing** ones build data over days.
 
@@ -77,12 +103,12 @@ These are the dashboards that expose real, third-party data for the site. **Inst
 
 **Verification cadence:** instant portals at deploy and on every content change; GSC/Bing weekly for the first month then monthly; AI spot-check monthly. The GitHub Action runs the automated subset weekly and on every PR.
 
-## 5. Owner actions still required (non-blocking)
+## 6. Owner actions still required (non-blocking)
 
 1. **Search Console + Bing verification** — provide the verification tokens (added as `<meta>` tags in `index.html`, placeholders already in place) **and** add the matching DNS TXT records in Cloudflare (belt-and-suspenders, covers apex + `www`). Then submit `sitemap.xml` in both consoles.
 2. **`sameAs` profiles** — confirm any public social profiles to add to the `Organization` schema (omitted for now — none confirmed).
 3. **Optional `PAGESPEED_API_KEY`** repo secret for un-throttled CI PageSpeed runs.
 
-## 6. Expected outcome
+## 7. Expected outcome
 
-A correct entity in Google's/Bing's graph, eligibility for FAQ / breadcrumb / sitelink rich results, branded preview cards on every share and LLM citation, an authoritative `llms.txt` for answer engines, and a measured Core-Web-Vitals baseline — all continuously regression-checked in CI.
+A correct entity in Google's/Bing's graph, eligibility for FAQ / breadcrumb / sitelink rich results, branded preview cards on every share and LLM citation, an authoritative `llms.txt` for answer engines, and — delivered — **mobile Performance 99 / LCP 1.8 s** with Core Web Vitals green, all continuously regression-checked in CI.
