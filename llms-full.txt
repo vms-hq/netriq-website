@@ -1,0 +1,79 @@
+# NetrIQ — full reference for LLM agents
+
+> NetrIQ ("नेत्र + IQ", the intelligent eye) is a vendor-agnostic, AI-first video management system (VMS) that adds live detection, license-plate recognition and forensic search to existing CCTV cameras. Software-only, hybrid by design, built by Nysha Technologies for the Indian market. Most CCTV records — it doesn't watch. NetrIQ watches.
+
+This file is a distilled, machine-readable copy of the public site at https://netriq.ai for retrieval and grounding. All facts below are also present on the linked pages.
+
+## One-line positioning
+
+NetrIQ connects to the cameras you already have and converts passive footage into real-time insight — helping teams act faster, reduce costs, and run safer, more efficient operations.
+
+## Who it is for
+
+Gated communities / housing, hospitals & healthcare, schools & campuses, retail & jewellery, restaurants & hotels, malls, fleet & logistics / yards, IT office spaces, and SMB / small offices. The same platform runs across all of them; verticals are configuration presets, not separate products.
+
+## The camera & deployment reality it is built for
+
+- **Cameras**: Hikvision, Dahua, CP Plus, Sparsh natively; Frigate NVRs; any generic ONVIF camera; Wi-Fi and 4G SIM cameras. Mixed vendors and mixed-vintage hardware across many gates are treated as the default, not the edge case. If a camera speaks RTSP or ONVIF, NetrIQ understands it.
+- **Networks**: Intranet, internet, or mixed. Remote sites work with no public IP — the Site Agent bridges over a cloud relay (no port forwarding, no static IP, no firewall holes).
+- **Deployment**: Software only. NetrIQ does not sell cameras; existing hardware stays where it is.
+- **Field conditions**: Intermittent uplinks, mixed-vintage cameras, HSRP plates, low-light gates — tuned and tested against real conditions, not lab/showroom.
+
+## What happens to a frame (signal path)
+
+A traditional VMS records and waits to be searched. NetrIQ reads every frame as it arrives — live, and across the archive.
+
+1. **Capture** — Auto-discovery scans the LAN, reads codecs, registers cameras in bulk. WebRTC live view with sub-second latency. H.265 / H.264 with automatic fallback. Continuous recording with retention.
+2. **Understand** — Person, vehicle and object detection (YOLO-class). License-plate recognition, HSRP-tuned with multi-frame consensus OCR. Persons of Interest tracked across cameras (OSNet Re-ID). Filters noise down to what matters.
+3. **Act** — WhatsApp and email alerts. Forensic scan over recorded footage. Gate log and vehicle registry. Signals route to the team and leave a queryable record — not a tape to scrub.
+
+## Architecture
+
+- **Edge — Site Agent**: Single binary (Linux / Raspberry Pi / x86). RTSP capture and codec normalisation. Snapshot fallback on RTSP drop. Token-based site activation.
+- **Detection — AI Engine**: YOLO-class object detection. License-plate OCR. OSNet Re-ID for cross-camera identity. Forensic scan over the archive.
+- **Control — Cloud Console**: Live view, playback, dashboards. Gate log and vehicle registry. Roles, groups, multi-site. Alerts via WhatsApp / email.
+
+## Editions
+
+- **NetrIQ VMS (Foundation)** — The video-management base every deployment starts on: camera ingestion, live view, recording, event-anchor playback, and basic detection across every supported camera.
+- **NetrIQ Suite (Flagship)** — Everything in VMS plus the full AI surface: visual search, person-of-interest Re-ID, tailgating detection, PTZ-360, zone rules, license-plate recognition, gate log, multi-channel alerts, and forensic export with chain-of-custody.
+
+You pick NetrIQ VMS or NetrIQ Suite per site and can move up later without re-installing. Verticals (housing, healthcare, retail, hospitality, fleet, etc.) are presets layered on an edition.
+
+## Pricing model
+
+Priced by camera tier, not by count alone — a car-park gate camera does not need the same tier as a control-room live wall. You pay for the analytics you turn on per camera. Indicative tiers: Record & detect (continuous recording + baseline detection with rule alerts); Plates & gates (LPR + auto-populated gate log and vehicle registry); Analytics & PoI (counting, occupancy, heatmaps, cross-camera Persons-of-Interest); Live wall (full live-view, no analytics requirement); Forensic-on-demand (low-cost archive tier, forensic detection on request); Custom (multi-site, multi-tenant, regulated — sized on the deployment). Contact NetrIQ for a quote.
+
+## Why NetrIQ vs. alternatives
+
+The market splits into expensive enterprise stacks, cheap proprietary hardware, and cloud-only newcomers that demand their own cameras. NetrIQ sits across the gap: an open, AI-native layer that runs on what you already own.
+
+- Any vendor mix, any network — one console (vs. one-vendor-only).
+- Tier-priced per camera for the analytics you want (vs. per-camera licences + annual maintenance).
+- Software-only; a Site Agent bridges existing cameras (vs. rip-and-replace).
+- Cloud relay for remote view, no public IP (vs. static IP / port forwarding / VPN).
+- AI on by default — detection, plates, PoI, forensic (vs. AI gated behind another licence).
+- Pair NDAA-compliant cameras where regulated; you keep hardware leverage, choice and portability.
+
+## FAQ
+
+- **Does NetrIQ work with my existing CCTV cameras?** Yes — software-only and vendor-agnostic (Hikvision, Dahua, CP Plus, Sparsh natively; Frigate NVRs; any ONVIF; Wi-Fi and 4G SIM). NetrIQ does not sell cameras.
+- **Do I need a public IP or port forwarding for remote view?** No — the Site Agent bridges cameras over a cloud relay; no public IP, port forwarding or firewall holes.
+- **Can NetrIQ read Indian HSRP number plates?** Yes — LPR is HSRP-tuned with multi-frame consensus OCR, tested against low light, mixed-vintage cameras and network drops.
+- **Is footage stored locally or in the cloud?** Both — hybrid by design; recording can stay local while the cloud handles remote view and cross-camera intelligence, chosen per site.
+- **How is NetrIQ priced?** By camera tier (pay for the analytics you turn on per camera), not by count alone. Contact for a quote.
+- **VMS vs. Suite?** VMS is the video-management foundation; Suite adds the full AI surface (visual search, PoI Re-ID, tailgating, PTZ-360, zone rules, LPR, gate log, multi-channel alerts, forensic export with chain-of-custody). Verticals are presets on top of either.
+
+## Organisation & contact
+
+- Brand: **NetrIQ** · Legal entity: **Nysha Technologies** · Market: India.
+- Phone: **+91 94825 14646** · Email: **leads@netriq.ai**
+- Get a 30-minute live walkthrough on a real deployment (not slides) or a quote sized to your camera count and edition: https://netriq.ai/contact.html
+
+## Canonical URLs
+
+- https://netriq.ai/ — Home
+- https://netriq.ai/platform.html — Platform
+- https://netriq.ai/verticals.html — Verticals
+- https://netriq.ai/why-netriq.html — Why NetrIQ (+ FAQ)
+- https://netriq.ai/contact.html — Contact
