@@ -28,7 +28,8 @@
 <link rel="icon" href="/assets/logos/netriq-favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
 <link rel="stylesheet" href="/assets/css/site.css" />
 <script type="application/ld+json">
 {
@@ -123,7 +124,7 @@
           </ul>
         </div>
         <div class="cr-figure">
-          <div class="screenshot"><img src="/assets/img/live-view.png?v=4" alt="NetrIQ live-view grid showing multiple camera feeds with detection overlays" /></div>
+          <div class="screenshot"><picture><source type="image/webp" srcset="/assets/img/live-view.webp" /><img alt="NetrIQ live-view grid showing multiple camera feeds with detection overlays" src="/assets/img/live-view.png?v=4" fetchpriority="high" decoding="async" /></picture></div>
           <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
           <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
           <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
@@ -147,7 +148,7 @@
           </ul>
         </div>
         <div class="cr-figure">
-          <div class="screenshot"><img src="/assets/img/events.png?v=2" alt="NetrIQ detection events list with thumbnails redacted" /></div>
+          <div class="screenshot"><picture><source type="image/webp" srcset="/assets/img/events.webp" /><img alt="NetrIQ detection events list with thumbnails redacted" src="/assets/img/events.png?v=2" loading="lazy" decoding="async" /></picture></div>
           <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
           <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
           <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
@@ -171,7 +172,7 @@
           </ul>
         </div>
         <div class="cr-figure">
-          <div class="screenshot"><img src="/assets/img/alerts.png?v=2" alt="NetrIQ alerts list with rule routing and acknowledgement state" /></div>
+          <div class="screenshot"><picture><source type="image/webp" srcset="/assets/img/alerts.webp" /><img alt="NetrIQ alerts list with rule routing and acknowledgement state" src="/assets/img/alerts.png?v=2" loading="lazy" decoding="async" /></picture></div>
           <i class="cr-ret cr-ret--tl" aria-hidden="true"></i>
           <i class="cr-ret cr-ret--tr" aria-hidden="true"></i>
           <i class="cr-ret cr-ret--bl" aria-hidden="true"></i>
@@ -195,47 +196,47 @@
 
     <div class="screen-grid reveal" style="margin-top:36px;">
       <figure class="screen-card">
-        <img src="/assets/img/dashboard.png" alt="NetrIQ operations dashboard with detections by class, camera health, and active alerts" />
+        <picture><source type="image/webp" srcset="/assets/img/dashboard.webp" /><img alt="NetrIQ operations dashboard with detections by class, camera health, and active alerts" src="/assets/img/dashboard.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Dashboard</strong> &middot; classes detected in the last 24 h, camera health, event volume, active alerts &mdash; all on the landing screen.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/live-view.png" alt="Live-view grid showing multiple camera feeds in one console" />
+        <picture><source type="image/webp" srcset="/assets/img/live-view.webp" /><img alt="Live-view grid showing multiple camera feeds in one console" src="/assets/img/live-view.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Live view</strong> &middot; multi-camera grid with WebRTC sub-second latency. Detection overlays drawn on the feed in real time.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/events.png" alt="Detection events list with thumbnails redacted for PII" />
+        <picture><source type="image/webp" srcset="/assets/img/events.webp" /><img alt="Detection events list with thumbnails redacted for PII" src="/assets/img/events.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Detection events</strong> &middot; chronological event ledger with thumbnail, object class, confidence, camera, and one-click jump into the recording.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/analytics.png" alt="Analytics with detection classes, hourly activity, and sightings groups" />
+        <picture><source type="image/webp" srcset="/assets/img/analytics.webp" /><img alt="Analytics with detection classes, hourly activity, and sightings groups" src="/assets/img/analytics.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Analytics</strong> &middot; class breakdown, hourly activity, and object-track sightings groups. Person thumbnails redacted for the website.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/gate-log.png" alt="Gate log auto-populated by license plate recognition" />
+        <picture><source type="image/webp" srcset="/assets/img/gate-log.webp" /><img alt="Gate log auto-populated by license plate recognition" src="/assets/img/gate-log.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Gate log</strong> &middot; auto-populated by LPR. Plate, time, camera, image &mdash; searchable by plate fragment.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/poi-tracking.png" alt="Persons of Interest tracking panel" />
+        <picture><source type="image/webp" srcset="/assets/img/poi-tracking.webp" /><img alt="Persons of Interest tracking panel" src="/assets/img/poi-tracking.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Persons of Interest</strong> &middot; mark once, track everywhere. Cross-camera re-identification with class-aware matching.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/alerts.png" alt="Alerts list with rule routing and acknowledgement state" />
+        <picture><source type="image/webp" srcset="/assets/img/alerts.webp" /><img alt="Alerts list with rule routing and acknowledgement state" src="/assets/img/alerts.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Alerts</strong> &middot; rule-driven, audience-aware. Dispatch to in-app, email, or WhatsApp from the same engine.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/recordings.png" alt="Recording timeline with event markers" />
+        <picture><source type="image/webp" srcset="/assets/img/recordings.webp" /><img alt="Recording timeline with event markers" src="/assets/img/recordings.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Recordings</strong> &middot; segment-based archive with detection markers overlaid on the timeline. Scrub to context, not just to the clip.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/devices.png" alt="Device list with online status, codecs, and camera health" />
+        <picture><source type="image/webp" srcset="/assets/img/devices.webp" /><img alt="Device list with online status, codecs, and camera health" src="/assets/img/devices.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Devices</strong> &middot; every camera with its protocol, codec, online status, and last-seen. Credentials masked. Bulk actions across vendors.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/groups.png" alt="Camera groups with per-group toggles" />
+        <picture><source type="image/webp" srcset="/assets/img/groups.webp" /><img alt="Camera groups with per-group toggles" src="/assets/img/groups.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>Groups</strong> &middot; per-group toggles for detection, sharing, layouts. Drives access control and per-site routing.</figcaption>
       </figure>
       <figure class="screen-card">
-        <img src="/assets/img/settings.png" alt="System configuration UI" />
+        <picture><source type="image/webp" srcset="/assets/img/settings.webp" /><img alt="System configuration UI" src="/assets/img/settings.png" loading="lazy" decoding="async" /></picture>
         <figcaption><strong>System config</strong> &middot; admin-tunable knobs &mdash; thresholds, retention, AI add-ons, integrations. Live-reload, no restart for hot-path values.</figcaption>
       </figure>
     </div>
