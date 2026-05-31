@@ -31,7 +31,11 @@
 <link rel="icon" href="/assets/logos/netriq-favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<!-- Non-render-blocking fonts (display=swap shows fallback then swaps) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
+<!-- Preload the LCP hero image so it starts downloading immediately -->
+<link rel="preload" as="image" href="/assets/img/live-view.webp" type="image/webp" fetchpriority="high" />
 <link rel="stylesheet" href="/assets/css/site.css" />
 <script type="application/ld+json">
 {
@@ -126,14 +130,16 @@
           <span class="cr-frame__live"><span class="cr-dot cr-dot--ok"></span> Live</span>
         </div>
         <div class="cr-shots" aria-label="NetrIQ product screens">
-          <img class="cr-shot is-active" src="/assets/img/live-view.png?v=4" data-screen="live-view" data-label="Unified live view" data-desc="every camera in one wall — sub-second WebRTC" alt="NetrIQ unified live view: multi-camera wall with detection overlays" />
-          <img class="cr-shot" src="/assets/img/dashboard.png?v=2" data-screen="dashboard" data-label="Operations dashboard" data-desc="detections by class, camera health, active alerts" alt="NetrIQ dashboard: detection counts by class, cameras online, active alerts" />
-          <img class="cr-shot" src="/assets/img/events.png?v=2" data-screen="events" data-label="Detection events" data-desc="every detection, filtered to what matters" alt="NetrIQ event feed: detections filtered to what matters" />
-          <img class="cr-shot" src="/assets/img/alerts.png?v=2" data-screen="alerts" data-label="Alerts" data-desc="rule-driven, routed to your team" alt="NetrIQ alerts: zone-rule and detection alerts routed to the team" />
-          <img class="cr-shot" src="/assets/img/gate-log.png?v=2" data-screen="gate-log" data-label="Gate log" data-desc="vehicles in and out, plates read automatically" alt="NetrIQ gate log: vehicle entries with plate recognition" />
-          <img class="cr-shot" src="/assets/img/poi-tracking.png?v=2" data-screen="poi-tracking" data-label="Persons of Interest" data-desc="marked once, tracked across every camera" alt="NetrIQ persons-of-interest tracking across cameras" />
-          <img class="cr-shot" src="/assets/img/analytics.png?v=2" data-screen="analytics" data-label="Analytics" data-desc="counts, occupancy and object trails" alt="NetrIQ analytics: counts, occupancy and object trails" />
-          <img class="cr-shot" src="/assets/img/recordings.png?v=3" data-screen="recordings" data-label="Recordings" data-desc="playback with event-anchor seek" alt="NetrIQ recordings: playback with event-anchor seek" />
+          <!-- WebP (≈90% smaller) with PNG fallback. Active shot loads eager + high priority (LCP);
+               the rest are lazy + low priority so they never starve the LCP image on mobile. -->
+          <picture><source type="image/webp" srcset="/assets/img/live-view.webp" /><img class="cr-shot is-active" src="/assets/img/live-view.png?v=4" width="1280" height="720" fetchpriority="high" decoding="async" data-screen="live-view" data-label="Unified live view" data-desc="every camera in one wall — sub-second WebRTC" alt="NetrIQ unified live view: multi-camera wall with detection overlays" /></picture>
+          <picture><source type="image/webp" srcset="/assets/img/dashboard.webp" /><img class="cr-shot" src="/assets/img/dashboard.png?v=2" width="1280" height="720" loading="lazy" fetchpriority="low" decoding="async" data-screen="dashboard" data-label="Operations dashboard" data-desc="detections by class, camera health, active alerts" alt="NetrIQ dashboard: detection counts by class, cameras online, active alerts" /></picture>
+          <picture><source type="image/webp" srcset="/assets/img/events.webp" /><img class="cr-shot" src="/assets/img/events.png?v=2" width="1280" height="720" loading="lazy" fetchpriority="low" decoding="async" data-screen="events" data-label="Detection events" data-desc="every detection, filtered to what matters" alt="NetrIQ event feed: detections filtered to what matters" /></picture>
+          <picture><source type="image/webp" srcset="/assets/img/alerts.webp" /><img class="cr-shot" src="/assets/img/alerts.png?v=2" width="1280" height="720" loading="lazy" fetchpriority="low" decoding="async" data-screen="alerts" data-label="Alerts" data-desc="rule-driven, routed to your team" alt="NetrIQ alerts: zone-rule and detection alerts routed to the team" /></picture>
+          <picture><source type="image/webp" srcset="/assets/img/gate-log.webp" /><img class="cr-shot" src="/assets/img/gate-log.png?v=2" width="1280" height="720" loading="lazy" fetchpriority="low" decoding="async" data-screen="gate-log" data-label="Gate log" data-desc="vehicles in and out, plates read automatically" alt="NetrIQ gate log: vehicle entries with plate recognition" /></picture>
+          <picture><source type="image/webp" srcset="/assets/img/poi-tracking.webp" /><img class="cr-shot" src="/assets/img/poi-tracking.png?v=2" width="1280" height="720" loading="lazy" fetchpriority="low" decoding="async" data-screen="poi-tracking" data-label="Persons of Interest" data-desc="marked once, tracked across every camera" alt="NetrIQ persons-of-interest tracking across cameras" /></picture>
+          <picture><source type="image/webp" srcset="/assets/img/analytics.webp" /><img class="cr-shot" src="/assets/img/analytics.png?v=2" width="1280" height="720" loading="lazy" fetchpriority="low" decoding="async" data-screen="analytics" data-label="Analytics" data-desc="counts, occupancy and object trails" alt="NetrIQ analytics: counts, occupancy and object trails" /></picture>
+          <picture><source type="image/webp" srcset="/assets/img/recordings.webp" /><img class="cr-shot" src="/assets/img/recordings.png?v=3" width="1280" height="720" loading="lazy" fetchpriority="low" decoding="async" data-screen="recordings" data-label="Recordings" data-desc="playback with event-anchor seek" alt="NetrIQ recordings: playback with event-anchor seek" /></picture>
           <span class="cr-scan" aria-hidden="true"></span>
         </div>
         <div class="cr-frame__foot">
