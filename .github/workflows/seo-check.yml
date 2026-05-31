@@ -1,0 +1,66 @@
+name: SEO / LLM-visibility check
+
+# Verifies the discoverability surface search engines and LLM agents read:
+# canonical, Open Graph, Twitter cards, valid JSON-LD, llms.txt, AI-friendly
+# robots.txt and a sitemap with <lastmod>.
+#
+#  * On every PR / push that touches the site  -> validate the static files in
+#    the repo (catches a broken tag or invalid JSON-LD before it ships).
+#  * Weekly + manual dispatch                  -> validate the LIVE site and
+#    pull Core Web Vitals + Lighthouse scores from PageSpeed Insights, then
+#    upload the report as an artifact.
+#
+# Optional: set repo secret PAGESPEED_API_KEY for reliable (un-throttled) PSI
+# calls. The check still runs without it, just rate-limited.
+
+on:
+  pull_request:
+    paths:
+      - '**.html'
+      - 'llms*.txt'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'scripts/seo_check.py'
+      - '.github/workflows/seo-check.yml'
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'llms*.txt'
+      - 'robots.txt'
+      - 'sitemap.xml'
+  schedule:
+    - cron: '0 4 * * 1'   # every Monday 04:00 UTC = 09:30 IST
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # PRs/pushes validate the files in the repo (pre-deploy gate).
+      - name: Validate static files
+        if: github.event_name == 'pull_request' || github.event_name == 'push'
+        run: python3 scripts/seo_check.py --root . --report seo-report.md
+
+      # Scheduled/manual runs validate the live deployment + PageSpeed.
+      - name: Validate live site + PageSpeed
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+        run: python3 scripts/seo_check.py --url https://netriq.ai --psi --report seo-report.md
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report
+          path: seo-report.md

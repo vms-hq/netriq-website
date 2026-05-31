@@ -1,0 +1,33 @@
+# NetrIQ
+
+> NetrIQ ("नेत्र + IQ", the intelligent eye) is a vendor-agnostic, AI-first video management system (VMS) that adds live detection, license-plate recognition (HSRP-tuned) and forensic search to the CCTV cameras a site already owns — no rip-and-replace. It is software-only (NetrIQ does not sell cameras), works across mixed vendors and networks, and is built by Nysha Technologies for the Indian market.
+
+## What it is
+
+- Connects to existing CCTV — Hikvision, Dahua, CP Plus and Sparsh natively, Frigate NVRs, any generic ONVIF camera, plus Wi-Fi and 4G SIM cameras.
+- Turns passive footage into real-time insight: WebRTC live view (sub-second), continuous recording with event-anchor playback, object/person/vehicle detection, HSRP license-plate recognition, cross-camera person-of-interest tracking (OSNet Re-ID), forensic scan over the archive, gate log and vehicle registry, and WhatsApp/email alerts.
+- Works on any network: intranet, internet, mixed, or remote sites with no public IP — the Site Agent (single binary, Linux/Pi/x86) bridges cameras over a cloud relay with no port forwarding or firewall holes.
+- Hybrid storage: recording can stay local while the cloud handles remote view and cross-camera intelligence; chosen per site.
+- Two editions: **NetrIQ VMS** (video-management foundation — ingestion, live view, recording, playback, basic detection) and **NetrIQ Suite** (full AI surface — visual search, PoI Re-ID, tailgating, PTZ-360, zone rules, LPR, gate log, multi-channel alerts, forensic export with chain-of-custody). Verticals are presets on top of an edition, not separate products.
+- Priced by camera tier (pay for the analytics you turn on per camera), not by count alone.
+
+## Pages
+
+- [Home](https://netriq.ai/): What NetrIQ is, the camera/network/storage reality it handles, and the two editions.
+- [Platform](https://netriq.ai/platform.html): Shipping capabilities today — live view, recording, AI detection, LPR, person-of-interest tracking, forensic scan, alerts, multi-site control, and the Edge / AI Engine / Cloud Console architecture.
+- [Verticals](https://netriq.ai/verticals.html): Deployment fit across gated communities, hospitals, schools & campuses, retail & jewellery, restaurants & hotels, malls, fleet & logistics, IT offices, and SMB.
+- [Why NetrIQ](https://netriq.ai/why-netriq.html): The case for an open, AI-first VMS vs. single-vendor/proprietary/cloud-only alternatives, the pricing model, and an FAQ.
+- [Contact](https://netriq.ai/contact.html): Request a 30-minute live walkthrough or a quote sized to your camera count and edition.
+
+## Key facts
+
+- Vendor-agnostic and software-only — NetrIQ does not sell cameras; existing hardware stays in place.
+- HSRP (Indian high-security registration plate) recognition with multi-frame consensus OCR, tuned for low light and mixed-vintage cameras.
+- Remote sites need no public IP; the Site Agent bridges over a cloud relay.
+- Legal entity: Nysha Technologies. Brand: NetrIQ. Market: India.
+
+## Contact
+
+- Phone: +91 94825 14646
+- Email: leads@netriq.ai
+- Walkthrough / quote: https://netriq.ai/contact.html

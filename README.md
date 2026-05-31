@@ -40,6 +40,22 @@ Recipient mapping is configured on Cloudflare Email Routing and on the form-rela
 
 Product screenshots live in `assets/img/` and are PII-clean — face regions on customer-bearing surfaces are mosaic-redacted via `scripts/face_blur.py`. The allowlist is enforced by `scripts/sync-screenshots.sh` (used by the weekly `sync-screenshots.yml` GitHub Action).
 
+## SEO & LLM-agent visibility
+
+Every indexable page carries canonical, Open Graph, Twitter-card and `robots` meta plus inline JSON-LD structured data (`Organization` + `WebSite` on home, `SoftwareApplication` on platform, `FAQPage` on why-netriq, `BreadcrumbList`/`ItemList`/`ContactPage` as appropriate). The `og:image` cards live in `assets/og/` (regenerate with the PIL snippet in git history). LLM agents are served `/llms.txt` (curated) and `/llms-full.txt` (full distilled content); `robots.txt` explicitly welcomes AI crawlers and `sitemap.xml` carries `<lastmod>`.
+
+`scripts/seo_check.py` validates all of the above. Run it before pushing:
+
+```sh
+python3 scripts/seo_check.py --root .            # validate the files in this repo
+python3 scripts/seo_check.py --url https://netriq.ai --psi   # validate the live site + PageSpeed
+```
+
+Full analysis, the live portals we measure against (Search Console, Bing, Rich Results, PageSpeed, OG debuggers, AI answer engines) and target thresholds: `docs/seo-llm-visibility-analysis-2026-05-31.md`.
+
+**Owner setup still pending:** paste Google Search Console + Bing verification tokens (placeholder `<meta>` tags are in `index.html`) and add the matching DNS TXT records in Cloudflare, then submit `sitemap.xml` in both consoles.
+
 ## Workflows
 
 - `.github/workflows/sync-screenshots.yml` — weekly auto-refresh of allowlisted screenshots from the internal `business` repo. Opens a PR; never pushes to `main` directly so a human eyeballs the diff.
+- `.github/workflows/seo-check.yml` — runs `scripts/seo_check.py` on every PR (validates the static files) and weekly against the live site (with PageSpeed/Core Web Vitals); uploads the report as an artifact.
