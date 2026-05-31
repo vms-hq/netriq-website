@@ -359,6 +359,11 @@ p { color: var(--text-soft); }
    ============================================================ */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .reveal.is-in { opacity: 1; transform: none; }
+/* Above-the-fold hero must NOT be opacity-gated by JS — that delays LCP paint
+   until the reveal animation finishes (~2s after FCP). Keep it painted from the
+   first frame; the slide-up still plays when .is-in lands. CLS stays 0 (transform
+   doesn't shift layout). Single biggest remaining LCP win. */
+.cr-hero .reveal { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
